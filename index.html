@@ -1,0 +1,1323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KIMUN & FUTABA</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:#fff;overflow:hidden}
+body{position:fixed;inset:0}
+
+.scroll-root{
+  width:100%;
+  height:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:#fff;
+}
+
+.page{
+  position:relative;
+  width:min(100%,1360px);
+  aspect-ratio:1360/1891;
+  flex:0 0 auto;
+  overflow:hidden;
+  background:transparent;
+  line-height:0;
+}
+
+.page+.page{margin-top:-3px}
+
+.layer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  opacity:0;
+  pointer-events:none;
+  display:block;
+}
+
+.initial-loader{
+  position:fixed;
+  inset:0;
+  z-index:20000;
+  background:#fff;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transition:opacity .45s ease-in-out,visibility 0s linear .45s;
+}
+
+.site-ready .initial-loader{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.bgm-btn{
+  position:fixed;
+  top:max(20px,env(safe-area-inset-top));
+  left:max(20px,env(safe-area-inset-left));
+  z-index:10000;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid rgba(0,0,0,.1);
+  background:rgba(255,255,255,.7);
+  display:grid;
+  place-items:center;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.bgm-btn svg{
+  width:18px;
+  height:18px;
+  fill:#555;
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes growTree{
+  from{opacity:0;transform:scale(0)}
+  to{opacity:1;transform:scale(1)}
+}
+
+@keyframes flyAndStop{
+  from{opacity:0;transform:translate(120px,-20px)}
+  to{opacity:1;transform:translate(0,0)}
+}
+
+@keyframes title2FromLine{
+  0%{transform:translateY(-2.8556%)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes title3FromLine{
+  0%{transform:translateY(-2.9085%)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes title4FromLine{
+  0%{transform:translateY(-2.9085%)}
+  100%{transform:translateY(0)}
+}
+
+/* title-2 계열은 차례 전 완전 숨김 */
+.title2-reveal,
+.title3-reveal,
+.title4-reveal{
+  position:absolute;
+  inset:0;
+  z-index:20;
+  overflow:hidden;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.title2-reveal{clip-path:inset(20.5182% 0 0 0)}
+.title3-reveal{clip-path:inset(25.8065% 0 0 0)}
+.title4-reveal{clip-path:inset(30.4072% 0 0 0)}
+
+.title2-reveal .title22,
+.title3-reveal .title32,
+.title4-reveal .title42{
+  display:none;
+  opacity:0!important;
+  visibility:hidden;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  position:absolute;
+  inset:0;
+}
+
+.title2-reveal.run .title22,
+.title3-reveal.run .title32{
+  display:block;
+  opacity:1!important;
+  visibility:visible;
+}
+
+/* ================= PAGE 1 ================= */
+
+.page1 .tree1{transform-origin:50% 82%}
+
+.site-ready .page1 .background1{
+  animation:fadeIn 1.3s ease-in-out 0s both;
+}
+
+.site-ready .page1 .rabbit1{
+  animation:fadeIn 1.3s ease-in-out 1.3s both;
+}
+
+.site-ready .page1 .tree1{
+  animation:growTree 1.3s ease-in-out 2.6s both;
+}
+
+.site-ready .page1 .bird1{
+  animation:flyAndStop 1.3s ease-in-out 3.9s both;
+}
+
+.site-ready .page1 .title1{
+  animation:fadeIn 1.3s ease-in-out 5.2s both;
+}
+
+.site-ready .page1 .date1{
+  animation:fadeIn 1.3s ease-in-out 6.5s both;
+}
+
+.site-ready .page1 .name1{
+  animation:fadeIn 1.3s ease-in-out 7.8s both;
+}
+
+/* ================= PAGE 2 / PAGE 3 =================
+   순서가 되기 전에는 GPU 합성 과정에서도 보이지 않도록
+   opacity + visibility 둘 다 차단.
+*/
+
+.page2 .background2,
+.page2 .photo2,
+.page2 .flower2,
+.page2 .title21,
+.page2 .message2,
+
+.page3 .background3,
+.page3 .r31,
+.page3 .r32,
+.page3 .r33,
+.page3 .r34,
+.page3 .r35,
+.page3 .r36,
+.page3 .r37,
+.page3 .r38,
+.page3 .r39,
+.page3 .r310,
+.page3 .r311,
+.page3 .r312,
+.page3 .title31,
+.page3 .message3,
+.page3 .details3,
+.page3 .blessing3{
+  opacity:0;
+  visibility:hidden;
+}
+
+.page2 .background2.run,
+.page2 .photo2.run,
+.page2 .flower2.run,
+.page2 .title21.run,
+.page2 .message2.run,
+
+.page3 .background3.run,
+.page3 .r31.run,
+.page3 .r32.run,
+.page3 .r33.run,
+.page3 .r34.run,
+.page3 .r35.run,
+.page3 .r36.run,
+.page3 .r37.run,
+.page3 .r38.run,
+.page3 .r39.run,
+.page3 .r310.run,
+.page3 .r311.run,
+.page3 .r312.run,
+.page3 .title31.run,
+.page3 .message3.run,
+.page3 .details3.run,
+.page3 .blessing3.run{
+  visibility:visible;
+  animation:fadeIn 1.3s ease-in-out both;
+}
+
+/* PAGE 2 */
+
+.page2 .title2-reveal.run{
+  visibility:visible;
+}
+
+.page2 .title2-reveal.run .title22{
+  opacity:1!important;
+  visibility:visible;
+  animation:title2FromLine 1.3s linear both;
+}
+
+.flower2{
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+
+/* PAGE 3 */
+
+.page3 .icon-place-motion.run,
+.page3 .icon-gift-motion.run{
+  animation:fadeIn 1.3s ease-in-out both;
+}
+
+.page3 .title3-reveal.run{
+  visibility:visible;
+}
+
+.page3 .title3-reveal.run .title32{
+  opacity:1!important;
+  visibility:visible;
+  animation:title3FromLine 1.3s linear both;
+}
+
+/* 아이콘 자체만 클릭 모션 */
+
+.icon-motion-wrapper{
+  position:absolute;
+  z-index:70;
+  overflow:hidden;
+  opacity:0;
+  pointer-events:none;
+  -webkit-transform:translateZ(0) scale(1);
+  transform:translateZ(0) scale(1);
+  -webkit-transform-origin:50% 50%;
+  transform-origin:50% 50%;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  -webkit-transition:-webkit-transform 140ms ease-out;
+  transition:transform 140ms ease-out;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.icon-motion-wrapper.is-pressed{
+  -webkit-transform:translateZ(0) scale(.82);
+  transform:translateZ(0) scale(.82);
+}
+
+.page3 .icon-place-motion.ready,
+.page3 .icon-gift-motion.ready{
+  pointer-events:auto;
+}
+
+.icon-place-motion{
+  left:66.6667%;
+  top:51.0312%;
+  width:9.1979%;
+  height:6.6103%;
+}
+
+.icon-gift-motion{
+  left:82.3400%;
+  top:89.1063%;
+  width:7.5791%;
+  height:5.4469%;
+}
+
+.icon-crop-source{
+  position:absolute;
+  max-width:none;
+  pointer-events:none;
+  object-fit:fill;
+}
+
+.icon-place-motion .icon-crop-source{
+  width:1087.2%;
+  height:1512.8%;
+  left:-724.8%;
+  top:-772%;
+}
+
+.icon-gift-motion .icon-crop-source{
+  width:1319.4175%;
+  height:1835.9223%;
+  left:-1086.4078%;
+  top:-1635.9223%;
+}
+
+.icon-motion-click{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  border:0;
+  outline:0;
+  background:transparent;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* ================= PAGE 4 ================= */
+
+.page4-modal{
+  position:fixed;
+  inset:0;
+  z-index:15000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0);
+  visibility:hidden;
+  pointer-events:none;
+  transition:
+    background-color 1.3s ease-in-out,
+    visibility 0s linear 1.3s;
+}
+
+.page4-modal.active{
+  visibility:visible;
+  pointer-events:auto;
+  background:rgba(0,0,0,.62);
+  transition:background-color 1.3s ease-in-out;
+}
+
+.page4-modal.closing{
+  visibility:visible;
+  pointer-events:none;
+  background:rgba(0,0,0,0);
+}
+
+.page4-content{
+  position:relative;
+  width:100vw;
+  height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:opacity 1.3s ease-in-out;
+}
+
+.page4-modal.active .page4-content{opacity:1}
+.page4-modal.closing .page4-content{opacity:0}
+
+.page4-card{
+  position:relative;
+  width:min(100vw,calc(100dvh * 1360 / 1891),1360px);
+  aspect-ratio:1360/1891;
+  overflow:hidden;
+  background:transparent;
+}
+
+.page4-modal.active .background4{
+  animation:fadeIn 1.3s ease-in-out 0s both;
+}
+
+.page4-modal.active .rabbit4{
+  animation:fadeIn 1.3s ease-in-out 1.3s both;
+}
+
+.page4-modal.active .title41{
+  animation:fadeIn 1.3s ease-in-out 2.6s both;
+}
+
+.page4-modal.active .title4-reveal{
+  visibility:hidden;
+}
+
+.page4-modal.active.title4-ready .title4-reveal{
+  visibility:visible;
+}
+
+.page4-modal.active.title4-ready .title4-reveal .title42{
+  display:block;
+  opacity:1!important;
+  visibility:visible;
+  animation:title4FromLine 1.3s linear both;
+}
+
+.page4-modal.active .account4{
+  animation:fadeIn 1.3s ease-in-out 5.2s both;
+}
+
+.modal-close-btn{
+  position:absolute;
+  top:max(20px,env(safe-area-inset-top));
+  right:max(20px,env(safe-area-inset-right));
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:rgba(0,0,0,.55);
+  z-index:100;
+  cursor:pointer;
+}
+
+.modal-close-btn:before,
+.modal-close-btn:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:17px;
+  height:2px;
+  background:#fff;
+  border-radius:2px;
+}
+
+.modal-close-btn:before{
+  transform:translate(-50%,-50%) rotate(45deg);
+}
+
+.modal-close-btn:after{
+  transform:translate(-50%,-50%) rotate(-45deg);
+}
+
+.account-click{
+  position:absolute;
+  z-index:80;
+  border:0;
+  outline:0;
+  background:transparent;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+.account-kb{
+  left:30.5147%;
+  top:42.6230%;
+  width:38.5294%;
+  height:2.0624%;
+}
+
+.account-woori{
+  left:30.8824%;
+  top:52.7763%;
+  width:37.7206%;
+  height:2.1153%;
+}
+
+.account-hana{
+  left:32.7206%;
+  top:60.4971%;
+  width:34.4118%;
+  height:2.0624%;
+}
+
+.copy-toast{
+  position:fixed;
+  left:50%;
+  bottom:max(30px,calc(env(safe-area-inset-bottom) + 18px));
+  z-index:20000;
+  padding:10px 17px;
+  border-radius:999px;
+  color:#fff;
+  background:rgba(0,0,0,.58);
+  font-size:14px;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+  pointer-events:none;
+  opacity:0;
+  transform:translate(-50%,8px);
+}
+
+.copy-toast.show{
+  animation:copyToastFade 1.55s ease-in-out both;
+}
+
+@keyframes copyToastFade{
+  0%{opacity:0;transform:translate(-50%,8px)}
+  18%,70%{opacity:.92;transform:translate(-50%,0)}
+  100%{opacity:0;transform:translate(-50%,-3px)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="initial-loader" aria-hidden="true"></div>
+
+<audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
+
+<button class="bgm-btn" id="bgmBtn" type="button" aria-label="음악 켜기/끄기">
+  <svg id="musicIcon" viewBox="0 0 24 24">
+    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+  </svg>
+</button>
+
+<main class="scroll-root" id="scrollRoot">
+
+<section class="page page1">
+  <img src="background1.png" class="layer background1">
+  <img src="rabbit1.png" class="layer rabbit1">
+  <img src="tree1.png" class="layer tree1">
+  <img src="bird1.png" class="layer bird1">
+  <img src="title1.png" class="layer title1">
+  <img src="date1.png" class="layer date1">
+  <img src="name1.png" class="layer name1">
+</section>
+
+<section class="page page2">
+  <img data-src="background2.png" class="layer background2">
+  <img data-src="photo2.png" class="layer photo2">
+  <img data-src="flower2.png" class="layer flower2">
+  <img data-src="title2-1.png" class="layer title21">
+
+  <div class="title2-reveal">
+    <img data-src="title2-2.png" class="title22">
+  </div>
+
+  <img data-src="message2.png" class="layer message2">
+</section>
+
+<section class="page page3">
+  <img data-src="background3.png" class="layer background3">
+
+  <img data-src="rabbit3-1.png" class="layer r31">
+  <img data-src="rabbit3-2.png" class="layer r32">
+  <img data-src="rabbit3-3.png" class="layer r33">
+  <img data-src="rabbit3-4.png" class="layer r34">
+  <img data-src="rabbit3-5.png" class="layer r35">
+  <img data-src="rabbit3-6.png" class="layer r36">
+  <img data-src="rabbit3-7.png" class="layer r37">
+  <img data-src="rabbit3-8.png" class="layer r38">
+  <img data-src="rabbit3-9.png" class="layer r39">
+  <img data-src="rabbit3-10.png" class="layer r310">
+  <img data-src="rabbit3-11.png" class="layer r311">
+  <img data-src="rabbit3-12.png" class="layer r312">
+
+  <img data-src="title3-1.png" class="layer title31">
+
+  <div class="title3-reveal">
+    <img data-src="title3-2.png" class="title32">
+  </div>
+
+  <img data-src="message3.png" class="layer message3">
+
+  <img data-src="details3.png" class="layer details3">
+
+  <div class="icon-motion-wrapper icon-place-motion" id="placeIconMotion">
+    <img data-src="icon3-1.png" class="icon-crop-source" aria-hidden="true">
+
+    <a
+      class="icon-motion-click"
+      id="placeHotspot"
+      href="https://m.place.naver.com/restaurant/1042936870/home"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="샷토148 네이버 플레이스 새 창으로 열기">
+    </a>
+  </div>
+
+  <img data-src="blessing3.png" class="layer blessing3">
+
+  <div class="icon-motion-wrapper icon-gift-motion" id="giftIconMotion">
+    <img data-src="icon3-2.png" class="icon-crop-source" aria-hidden="true">
+    <button class="icon-motion-click" id="openPage4" type="button" aria-label="마음 전하실 곳 열기"></button>
+  </div>
+</section>
+
+</main>
+
+<div class="page4-modal" id="page4Modal" aria-hidden="true">
+  <div class="page4-content">
+    <div class="page4-card">
+
+      <img data-src="background4.png" class="layer background4">
+      <img data-src="rabbit4.png" class="layer rabbit4">
+      <img data-src="title4-1.png" class="layer title41">
+
+      <div class="title4-reveal">
+        <img data-src="title4-2.png" class="title42">
+      </div>
+
+      <img data-src="account4.png" class="layer account4">
+
+      <button class="modal-close-btn" id="closePage4" type="button" aria-label="닫기"></button>
+
+      <button class="account-click account-kb"
+              type="button"
+              data-account="27010204218011"
+              aria-label="국민은행 계좌번호 복사"></button>
+
+      <button class="account-click account-woori"
+              type="button"
+              data-account="1002239470141"
+              aria-label="우리은행 계좌번호 복사"></button>
+
+      <button class="account-click account-hana"
+              type="button"
+              data-account="29819040468"
+              aria-label="하나은행 계좌번호 복사"></button>
+
+    </div>
+  </div>
+</div>
+
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite">
+  계좌번호가 복사되었습니다.
+</div>
+
+<script>
+const root = document.getElementById('scrollRoot');
+
+const pages = [...document.querySelectorAll('.page')];
+const page1 = pages[0];
+const page2 = pages[1];
+const page3 = pages[2];
+
+/*
+  저사양 Android 대응
+
+  - PNG 파일 자체는 절대 변경하지 않음
+  - 따라서 화질 변화 없음
+  - data-src 이미지는 필요한 페이지를 준비할 때만 src 적용
+  - 여러 이미지를 동시에 decode하지 않고 반드시 한 장씩 처리
+  - 같은 페이지를 중복 decode하지 않음
+*/
+
+const imagePrep = new WeakMap();
+
+function prepareImage(img) {
+  if (img.dataset.src && !img.getAttribute('src')) {
+    img.src = img.dataset.src;
+  }
+
+  return new Promise(resolve => {
+    const finish = () => {
+      if (
+        img.naturalWidth > 0 &&
+        typeof img.decode === 'function'
+      ) {
+        img.decode()
+          .catch(() => {})
+          .finally(resolve);
+      } else {
+        resolve();
+      }
+    };
+
+    if (img.complete) {
+      finish();
+      return;
+    }
+
+    img.addEventListener('load', finish, { once:true });
+    img.addEventListener('error', resolve, { once:true });
+  });
+}
+
+function prepareImages(container) {
+  if (!container) {
+    return Promise.resolve();
+  }
+
+  if (imagePrep.has(container)) {
+    return imagePrep.get(container);
+  }
+
+  const task = (async () => {
+    const images = container.querySelectorAll('img');
+
+    /*
+      중요:
+      Promise.all()을 사용하지 않는다.
+      저사양 Android에서 여러 대형 PNG가 동시에
+      decode되는 것을 막기 위해 한 장씩 순차 처리한다.
+    */
+    for (const img of images) {
+      await prepareImage(img);
+    }
+  })();
+
+  imagePrep.set(container, task);
+
+  return task;
+}
+
+
+/* =========================
+   최초 화면
+========================= */
+
+prepareImages(page1).finally(() => {
+
+  requestAnimationFrame(() => {
+
+    document.body.classList.add('site-ready');
+
+    /*
+      첫 화면 표시가 끝난 다음에만
+      2페이지 이미지 준비를 시작한다.
+    */
+    setTimeout(() => {
+      prepareImages(page2);
+    }, 0);
+
+  });
+
+});
+
+
+/* =========================
+   순차 애니메이션
+========================= */
+
+const animationTimers = new WeakMap();
+
+function schedulePage(page, steps) {
+
+  if (!page || page.dataset.started === '1') {
+    return;
+  }
+
+  page.dataset.started = '1';
+
+  const timers = [];
+
+  steps.forEach(([selector, delay, ready]) => {
+
+    const id = setTimeout(() => {
+
+      page.querySelectorAll(selector).forEach(el => {
+
+        /*
+          실제 순서가 되었을 때만 run 추가.
+          그 전에는 visibility:hidden 상태라
+          빠른 스크롤에서도 미리 나타나지 않는다.
+        */
+
+        el.classList.add('run');
+
+        if (ready) {
+          el.classList.add('ready');
+        }
+
+      });
+
+    }, Math.max(0, delay * 1000));
+
+    timers.push(id);
+
+  });
+
+  animationTimers.set(page, timers);
+}
+
+
+/* =========================
+   페이지 시작
+========================= */
+
+async function startPage(page) {
+
+  if (
+    !page ||
+    page.dataset.loading === '1' ||
+    page.dataset.started === '1'
+  ) {
+    return;
+  }
+
+  page.dataset.loading = '1';
+
+  /*
+    해당 페이지의 PNG를 한 장씩 준비.
+  */
+  await prepareImages(page);
+
+  delete page.dataset.loading;
+
+
+  /* PAGE 2 */
+
+  if (page.classList.contains('page2')) {
+
+    schedulePage(page, [
+      ['.background2',    0],
+      ['.photo2',         1.3],
+      ['.flower2',        2.6],
+      ['.title21',        3.9],
+      ['.title2-reveal',  5.2],
+      ['.message2',       6.5]
+    ]);
+
+    /*
+      2페이지가 시작된 이후에 3페이지를 미리 준비.
+      동시에 전부 decode하지 않고 prepareImages 내부에서
+      한 장씩 처리한다.
+    */
+
+    setTimeout(() => {
+      prepareImages(page3);
+    }, 0);
+  }
+
+
+  /* PAGE 3 */
+
+  if (page.classList.contains('page3')) {
+
+    schedulePage(page, [
+      ['.background3',                  0],
+
+      ['.r31',                          1.3],
+      ['.r32',                          1.65],
+      ['.r33',                          2.0],
+      ['.r34',                          2.35],
+      ['.r35',                          2.7],
+      ['.r36',                          3.05],
+      ['.r37',                          3.4],
+      ['.r38',                          3.75],
+      ['.r39',                          4.1],
+      ['.r310',                         4.45],
+      ['.r311',                         4.8],
+      ['.r312',                         5.15],
+
+      ['.title31',                      6.45],
+      ['.title3-reveal',                7.75],
+      ['.message3',                     9.05],
+
+      /*
+        icon3-1은 details3와 정확히 동시에 등장
+      */
+      ['.details3,.icon-place-motion', 10.35, true],
+
+      /*
+        icon3-2는 blessing3와 정확히 동시에 등장
+      */
+      ['.blessing3,.icon-gift-motion', 11.65, true]
+    ]);
+
+  }
+}
+
+
+/* =========================
+   화면 진입 감지
+
+   계속 scroll 이벤트에서 무거운 계산을 하지 않고
+   IntersectionObserver 사용.
+========================= */
+
+const io = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (
+      entry.isIntersecting &&
+      entry.target !== page1
+    ) {
+      startPage(entry.target);
+    }
+
+  });
+
+}, {
+  root: root,
+  threshold: .18,
+  rootMargin: '0px 0px -10% 0px'
+});
+
+pages.slice(1).forEach(page => {
+  io.observe(page);
+});
+
+
+/* =========================
+   BGM
+========================= */
+
+const bgm = document.getElementById('bgm');
+const btn = document.getElementById('bgmBtn');
+const musicIcon = document.getElementById('musicIcon');
+
+let isPlaying = false;
+
+const iconPlaying =
+  '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
+
+const iconMuted =
+  '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+
+function playAudio() {
+
+  bgm.play()
+    .then(() => {
+      isPlaying = true;
+      musicIcon.innerHTML = iconPlaying;
+    })
+    .catch(() => {});
+
+}
+
+function toggleBgm() {
+
+  if (isPlaying) {
+
+    bgm.pause();
+
+    isPlaying = false;
+
+    musicIcon.innerHTML = iconMuted;
+
+  } else {
+
+    playAudio();
+
+  }
+
+}
+
+btn.addEventListener('click', e => {
+
+  e.stopPropagation();
+
+  toggleBgm();
+
+});
+
+function firstTouch() {
+
+  if (!isPlaying) {
+    playAudio();
+  }
+
+  window.removeEventListener('pointerdown', firstTouch);
+
+}
+
+window.addEventListener(
+  'pointerdown',
+  firstTouch,
+  { passive:true }
+);
+
+
+/* =========================
+   아이콘 클릭 모션
+========================= */
+
+function bindPress(button, wrapper) {
+
+  if (!button || !wrapper) {
+    return;
+  }
+
+  button.addEventListener('pointerdown', () => {
+    wrapper.classList.add('is-pressed');
+  });
+
+  [
+    'pointerup',
+    'pointercancel',
+    'pointerleave'
+  ].forEach(eventName => {
+
+    button.addEventListener(eventName, () => {
+      wrapper.classList.remove('is-pressed');
+    });
+
+  });
+
+}
+
+bindPress(
+  document.getElementById('placeHotspot'),
+  document.getElementById('placeIconMotion')
+);
+
+bindPress(
+  document.getElementById('openPage4'),
+  document.getElementById('giftIconMotion')
+);
+
+
+/* =========================
+   PAGE 4
+========================= */
+
+const page4Modal = document.getElementById('page4Modal');
+
+const openPage4 = document.getElementById('openPage4');
+
+const closePage4 = document.getElementById('closePage4');
+
+let closeTimer = null;
+let title4Timer = null;
+
+
+function resetPage4Animations() {
+
+  page4Modal
+    .querySelectorAll('.layer')
+    .forEach(el => {
+
+      el.style.animation = 'none';
+
+      void el.offsetWidth;
+
+      el.style.animation = '';
+
+    });
+
+}
+
+
+async function showPage4() {
+
+  /*
+    PAGE 4도 열 때 처음으로 PNG를 한 장씩 준비한다.
+    초기 로딩 시 메모리에 올리지 않는다.
+  */
+
+  await prepareImages(page4Modal);
+
+
+  if (closeTimer) {
+
+    clearTimeout(closeTimer);
+
+    closeTimer = null;
+
+  }
+
+
+  if (title4Timer) {
+
+    clearTimeout(title4Timer);
+
+    title4Timer = null;
+
+  }
+
+
+  page4Modal.classList.remove('title4-ready');
+
+  resetPage4Animations();
+
+  page4Modal.classList.remove('closing');
+
+  page4Modal.classList.add('active');
+
+  page4Modal.setAttribute(
+    'aria-hidden',
+    'false'
+  );
+
+
+  title4Timer = setTimeout(() => {
+
+    if (
+      page4Modal.classList.contains('active')
+    ) {
+      page4Modal.classList.add('title4-ready');
+    }
+
+    title4Timer = null;
+
+  }, 3900);
+
+}
+
+
+function hidePage4() {
+
+  if (
+    !page4Modal.classList.contains('active') ||
+    page4Modal.classList.contains('closing')
+  ) {
+    return;
+  }
+
+
+  if (title4Timer) {
+
+    clearTimeout(title4Timer);
+
+    title4Timer = null;
+
+  }
+
+
+  page4Modal.classList.remove('title4-ready');
+
+  page4Modal.classList.add('closing');
+
+
+  closeTimer = setTimeout(() => {
+
+    page4Modal.classList.remove(
+      'active',
+      'closing'
+    );
+
+    page4Modal.setAttribute(
+      'aria-hidden',
+      'true'
+    );
+
+    closeTimer = null;
+
+  }, 1300);
+
+}
+
+
+openPage4.addEventListener('click', e => {
+
+  e.stopPropagation();
+
+  showPage4();
+
+});
+
+
+closePage4.addEventListener('click', e => {
+
+  e.stopPropagation();
+
+  hidePage4();
+
+});
+
+
+page4Modal.addEventListener('click', e => {
+
+  if (
+    e.target === page4Modal ||
+    e.target.classList.contains('page4-content')
+  ) {
+    hidePage4();
+  }
+
+});
+
+
+/* =========================
+   계좌번호 복사
+========================= */
+
+const copyToast = document.getElementById('copyToast');
+
+let toastTimer = null;
+
+
+function fallbackCopy(text) {
+
+  const textarea =
+    document.createElement('textarea');
+
+  textarea.value = text;
+
+  textarea.setAttribute(
+    'readonly',
+    ''
+  );
+
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  textarea.style.opacity = '0';
+
+  document.body.appendChild(textarea);
+
+  textarea.select();
+
+  textarea.setSelectionRange(
+    0,
+    text.length
+  );
+
+  document.execCommand('copy');
+
+  textarea.remove();
+
+}
+
+
+async function copyAccountNumber(value) {
+
+  const digitsOnly =
+    String(value).replace(/\D/g, '');
+
+
+  try {
+
+    if (
+      navigator.clipboard &&
+      window.isSecureContext
+    ) {
+
+      await navigator.clipboard.writeText(
+        digitsOnly
+      );
+
+    } else {
+
+      fallbackCopy(digitsOnly);
+
+    }
+
+
+    if (toastTimer) {
+      clearTimeout(toastTimer);
+    }
+
+
+    copyToast.classList.remove('show');
+
+    void copyToast.offsetWidth;
+
+    copyToast.classList.add('show');
+
+
+    toastTimer = setTimeout(() => {
+
+      copyToast.classList.remove('show');
+
+      toastTimer = null;
+
+    }, 1550);
+
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
+
+}
+
+
+document
+  .querySelectorAll('.account-click')
+  .forEach(el => {
+
+    el.addEventListener('click', e => {
+
+      e.stopPropagation();
+
+      copyAccountNumber(
+        el.dataset.account
+      );
+
+    });
+
+  });
+
+
+/* 외부 페이지에서 돌아왔을 때
+   애니메이션/페이지 상태를 초기화하지 않는다. */
+
+window.addEventListener('pageshow', () => {
+
+  document
+    .querySelectorAll('.icon-motion-wrapper')
+    .forEach(el => {
+      el.classList.remove('is-pressed');
+    });
+
+});
+</script>
+
+</body>
+</html>
