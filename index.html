@@ -126,7 +126,6 @@ body{
     opacity:0;
     transform:scale(0);
   }
-
   to{
     opacity:1;
     transform:scale(1);
@@ -138,7 +137,6 @@ body{
     opacity:0;
     transform:translate(120px,-20px);
   }
-
   to{
     opacity:1;
     transform:translate(0,0);
@@ -146,38 +144,23 @@ body{
 }
 
 @keyframes title2FromLine{
-  0%{
-    transform:translateY(-2.8556%);
-  }
-
-  100%{
-    transform:translateY(0);
-  }
+  0%{transform:translateY(-2.8556%)}
+  100%{transform:translateY(0)}
 }
 
 @keyframes title3FromLine{
-  0%{
-    transform:translateY(-2.9085%);
-  }
-
-  100%{
-    transform:translateY(0);
-  }
+  0%{transform:translateY(-2.9085%)}
+  100%{transform:translateY(0)}
 }
 
 @keyframes title4FromLine{
-  0%{
-    transform:translateY(-2.9085%);
-  }
-
-  100%{
-    transform:translateY(0);
-  }
+  0%{transform:translateY(-2.9085%)}
+  100%{transform:translateY(0)}
 }
 
 
 /* =========================
-   TITLE-2 REVEAL
+   TITLE REVEAL
 ========================= */
 
 .title2-reveal,
@@ -329,6 +312,7 @@ body{
 }
 
 .page2 .title2-reveal.run .title22{
+  display:block;
   opacity:1!important;
   visibility:visible;
   animation:title2FromLine 1.3s linear both;
@@ -354,6 +338,7 @@ body{
 }
 
 .page3 .title3-reveal.run .title32{
+  display:block;
   opacity:1!important;
   visibility:visible;
   animation:title3FromLine 1.3s linear both;
@@ -471,17 +456,20 @@ body{
 .page4-modal.active{
   visibility:visible;
   pointer-events:auto;
-
   background:rgba(0,0,0,.62);
 
-  transition:background-color 1.3s ease-in-out;
+  transition:
+    background-color 1.3s ease-in-out;
 }
 
-.page4-modal.closing{
-  /*
-    closing 중에도 title4-ready를 유지한다.
-    현재 화면 전체가 그대로 페이드아웃된다.
-  */
+/*
+  닫을 때 active는 그대로 유지하고
+  closing만 추가한다.
+
+  따라서 내부 요소들의 현재 표시 상태는
+  페이드가 끝날 때까지 그대로 유지된다.
+*/
+.page4-modal.active.closing{
   visibility:visible;
   pointer-events:none;
   background:rgba(0,0,0,0);
@@ -499,14 +487,18 @@ body{
 
   opacity:0;
 
-  transition:opacity 1.3s ease-in-out;
+  transition:
+    opacity 1.3s ease-in-out;
 }
 
 .page4-modal.active .page4-content{
   opacity:1;
 }
 
-.page4-modal.closing .page4-content{
+/*
+  전체 화면을 통째로 페이드아웃.
+*/
+.page4-modal.active.closing .page4-content{
   opacity:0;
 }
 
@@ -526,7 +518,9 @@ body{
 }
 
 
-/* PAGE 4 등장 */
+/* =========================
+   PAGE 4 등장
+========================= */
 
 .page4-modal.active .background4{
   animation:fadeIn 1.3s ease-in-out 0s both;
@@ -540,15 +534,27 @@ body{
   animation:fadeIn 1.3s ease-in-out 2.6s both;
 }
 
-.page4-modal.active .title4-reveal{
+
+/*
+  기본 상태에서만 title4-2 숨김.
+
+  예전처럼
+  .page4-modal.active .title4-reveal {
+    visibility:hidden;
+  }
+
+  을 사용하지 않는다.
+
+  그 규칙 때문에 닫을 때 title4-2가
+  먼저 사라지는 문제가 생겼음.
+*/
+.page4-modal .title4-reveal{
   visibility:hidden;
 }
 
 
 /*
-  중요:
-  closing 상태에서도 title4-ready가 유지되므로
-  title4-2가 먼저 사라지지 않는다.
+  title4-2 등장 순서가 된 이후
 */
 .page4-modal.active.title4-ready .title4-reveal{
   visibility:visible;
@@ -557,10 +563,39 @@ body{
 .page4-modal.active.title4-ready .title4-reveal .title42{
   display:block;
   opacity:1!important;
-  visibility:visible;
+  visibility:visible!important;
   animation:title4FromLine 1.3s linear both;
 }
 
+
+/*
+  닫는 동안에도 title4-2를
+  현재 최종 위치에 그대로 유지한다.
+*/
+.page4-modal.active.closing.title4-ready .title4-reveal{
+  visibility:visible!important;
+}
+
+.page4-modal.active.closing.title4-ready .title42{
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+
+  /*
+    닫을 때 title4 reveal 애니메이션 자체는
+    다시 실행하지 않는다.
+
+    이미 나타난 최종 위치를 그대로 유지.
+  */
+  animation:none!important;
+  transform:translateY(0)!important;
+}
+
+
+/*
+  account4도 closing 동안
+  현재 애니메이션 결과를 유지한다.
+*/
 .page4-modal.active .account4{
   animation:fadeIn 1.3s ease-in-out 5.2s both;
 }
@@ -585,7 +620,10 @@ body{
   background:rgba(0,0,0,.55);
 
   z-index:100;
+
   cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
 }
 
 .modal-close-btn:before,
@@ -698,10 +736,15 @@ body{
 }
 
 .copy-toast.show{
-  animation:copyToastFade 1.55s ease-in-out both;
+  animation:
+    copyToastFade
+    1.55s
+    ease-in-out
+    both;
 }
 
 @keyframes copyToastFade{
+
   0%{
     opacity:0;
     transform:translate(-50%,8px);
@@ -716,12 +759,14 @@ body{
     opacity:0;
     transform:translate(-50%,-3px);
   }
+
 }
 </style>
 </head>
 
 
 <body>
+
 
 <div
   class="initial-loader"
@@ -1168,12 +1213,8 @@ function prepareImages(container){
 
 
       /*
-        Promise.all 사용 안 함.
-
-        대형 PNG 여러 장을 동시에
-        디코딩하지 않고 한 장씩 처리해서
-        저사양 Android의 순간 메모리 사용량을
-        낮춘다.
+        대형 PNG를 동시에 decode하지 않고
+        한 장씩 순차적으로 준비한다.
       */
 
       for(const img of images){
@@ -1209,11 +1250,6 @@ prepareImages(page1)
         .classList
         .add('site-ready');
 
-
-      /*
-        첫 페이지가 화면에 나온 뒤
-        2페이지 준비 시작
-      */
 
       setTimeout(()=>{
 
@@ -1262,11 +1298,6 @@ function schedulePage(
           page
             .querySelectorAll(selector)
             .forEach(el=>{
-
-              /*
-                실제 순서가 되었을 때만
-                화면에 등장.
-              */
 
               el.classList.add('run');
 
@@ -1349,11 +1380,6 @@ async function startPage(page){
     );
 
 
-    /*
-      PAGE 2가 시작된 뒤
-      PAGE 3 이미지를 미리 준비
-    */
-
     setTimeout(()=>{
 
       prepareImages(page3);
@@ -1394,23 +1420,11 @@ async function startPage(page){
 
         ['.message3',9.05],
 
-
-        /*
-          details3와 icon3-1
-          정확히 동시에 등장
-        */
-
         [
           '.details3,.icon-place-motion',
           10.35,
           true
         ],
-
-
-        /*
-          blessing3와 icon3-2
-          정확히 동시에 등장
-        */
 
         [
           '.blessing3,.icon-gift-motion',
@@ -1686,14 +1700,11 @@ function resetPage4Animations(){
 }
 
 
-/* PAGE 4 열기 */
+/* =========================
+   PAGE 4 열기
+========================= */
 
 async function showPage4(){
-
-  /*
-    PAGE 4 이미지는
-    실제로 열 때 한 장씩 준비.
-  */
 
   await prepareImages(
     page4Modal
@@ -1723,20 +1734,18 @@ async function showPage4(){
 
 
   /*
-    새로 열 때만 이전 상태 초기화.
+    새로 열기 직전에만
+    이전 title4 상태를 초기화한다.
   */
-
   page4Modal
     .classList
-    .remove('title4-ready');
+    .remove(
+      'closing',
+      'title4-ready'
+    );
 
 
   resetPage4Animations();
-
-
-  page4Modal
-    .classList
-    .remove('closing');
 
 
   page4Modal
@@ -1751,16 +1760,19 @@ async function showPage4(){
 
 
   /*
-    title4-2 등장
+    title4-2 등장 시점
   */
-
   title4Timer =
     setTimeout(()=>{
 
       if(
         page4Modal
           .classList
-          .contains('active')
+          .contains('active') &&
+
+        !page4Modal
+          .classList
+          .contains('closing')
       ){
 
         page4Modal
@@ -1777,25 +1789,9 @@ async function showPage4(){
 }
 
 
-/*
-  PAGE 4 닫기
-
-  ★ 수정된 부분 ★
-
-  닫기 버튼을 누르는 순간
-  title4-ready를 제거하지 않는다.
-
-  즉 현재 화면의
-  background4
-  rabbit4
-  title4-1
-  title4-2
-  account4
-
-  전부 현재 모습 그대로 유지한 채
-  page4-content 전체가 1.3초 동안
-  페이드아웃된다.
-*/
+/* =========================
+   PAGE 4 닫기
+========================= */
 
 function hidePage4(){
 
@@ -1816,9 +1812,9 @@ function hidePage4(){
 
   /*
     아직 title4-2 등장 전이라면
-    예정된 등장은 취소한다.
+    이후에 갑자기 등장하지 않도록
+    예약 타이머만 취소한다.
   */
-
   if(title4Timer){
 
     clearTimeout(
@@ -1831,14 +1827,18 @@ function hidePage4(){
 
 
   /*
-    중요:
-    여기서 title4-ready를
-    절대 제거하지 않는다.
+    중요
 
-    현재 보이는 상태를 그대로
-    유지한 채 전체 페이드아웃.
+    여기서는
+    title4-ready를 절대 제거하지 않는다.
+
+    현재 보이는 상태를 그대로 유지하면서
+    page4-content 전체에 opacity 0을 적용한다.
+
+    따라서 이미 보이는 title4-2도
+    다른 이미지와 동시에 1.3초 동안
+    자연스럽게 페이드아웃된다.
   */
-
   page4Modal
     .classList
     .add('closing');
@@ -1848,8 +1848,8 @@ function hidePage4(){
     setTimeout(()=>{
 
       /*
-        페이드아웃이 완전히 끝난 뒤에만
-        title4 상태를 초기화한다.
+        전체 페이드아웃 1.3초가
+        완전히 끝난 뒤에만 상태 초기화.
       */
 
       page4Modal
@@ -2094,10 +2094,10 @@ window.addEventListener(
   ()=>{
 
     /*
-      PAGE 3 등장 상태는
-      절대 초기화하지 않는다.
+      PAGE 2 / PAGE 3의 등장 상태는
+      초기화하지 않는다.
 
-      눌린 아이콘 상태만 해제.
+      눌려 있던 아이콘 상태만 해제.
     */
 
     document
