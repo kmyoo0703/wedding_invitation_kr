@@ -71,6 +71,7 @@ body{
   opacity:1;
   visibility:visible;
   pointer-events:auto;
+
   transition:
     opacity .45s ease-in-out,
     visibility 0s linear .45s;
@@ -89,20 +90,40 @@ body{
 
 .bgm-btn{
   position:fixed;
-  top:max(20px,env(safe-area-inset-top));
-  left:max(20px,env(safe-area-inset-left));
+
+  top:max(
+    20px,
+    env(safe-area-inset-top)
+  );
+
+  left:max(
+    20px,
+    env(safe-area-inset-left)
+  );
+
   z-index:10000;
+
   width:36px;
   height:36px;
+
   border-radius:50%;
-  border:1px solid rgba(0,0,0,.1);
-  background:rgba(255,255,255,.7);
+
+  border:
+    1px solid rgba(0,0,0,.1);
+
+  background:
+    rgba(255,255,255,.7);
+
   display:grid;
   place-items:center;
+
   backdrop-filter:blur(4px);
   -webkit-backdrop-filter:blur(4px);
+
   cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+
+  -webkit-tap-highlight-color:
+    transparent;
 }
 
 .bgm-btn svg{
@@ -117,45 +138,92 @@ body{
 ========================= */
 
 @keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
+
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+
 }
 
+
 @keyframes growTree{
+
   from{
     opacity:0;
     transform:scale(0);
   }
+
   to{
     opacity:1;
     transform:scale(1);
   }
+
 }
+
 
 @keyframes flyAndStop{
+
   from{
     opacity:0;
-    transform:translate(120px,-20px);
+    transform:
+      translate(120px,-20px);
   }
+
   to{
     opacity:1;
-    transform:translate(0,0);
+    transform:
+      translate(0,0);
   }
+
 }
+
 
 @keyframes title2FromLine{
-  0%{transform:translateY(-2.8556%)}
-  100%{transform:translateY(0)}
+
+  0%{
+    transform:
+      translateY(-2.8556%);
+  }
+
+  100%{
+    transform:
+      translateY(0);
+  }
+
 }
+
 
 @keyframes title3FromLine{
-  0%{transform:translateY(-2.9085%)}
-  100%{transform:translateY(0)}
+
+  0%{
+    transform:
+      translateY(-2.9085%);
+  }
+
+  100%{
+    transform:
+      translateY(0);
+  }
+
 }
 
+
 @keyframes title4FromLine{
-  0%{transform:translateY(-2.9085%)}
-  100%{transform:translateY(0)}
+
+  0%{
+    transform:
+      translateY(-2.9085%);
+  }
+
+  100%{
+    transform:
+      translateY(0);
+  }
+
 }
 
 
@@ -168,41 +236,60 @@ body{
 .title4-reveal{
   position:absolute;
   inset:0;
+
   z-index:20;
+
   overflow:hidden;
+
   visibility:hidden;
+
   pointer-events:none;
 }
 
+
 .title2-reveal{
-  clip-path:inset(20.5182% 0 0 0);
+  clip-path:
+    inset(20.5182% 0 0 0);
 }
+
 
 .title3-reveal{
-  clip-path:inset(25.8065% 0 0 0);
+  clip-path:
+    inset(25.8065% 0 0 0);
 }
 
+
 .title4-reveal{
-  clip-path:inset(30.4072% 0 0 0);
+  clip-path:
+    inset(30.4072% 0 0 0);
 }
+
 
 .title2-reveal .title22,
 .title3-reveal .title32,
 .title4-reveal .title42{
   display:none;
+
   opacity:0!important;
+
   visibility:hidden;
+
   width:100%;
   height:100%;
+
   object-fit:fill;
+
   position:absolute;
   inset:0;
 }
 
+
 .title2-reveal.run .title22,
 .title3-reveal.run .title32{
   display:block;
+
   opacity:1!important;
+
   visibility:visible;
 }
 
@@ -212,35 +299,92 @@ body{
 ========================= */
 
 .page1 .tree1{
-  transform-origin:50% 82%;
+  transform-origin:
+    50% 82%;
 }
 
-.site-ready .page1 .background1{
-  animation:fadeIn 1.3s ease-in-out 0s both;
+
+.site-ready
+.page1
+.background1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    0s
+    both;
 }
 
-.site-ready .page1 .rabbit1{
-  animation:fadeIn 1.3s ease-in-out 1.3s both;
+
+.site-ready
+.page1
+.rabbit1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    1.3s
+    both;
 }
 
-.site-ready .page1 .tree1{
-  animation:growTree 1.3s ease-in-out 2.6s both;
+
+.site-ready
+.page1
+.tree1{
+  animation:
+    growTree
+    1.3s
+    ease-in-out
+    2.6s
+    both;
 }
 
-.site-ready .page1 .bird1{
-  animation:flyAndStop 1.3s ease-in-out 3.9s both;
+
+.site-ready
+.page1
+.bird1{
+  animation:
+    flyAndStop
+    1.3s
+    ease-in-out
+    3.9s
+    both;
 }
 
-.site-ready .page1 .title1{
-  animation:fadeIn 1.3s ease-in-out 5.2s both;
+
+.site-ready
+.page1
+.title1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    5.2s
+    both;
 }
 
-.site-ready .page1 .date1{
-  animation:fadeIn 1.3s ease-in-out 6.5s both;
+
+.site-ready
+.page1
+.date1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    6.5s
+    both;
 }
 
-.site-ready .page1 .name1{
-  animation:fadeIn 1.3s ease-in-out 7.8s both;
+
+.site-ready
+.page1
+.name1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    7.8s
+    both;
 }
 
 
@@ -255,6 +399,7 @@ body{
 .page2 .message2,
 
 .page3 .background3,
+
 .page3 .r31,
 .page3 .r32,
 .page3 .r33,
@@ -267,13 +412,18 @@ body{
 .page3 .r310,
 .page3 .r311,
 .page3 .r312,
+
 .page3 .title31,
+
 .page3 .message3,
+
 .page3 .details3,
+
 .page3 .blessing3{
   opacity:0;
   visibility:hidden;
 }
+
 
 .page2 .background2.run,
 .page2 .photo2.run,
@@ -282,6 +432,7 @@ body{
 .page2 .message2.run,
 
 .page3 .background3.run,
+
 .page3 .r31.run,
 .page3 .r32.run,
 .page3 .r33.run,
@@ -294,12 +445,21 @@ body{
 .page3 .r310.run,
 .page3 .r311.run,
 .page3 .r312.run,
+
 .page3 .title31.run,
+
 .page3 .message3.run,
+
 .page3 .details3.run,
+
 .page3 .blessing3.run{
   visibility:visible;
-  animation:fadeIn 1.3s ease-in-out both;
+
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    both;
 }
 
 
@@ -307,20 +467,34 @@ body{
    PAGE 2
 ========================= */
 
-.page2 .title2-reveal.run{
+.page2
+.title2-reveal.run{
   visibility:visible;
 }
 
-.page2 .title2-reveal.run .title22{
+
+.page2
+.title2-reveal.run
+.title22{
   display:block;
+
   opacity:1!important;
+
   visibility:visible;
-  animation:title2FromLine 1.3s linear both;
+
+  animation:
+    title2FromLine
+    1.3s
+    linear
+    both;
 }
+
 
 .flower2{
   filter:none!important;
-  mix-blend-mode:normal!important;
+
+  mix-blend-mode:
+    normal!important;
 }
 
 
@@ -328,104 +502,170 @@ body{
    PAGE 3
 ========================= */
 
-.page3 .icon-place-motion.run,
-.page3 .icon-gift-motion.run{
-  animation:fadeIn 1.3s ease-in-out both;
+.page3
+.icon-place-motion.run,
+
+.page3
+.icon-gift-motion.run{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    both;
 }
 
-.page3 .title3-reveal.run{
+
+.page3
+.title3-reveal.run{
   visibility:visible;
 }
 
-.page3 .title3-reveal.run .title32{
+
+.page3
+.title3-reveal.run
+.title32{
   display:block;
+
   opacity:1!important;
+
   visibility:visible;
-  animation:title3FromLine 1.3s linear both;
+
+  animation:
+    title3FromLine
+    1.3s
+    linear
+    both;
 }
 
 
 /* =========================
-   ICON MOTION
+   ICON
 ========================= */
 
 .icon-motion-wrapper{
   position:absolute;
+
   z-index:70;
+
   overflow:hidden;
+
   opacity:0;
+
   pointer-events:none;
 
-  -webkit-transform:translateZ(0) scale(1);
-  transform:translateZ(0) scale(1);
+  transform:
+    scale(1);
 
-  -webkit-transform-origin:50% 50%;
-  transform-origin:50% 50%;
+  -webkit-transform:
+    scale(1);
 
-  -webkit-backface-visibility:hidden;
-  backface-visibility:hidden;
+  transform-origin:
+    50% 50%;
 
-  -webkit-transition:-webkit-transform 140ms ease-out;
-  transition:transform 140ms ease-out;
+  -webkit-transform-origin:
+    50% 50%;
 
-  -webkit-tap-highlight-color:transparent;
+  transition:
+    transform
+    140ms
+    ease-out;
+
+  -webkit-transition:
+    -webkit-transform
+    140ms
+    ease-out;
+
+  -webkit-tap-highlight-color:
+    transparent;
 }
+
 
 .icon-motion-wrapper.is-pressed{
-  -webkit-transform:translateZ(0) scale(.82);
-  transform:translateZ(0) scale(.82);
+  transform:
+    scale(.82);
+
+  -webkit-transform:
+    scale(.82);
 }
 
-.page3 .icon-place-motion.ready,
-.page3 .icon-gift-motion.ready{
+
+.page3
+.icon-place-motion.ready,
+
+.page3
+.icon-gift-motion.ready{
   pointer-events:auto;
 }
+
 
 .icon-place-motion{
   left:66.6667%;
   top:51.0312%;
+
   width:9.1979%;
   height:6.6103%;
 }
 
+
 .icon-gift-motion{
   left:82.3400%;
   top:89.1063%;
+
   width:7.5791%;
   height:5.4469%;
 }
 
+
 .icon-crop-source{
   position:absolute;
+
   max-width:none;
+
   pointer-events:none;
+
   object-fit:fill;
 }
 
-.icon-place-motion .icon-crop-source{
+
+.icon-place-motion
+.icon-crop-source{
   width:1087.2%;
   height:1512.8%;
+
   left:-724.8%;
   top:-772%;
 }
 
-.icon-gift-motion .icon-crop-source{
+
+.icon-gift-motion
+.icon-crop-source{
   width:1319.4175%;
   height:1835.9223%;
+
   left:-1086.4078%;
   top:-1635.9223%;
 }
 
+
 .icon-motion-click{
   position:absolute;
+
   inset:0;
+
   z-index:3;
+
   border:0;
   outline:0;
+
   background:transparent;
+
   cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
   appearance:none;
+
   -webkit-appearance:none;
 }
 
@@ -436,56 +676,94 @@ body{
 
 .page4-modal{
   position:fixed;
+
   inset:0;
+
   z-index:15000;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  background:rgba(0,0,0,0);
+  background:
+    rgba(0,0,0,0);
 
   visibility:hidden;
+
   pointer-events:none;
 
   transition:
-    background-color 1.3s ease-in-out,
-    visibility 0s linear 1.3s;
+    background-color
+    1.3s
+    ease-in-out,
+
+    visibility
+    0s
+    linear
+    1.3s;
 }
+
 
 .page4-modal.active{
   visibility:visible;
+
   pointer-events:auto;
-  background:rgba(0,0,0,.62);
-  transition:background-color 1.3s ease-in-out;
+
+  background:
+    rgba(0,0,0,.62);
+
+  transition:
+    background-color
+    1.3s
+    ease-in-out;
 }
+
 
 .page4-modal.active.closing{
   visibility:visible;
+
   pointer-events:none;
-  background:rgba(0,0,0,0);
+
+  background:
+    rgba(0,0,0,0);
 }
+
 
 .page4-content{
   position:relative;
+
   width:100vw;
+
   height:100dvh;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   opacity:0;
-  transition:opacity 1.3s ease-in-out;
+
+  transition:
+    opacity
+    1.3s
+    ease-in-out;
 }
 
-.page4-modal.active .page4-content{
+
+.page4-modal.active
+.page4-content{
   opacity:1;
 }
 
-.page4-modal.active.closing .page4-content{
+
+.page4-modal.active.closing
+.page4-content{
   opacity:0;
 }
+
 
 .page4-card{
   position:relative;
@@ -496,60 +774,114 @@ body{
     1360px
   );
 
-  aspect-ratio:1360/1891;
+  aspect-ratio:
+    1360/1891;
+
   overflow:hidden;
+
   background:transparent;
 }
 
 
-/* PAGE 4 등장 */
+/* =========================
+   PAGE 4 ANIMATION
+========================= */
 
-.page4-modal.active .background4{
-  animation:fadeIn 1.3s ease-in-out 0s both;
+.page4-modal.active
+.background4{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    0s
+    both;
 }
 
-.page4-modal.active .rabbit4{
-  animation:fadeIn 1.3s ease-in-out 1.3s both;
+
+.page4-modal.active
+.rabbit4{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    1.3s
+    both;
 }
 
-.page4-modal.active .title41{
-  animation:fadeIn 1.3s ease-in-out 2.6s both;
+
+.page4-modal.active
+.title41{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    2.6s
+    both;
 }
 
-.page4-modal .title4-reveal{
+
+.page4-modal
+.title4-reveal{
   visibility:hidden;
 }
 
-.page4-modal.active.title4-ready .title4-reveal{
+
+.page4-modal.active.title4-ready
+.title4-reveal{
   visibility:visible;
 }
 
-.page4-modal.active.title4-ready .title4-reveal .title42{
+
+.page4-modal.active.title4-ready
+.title4-reveal
+.title42{
   display:block;
+
   opacity:1!important;
+
   visibility:visible!important;
-  animation:title4FromLine 1.3s linear both;
+
+  animation:
+    title4FromLine
+    1.3s
+    linear
+    both;
 }
 
 
 /*
-  PAGE 4가 닫히는 동안에는
-  title4-2를 현재 최종 상태 그대로 유지.
+  닫는 동안 title4-2 유지
 */
-.page4-modal.active.closing.title4-ready .title4-reveal{
+
+.page4-modal.active.closing.title4-ready
+.title4-reveal{
   visibility:visible!important;
 }
 
-.page4-modal.active.closing.title4-ready .title42{
+
+.page4-modal.active.closing.title4-ready
+.title42{
   display:block!important;
+
   opacity:1!important;
+
   visibility:visible!important;
+
   animation:none!important;
-  transform:translateY(0)!important;
+
+  transform:
+    translateY(0)!important;
 }
 
-.page4-modal.active .account4{
-  animation:fadeIn 1.3s ease-in-out 5.2s both;
+
+.page4-modal.active
+.account4{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    5.2s
+    both;
 }
 
 
@@ -560,41 +892,61 @@ body{
 .modal-close-btn{
   position:absolute;
 
-  top:max(20px,env(safe-area-inset-top));
-  right:max(20px,env(safe-area-inset-right));
+  top:max(
+    20px,
+    env(safe-area-inset-top)
+  );
+
+  right:max(
+    20px,
+    env(safe-area-inset-right)
+  );
 
   width:36px;
   height:36px;
 
   border:0;
+
   border-radius:50%;
 
-  background:rgba(0,0,0,.55);
+  background:
+    rgba(0,0,0,.55);
 
   z-index:100;
-  cursor:pointer;
 
-  -webkit-tap-highlight-color:transparent;
+  cursor:pointer;
 }
+
 
 .modal-close-btn:before,
 .modal-close-btn:after{
   content:"";
+
   position:absolute;
+
   left:50%;
   top:50%;
+
   width:17px;
   height:2px;
+
   background:#fff;
+
   border-radius:2px;
 }
 
+
 .modal-close-btn:before{
-  transform:translate(-50%,-50%) rotate(45deg);
+  transform:
+    translate(-50%,-50%)
+    rotate(45deg);
 }
 
+
 .modal-close-btn:after{
-  transform:translate(-50%,-50%) rotate(-45deg);
+  transform:
+    translate(-50%,-50%)
+    rotate(-45deg);
 }
 
 
@@ -604,38 +956,48 @@ body{
 
 .account-click{
   position:absolute;
+
   z-index:80;
 
   border:0;
+
   outline:0;
 
   background:transparent;
 
   cursor:pointer;
 
-  -webkit-tap-highlight-color:transparent;
+  -webkit-tap-highlight-color:
+    transparent;
 
   appearance:none;
+
   -webkit-appearance:none;
 }
+
 
 .account-kb{
   left:30.5147%;
   top:42.6230%;
+
   width:38.5294%;
   height:2.0624%;
 }
 
+
 .account-woori{
   left:30.8824%;
   top:52.7763%;
+
   width:37.7206%;
   height:2.1153%;
 }
 
+
 .account-hana{
   left:32.7206%;
   top:60.4971%;
+
   width:34.4118%;
   height:2.0624%;
 }
@@ -652,50 +1014,75 @@ body{
 
   bottom:max(
     30px,
-    calc(env(safe-area-inset-bottom) + 18px)
+    calc(
+      env(safe-area-inset-bottom)
+      + 18px
+    )
   );
 
   z-index:20000;
 
-  padding:10px 17px;
+  padding:
+    10px 17px;
 
-  border-radius:999px;
+  border-radius:
+    999px;
 
   color:#fff;
 
-  background:rgba(0,0,0,.58);
+  background:
+    rgba(0,0,0,.58);
 
   font-size:14px;
-  letter-spacing:-.02em;
 
-  white-space:nowrap;
+  letter-spacing:
+    -.02em;
 
-  pointer-events:none;
+  white-space:
+    nowrap;
+
+  pointer-events:
+    none;
 
   opacity:0;
 
-  transform:translate(-50%,8px);
+  transform:
+    translate(-50%,8px);
 }
+
 
 .copy-toast.show{
-  animation:copyToastFade 1.55s ease-in-out both;
+  animation:
+    copyToastFade
+    1.55s
+    ease-in-out
+    both;
 }
 
+
 @keyframes copyToastFade{
+
   0%{
     opacity:0;
-    transform:translate(-50%,8px);
+
+    transform:
+      translate(-50%,8px);
   }
 
   18%,70%{
     opacity:.92;
-    transform:translate(-50%,0);
+
+    transform:
+      translate(-50%,0);
   }
 
   100%{
     opacity:0;
-    transform:translate(-50%,-3px);
+
+    transform:
+      translate(-50%,-3px);
   }
+
 }
 </style>
 </head>
@@ -703,7 +1090,11 @@ body{
 
 <body>
 
-<div class="initial-loader" aria-hidden="true"></div>
+
+<div
+  class="initial-loader"
+  aria-hidden="true">
+</div>
 
 
 <audio
@@ -720,14 +1111,20 @@ body{
   type="button"
   aria-label="음악 켜기/끄기">
 
-  <svg id="musicIcon" viewBox="0 0 24 24">
+  <svg
+    id="musicIcon"
+    viewBox="0 0 24 24">
+
     <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+
   </svg>
 
 </button>
 
 
-<main class="scroll-root" id="scrollRoot">
+<main
+  class="scroll-root"
+  id="scrollRoot">
 
 
 <!-- =========================
@@ -736,13 +1133,33 @@ body{
 
 <section class="page page1">
 
-  <img src="background1.png" class="layer background1">
-  <img src="rabbit1.png" class="layer rabbit1">
-  <img src="tree1.png" class="layer tree1">
-  <img src="bird1.png" class="layer bird1">
-  <img src="title1.png" class="layer title1">
-  <img src="date1.png" class="layer date1">
-  <img src="name1.png" class="layer name1">
+  <img
+    src="background1.png"
+    class="layer background1">
+
+  <img
+    src="rabbit1.png"
+    class="layer rabbit1">
+
+  <img
+    src="tree1.png"
+    class="layer tree1">
+
+  <img
+    src="bird1.png"
+    class="layer bird1">
+
+  <img
+    src="title1.png"
+    class="layer title1">
+
+  <img
+    src="date1.png"
+    class="layer date1">
+
+  <img
+    src="name1.png"
+    class="layer name1">
 
 </section>
 
@@ -753,16 +1170,35 @@ body{
 
 <section class="page page2">
 
-  <img data-src="background2.png" class="layer background2">
-  <img data-src="photo2.png" class="layer photo2">
-  <img data-src="flower2.png" class="layer flower2">
-  <img data-src="title2-1.png" class="layer title21">
+  <img
+    data-src="background2.png"
+    class="layer background2">
+
+  <img
+    data-src="photo2.png"
+    class="layer photo2">
+
+  <img
+    data-src="flower2.png"
+    class="layer flower2">
+
+  <img
+    data-src="title2-1.png"
+    class="layer title21">
+
 
   <div class="title2-reveal">
-    <img data-src="title2-2.png" class="title22">
+
+    <img
+      data-src="title2-2.png"
+      class="title22">
+
   </div>
 
-  <img data-src="message2.png" class="layer message2">
+
+  <img
+    data-src="message2.png"
+    class="layer message2">
 
 </section>
 
@@ -773,30 +1209,83 @@ body{
 
 <section class="page page3">
 
-  <img data-src="background3.png" class="layer background3">
+  <img
+    data-src="background3.png"
+    class="layer background3">
 
-  <img data-src="rabbit3-1.png" class="layer r31">
-  <img data-src="rabbit3-2.png" class="layer r32">
-  <img data-src="rabbit3-3.png" class="layer r33">
-  <img data-src="rabbit3-4.png" class="layer r34">
-  <img data-src="rabbit3-5.png" class="layer r35">
-  <img data-src="rabbit3-6.png" class="layer r36">
-  <img data-src="rabbit3-7.png" class="layer r37">
-  <img data-src="rabbit3-8.png" class="layer r38">
-  <img data-src="rabbit3-9.png" class="layer r39">
-  <img data-src="rabbit3-10.png" class="layer r310">
-  <img data-src="rabbit3-11.png" class="layer r311">
-  <img data-src="rabbit3-12.png" class="layer r312">
 
-  <img data-src="title3-1.png" class="layer title31">
+  <img
+    data-src="rabbit3-1.png"
+    class="layer r31">
+
+  <img
+    data-src="rabbit3-2.png"
+    class="layer r32">
+
+  <img
+    data-src="rabbit3-3.png"
+    class="layer r33">
+
+  <img
+    data-src="rabbit3-4.png"
+    class="layer r34">
+
+  <img
+    data-src="rabbit3-5.png"
+    class="layer r35">
+
+  <img
+    data-src="rabbit3-6.png"
+    class="layer r36">
+
+  <img
+    data-src="rabbit3-7.png"
+    class="layer r37">
+
+  <img
+    data-src="rabbit3-8.png"
+    class="layer r38">
+
+  <img
+    data-src="rabbit3-9.png"
+    class="layer r39">
+
+  <img
+    data-src="rabbit3-10.png"
+    class="layer r310">
+
+  <img
+    data-src="rabbit3-11.png"
+    class="layer r311">
+
+  <img
+    data-src="rabbit3-12.png"
+    class="layer r312">
+
+
+  <img
+    data-src="title3-1.png"
+    class="layer title31">
+
 
   <div class="title3-reveal">
-    <img data-src="title3-2.png" class="title32">
+
+    <img
+      data-src="title3-2.png"
+      class="title32">
+
   </div>
 
-  <img data-src="message3.png" class="layer message3">
 
-  <img data-src="details3.png" class="layer details3">
+  <img
+    data-src="message3.png"
+    class="layer message3">
+
+
+  <img
+    data-src="details3.png"
+    class="layer details3">
+
 
   <div
     class="icon-motion-wrapper icon-place-motion"
@@ -806,6 +1295,7 @@ body{
       data-src="icon3-1.png"
       class="icon-crop-source"
       aria-hidden="true">
+
 
     <a
       class="icon-motion-click"
@@ -818,7 +1308,11 @@ body{
 
   </div>
 
-  <img data-src="blessing3.png" class="layer blessing3">
+
+  <img
+    data-src="blessing3.png"
+    class="layer blessing3">
+
 
   <div
     class="icon-motion-wrapper icon-gift-motion"
@@ -828,6 +1322,7 @@ body{
       data-src="icon3-2.png"
       class="icon-crop-source"
       aria-hidden="true">
+
 
     <button
       class="icon-motion-click"
@@ -856,27 +1351,35 @@ body{
 
     <div class="page4-card">
 
+
       <img
         data-src="background4.png"
         class="layer background4">
+
 
       <img
         data-src="rabbit4.png"
         class="layer rabbit4">
 
+
       <img
         data-src="title4-1.png"
         class="layer title41">
 
+
       <div class="title4-reveal">
+
         <img
           data-src="title4-2.png"
           class="title42">
+
       </div>
+
 
       <img
         data-src="account4.png"
         class="layer account4">
+
 
       <button
         class="modal-close-btn"
@@ -885,12 +1388,14 @@ body{
         aria-label="닫기">
       </button>
 
+
       <button
         class="account-click account-kb"
         type="button"
         data-account="27010204218011"
         aria-label="국민은행 계좌번호 복사">
       </button>
+
 
       <button
         class="account-click account-woori"
@@ -899,12 +1404,14 @@ body{
         aria-label="우리은행 계좌번호 복사">
       </button>
 
+
       <button
         class="account-click account-hana"
         type="button"
         data-account="29819040468"
         aria-label="하나은행 계좌번호 복사">
       </button>
+
 
     </div>
 
@@ -918,124 +1425,125 @@ body{
   id="copyToast"
   role="status"
   aria-live="polite">
+
   계좌번호가 복사되었습니다.
+
 </div>
 
 
 <script>
 
 /* =========================
-   기본 변수
+   기본
 ========================= */
 
 const root =
-  document.getElementById('scrollRoot');
+  document.getElementById(
+    'scrollRoot'
+  );
 
 const pages =
-  [...document.querySelectorAll('.page')];
+  [...document.querySelectorAll(
+    '.page'
+  )];
 
-const page1 = pages[0];
-const page2 = pages[1];
-const page3 = pages[2];
+const page1 =
+  pages[0];
+
+const page2 =
+  pages[1];
+
+const page3 =
+  pages[2];
 
 
 /* =========================
-   저사양 Android 이미지 준비
+   이미지 한 장만 준비
 ========================= */
 
-const imagePrep =
+const imagePromises =
   new WeakMap();
 
 
-function prepareImage(img){
+function loadImage(img){
+
+  if(!img){
+    return Promise.resolve();
+  }
+
+
+  if(
+    img.complete &&
+    img.naturalWidth > 0
+  ){
+    return Promise.resolve();
+  }
+
+
+  if(imagePromises.has(img)){
+    return imagePromises.get(img);
+  }
+
 
   if(
     img.dataset.src &&
     !img.getAttribute('src')
   ){
-    img.src = img.dataset.src;
-  }
 
+    img.src =
+      img.dataset.src;
 
-  return new Promise(resolve=>{
-
-    const finish = ()=>{
-
-      if(
-        img.naturalWidth > 0 &&
-        typeof img.decode === 'function'
-      ){
-
-        img
-          .decode()
-          .catch(()=>{})
-          .finally(resolve);
-
-      }else{
-
-        resolve();
-
-      }
-
-    };
-
-
-    if(img.complete){
-
-      finish();
-      return;
-
-    }
-
-
-    img.addEventListener(
-      'load',
-      finish,
-      {once:true}
-    );
-
-
-    img.addEventListener(
-      'error',
-      resolve,
-      {once:true}
-    );
-
-  });
-
-}
-
-
-function prepareImages(container){
-
-  if(!container){
-    return Promise.resolve();
-  }
-
-
-  if(imagePrep.has(container)){
-    return imagePrep.get(container);
   }
 
 
   const task =
-    (async()=>{
+    new Promise(resolve=>{
 
-      const images =
-        container.querySelectorAll('img');
+      if(
+        img.complete &&
+        img.naturalWidth > 0
+      ){
 
-
-      for(const img of images){
-
-        await prepareImage(img);
+        resolve();
+        return;
 
       }
 
-    })();
+
+      const done = ()=>{
+
+        /*
+          여기서는 강제로 decode()를
+          호출하지 않는다.
+
+          일부 저사양 Android에서
+          여러 대형 PNG를 decode()로
+          미리 올리는 것을 피한다.
+        */
+
+        resolve();
+
+      };
 
 
-  imagePrep.set(
-    container,
+      img.addEventListener(
+        'load',
+        done,
+        {once:true}
+      );
+
+
+      img.addEventListener(
+        'error',
+        done,
+        {once:true}
+      );
+
+    });
+
+
+  imagePromises.set(
+    img,
     task
   );
 
@@ -1046,10 +1554,101 @@ function prepareImages(container){
 
 
 /* =========================
-   첫 페이지 준비
+   selector에 필요한 이미지만 로드
 ========================= */
 
-prepareImages(page1)
+async function loadSelectorImages(
+  page,
+  selector
+){
+
+  const elements =
+    page.querySelectorAll(
+      selector
+    );
+
+
+  for(const el of elements){
+
+    if(
+      el.tagName === 'IMG'
+    ){
+
+      await loadImage(el);
+
+    }
+
+
+    const images =
+      el.querySelectorAll
+        ? el.querySelectorAll('img')
+        : [];
+
+
+    for(const img of images){
+
+      await loadImage(img);
+
+    }
+
+  }
+
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+/*
+  1페이지 파일명과
+  애니메이션은 기존 그대로.
+
+  첫 페이지 이미지는 HTML src로
+  직접 로딩되므로 loader만
+  load 상태를 확인한다.
+*/
+
+function waitPage1(){
+
+  const images =
+    page1.querySelectorAll('img');
+
+
+  return Promise.all(
+    [...images].map(img=>{
+
+      if(
+        img.complete &&
+        img.naturalWidth > 0
+      ){
+        return Promise.resolve();
+      }
+
+
+      return new Promise(resolve=>{
+
+        img.addEventListener(
+          'load',
+          resolve,
+          {once:true}
+        );
+
+        img.addEventListener(
+          'error',
+          resolve,
+          {once:true}
+        );
+
+      });
+
+    })
+  );
+
+}
+
+
+waitPage1()
   .finally(()=>{
 
     requestAnimationFrame(()=>{
@@ -1058,25 +1657,52 @@ prepareImages(page1)
         .classList
         .add('site-ready');
 
-
-      setTimeout(()=>{
-
-        prepareImages(page2);
-
-      },0);
-
     });
 
   });
 
 
 /* =========================
-   순차 애니메이션
+   PAGE 2 / 3 순차 실행
 ========================= */
 
-const animationTimers =
-  new WeakMap();
+function runStep(
+  page,
+  selector,
+  ready
+){
 
+  page
+    .querySelectorAll(selector)
+    .forEach(el=>{
+
+      el.classList.add(
+        'run'
+      );
+
+
+      if(ready){
+
+        el.classList.add(
+          'ready'
+        );
+
+      }
+
+    });
+
+}
+
+
+/*
+  핵심:
+
+  페이지 전체 이미지를 미리
+  메모리에 올리지 않는다.
+
+  각 레이어 등장 직전에
+  그 레이어만 로딩한다.
+*/
 
 function schedulePage(
   page,
@@ -1091,48 +1717,61 @@ function schedulePage(
   }
 
 
-  page.dataset.started = '1';
-
-
-  const timers = [];
+  page.dataset.started =
+    '1';
 
 
   steps.forEach(
     ([selector,delay,ready])=>{
 
-      const id =
-        setTimeout(()=>{
-
-          page
-            .querySelectorAll(selector)
-            .forEach(el=>{
-
-              el.classList.add('run');
+      const prepareDelay =
+        Math.max(
+          0,
+          delay * 1000 - 450
+        );
 
 
-              if(ready){
+      /*
+        등장 약 450ms 전에
+        해당 레이어만 요청.
+      */
+      setTimeout(()=>{
 
-                el.classList.add('ready');
+        loadSelectorImages(
+          page,
+          selector
+        );
 
-              }
+      },prepareDelay);
 
-            });
 
-        },Math.max(
+      /*
+        원래 지정된 시간에
+        해당 레이어 실행.
+      */
+      setTimeout(
+        async()=>{
+
+          await loadSelectorImages(
+            page,
+            selector
+          );
+
+
+          runStep(
+            page,
+            selector,
+            ready
+          );
+
+        },
+        Math.max(
           0,
           delay * 1000
-        ));
-
-
-      timers.push(id);
+        )
+      );
 
     }
-  );
-
-
-  animationTimers.set(
-    page,
-    timers
   );
 
 }
@@ -1142,24 +1781,14 @@ function schedulePage(
    PAGE 시작
 ========================= */
 
-async function startPage(page){
+function startPage(page){
 
   if(
     !page ||
-    page.dataset.loading === '1' ||
     page.dataset.started === '1'
   ){
     return;
   }
-
-
-  page.dataset.loading = '1';
-
-
-  await prepareImages(page);
-
-
-  delete page.dataset.loading;
 
 
   /* =========================
@@ -1167,34 +1796,47 @@ async function startPage(page){
   ========================= */
 
   if(
-    page.classList.contains('page2')
+    page.classList.contains(
+      'page2'
+    )
   ){
 
     schedulePage(
       page,
       [
 
-        ['.background2',0],
+        [
+          '.background2',
+          0
+        ],
 
-        ['.photo2',1.3],
+        [
+          '.photo2',
+          1.3
+        ],
 
-        ['.flower2',2.6],
+        [
+          '.flower2',
+          2.6
+        ],
 
-        ['.title21',3.9],
+        [
+          '.title21',
+          3.9
+        ],
 
-        ['.title2-reveal',5.2],
+        [
+          '.title2-reveal',
+          5.2
+        ],
 
-        ['.message2',6.5]
+        [
+          '.message2',
+          6.5
+        ]
 
       ]
     );
-
-
-    setTimeout(()=>{
-
-      prepareImages(page3);
-
-    },0);
 
   }
 
@@ -1202,47 +1844,117 @@ async function startPage(page){
   /* =========================
      PAGE 3
 
-     순서:
-     background
-     rabbit
+     정확한 순서:
+
+     background3
+
+     rabbit3-1 ~ rabbit3-12
+
      title3-1
+
      title3-2
+
      details3 + icon3-1
+
      message3
+
      blessing3 + icon3-2
   ========================= */
 
   if(
-    page.classList.contains('page3')
+    page.classList.contains(
+      'page3'
+    )
   ){
 
     schedulePage(
       page,
       [
 
-        ['.background3',0],
+        [
+          '.background3',
+          0
+        ],
 
-        ['.r31',1.3],
-        ['.r32',1.65],
-        ['.r33',2.0],
-        ['.r34',2.35],
-        ['.r35',2.7],
-        ['.r36',3.05],
-        ['.r37',3.4],
-        ['.r38',3.75],
-        ['.r39',4.1],
-        ['.r310',4.45],
-        ['.r311',4.8],
-        ['.r312',5.15],
 
-        ['.title31',6.45],
+        [
+          '.r31',
+          1.3
+        ],
 
-        ['.title3-reveal',7.75],
+        [
+          '.r32',
+          1.65
+        ],
+
+        [
+          '.r33',
+          2.0
+        ],
+
+        [
+          '.r34',
+          2.35
+        ],
+
+        [
+          '.r35',
+          2.7
+        ],
+
+        [
+          '.r36',
+          3.05
+        ],
+
+        [
+          '.r37',
+          3.4
+        ],
+
+        [
+          '.r38',
+          3.75
+        ],
+
+        [
+          '.r39',
+          4.1
+        ],
+
+        [
+          '.r310',
+          4.45
+        ],
+
+        [
+          '.r311',
+          4.8
+        ],
+
+        [
+          '.r312',
+          5.15
+        ],
+
+
+        [
+          '.title31',
+          6.45
+        ],
+
+
+        [
+          '.title3-reveal',
+          7.75
+        ],
 
 
         /*
-          details3 + icon3-1 먼저
+          먼저:
+          details3 + icon3-1
         */
+
         [
           '.details3,.icon-place-motion',
           9.05,
@@ -1251,8 +1963,10 @@ async function startPage(page){
 
 
         /*
-          그 다음 message3
+          그 다음:
+          message3
         */
+
         [
           '.message3',
           10.35
@@ -1260,8 +1974,10 @@ async function startPage(page){
 
 
         /*
-          마지막 blessing3 + icon3-2
+          마지막:
+          blessing3 + icon3-2
         */
+
         [
           '.blessing3,.icon-gift-motion',
           11.65,
@@ -1277,29 +1993,33 @@ async function startPage(page){
 
 
 /* =========================
-   PAGE 진입 감지
+   화면 진입 감지
 ========================= */
 
 const io =
   new IntersectionObserver(
+
     entries=>{
 
-      entries.forEach(entry=>{
+      entries.forEach(
+        entry=>{
 
-        if(
-          entry.isIntersecting &&
-          entry.target !== page1
-        ){
+          if(
+            entry.isIntersecting &&
+            entry.target !== page1
+          ){
 
-          startPage(
-            entry.target
-          );
+            startPage(
+              entry.target
+            );
+
+          }
 
         }
-
-      });
+      );
 
     },
+
     {
 
       root:root,
@@ -1310,6 +2030,7 @@ const io =
         '0px 0px -10% 0px'
 
     }
+
   );
 
 
@@ -1327,16 +2048,25 @@ pages
 ========================= */
 
 const bgm =
-  document.getElementById('bgm');
+  document.getElementById(
+    'bgm'
+  );
+
 
 const btn =
-  document.getElementById('bgmBtn');
+  document.getElementById(
+    'bgmBtn'
+  );
+
 
 const musicIcon =
-  document.getElementById('musicIcon');
+  document.getElementById(
+    'musicIcon'
+  );
 
 
-let isPlaying = false;
+let isPlaying =
+  false;
 
 
 const iconPlaying =
@@ -1353,7 +2083,8 @@ function playAudio(){
     .play()
     .then(()=>{
 
-      isPlaying = true;
+      isPlaying =
+        true;
 
       musicIcon.innerHTML =
         iconPlaying;
@@ -1370,7 +2101,8 @@ function toggleBgm(){
 
     bgm.pause();
 
-    isPlaying = false;
+    isPlaying =
+      false;
 
     musicIcon.innerHTML =
       iconMuted;
@@ -1421,7 +2153,7 @@ window.addEventListener(
 
 
 /* =========================
-   아이콘 클릭 모션
+   ICON PRESS
 ========================= */
 
 function bindPress(
@@ -1443,7 +2175,9 @@ function bindPress(
 
       wrapper
         .classList
-        .add('is-pressed');
+        .add(
+          'is-pressed'
+        );
 
     }
   );
@@ -1453,41 +2187,52 @@ function bindPress(
     'pointerup',
     'pointercancel',
     'pointerleave'
-  ].forEach(eventName=>{
 
-    button.addEventListener(
-      eventName,
-      ()=>{
+  ].forEach(
+    eventName=>{
 
-        wrapper
-          .classList
-          .remove('is-pressed');
+      button.addEventListener(
+        eventName,
+        ()=>{
 
-      }
-    );
+          wrapper
+            .classList
+            .remove(
+              'is-pressed'
+            );
 
-  });
+        }
+      );
+
+    }
+  );
 
 }
 
 
 bindPress(
+
   document.getElementById(
     'placeHotspot'
   ),
+
   document.getElementById(
     'placeIconMotion'
   )
+
 );
 
 
 bindPress(
+
   document.getElementById(
     'openPage4'
   ),
+
   document.getElementById(
     'giftIconMotion'
   )
+
 );
 
 
@@ -1513,14 +2258,69 @@ const closePage4 =
   );
 
 
-let closeTimer = null;
-let title4Timer = null;
+let closeTimer =
+  null;
 
+
+let title4Timer =
+  null;
+
+
+/* =========================
+   PAGE 4 필요한 파일 로딩
+========================= */
+
+async function preparePage4(){
+
+  /*
+    PAGE 4는 클릭했을 때만
+    순차 로딩한다.
+  */
+
+  const images = [
+
+    page4Modal.querySelector(
+      '.background4'
+    ),
+
+    page4Modal.querySelector(
+      '.rabbit4'
+    ),
+
+    page4Modal.querySelector(
+      '.title41'
+    ),
+
+    page4Modal.querySelector(
+      '.title42'
+    ),
+
+    page4Modal.querySelector(
+      '.account4'
+    )
+
+  ];
+
+
+  for(const img of images){
+
+    await loadImage(img);
+
+  }
+
+}
+
+
+/* =========================
+   PAGE 4 animation reset
+========================= */
 
 function resetPage4Animations(){
 
   page4Modal
-    .querySelectorAll('.layer')
+    .querySelectorAll(
+      '.layer'
+    )
     .forEach(el=>{
 
       el.style.animation =
@@ -1533,18 +2333,35 @@ function resetPage4Animations(){
 
     });
 
+
+  const title42 =
+    page4Modal.querySelector(
+      '.title42'
+    );
+
+
+  if(title42){
+
+    title42.style.animation =
+      'none';
+
+    void title42.offsetWidth;
+
+    title42.style.animation =
+      '';
+
+  }
+
 }
 
 
 /* =========================
-   PAGE 4 열기
+   PAGE 4 OPEN
 ========================= */
 
 async function showPage4(){
 
-  await prepareImages(
-    page4Modal
-  );
+  await preparePage4();
 
 
   if(closeTimer){
@@ -1553,7 +2370,8 @@ async function showPage4(){
       closeTimer
     );
 
-    closeTimer = null;
+    closeTimer =
+      null;
 
   }
 
@@ -1564,7 +2382,8 @@ async function showPage4(){
       title4Timer
     );
 
-    title4Timer = null;
+    title4Timer =
+      null;
 
   }
 
@@ -1582,7 +2401,9 @@ async function showPage4(){
 
   page4Modal
     .classList
-    .add('active');
+    .add(
+      'active'
+    );
 
 
   page4Modal.setAttribute(
@@ -1597,21 +2418,28 @@ async function showPage4(){
       if(
         page4Modal
           .classList
-          .contains('active') &&
+          .contains(
+            'active'
+          ) &&
 
         !page4Modal
           .classList
-          .contains('closing')
+          .contains(
+            'closing'
+          )
       ){
 
         page4Modal
           .classList
-          .add('title4-ready');
+          .add(
+            'title4-ready'
+          );
 
       }
 
 
-      title4Timer = null;
+      title4Timer =
+        null;
 
     },3900);
 
@@ -1619,7 +2447,7 @@ async function showPage4(){
 
 
 /* =========================
-   PAGE 4 닫기
+   PAGE 4 CLOSE
 ========================= */
 
 function hidePage4(){
@@ -1627,11 +2455,15 @@ function hidePage4(){
   if(
     !page4Modal
       .classList
-      .contains('active') ||
+      .contains(
+        'active'
+      ) ||
 
     page4Modal
       .classList
-      .contains('closing')
+      .contains(
+        'closing'
+      )
   ){
 
     return;
@@ -1645,36 +2477,30 @@ function hidePage4(){
       title4Timer
     );
 
-    title4Timer = null;
+    title4Timer =
+      null;
 
   }
 
 
   /*
-    title4-ready는 여기서 제거하지 않는다.
+    title4-ready는
+    페이드 전에 제거하지 않는다.
 
-    현재 보이는
-    background4
-    rabbit4
-    title4-1
-    title4-2
-    account4
-
-    상태 그대로 전체가 페이드아웃된다.
+    title4-2 포함 현재 보이는
+    PAGE 4 전체가 그대로
+    1.3초 페이드아웃.
   */
 
   page4Modal
     .classList
-    .add('closing');
+    .add(
+      'closing'
+    );
 
 
   closeTimer =
     setTimeout(()=>{
-
-      /*
-        페이드아웃이 완전히 끝난 다음에만
-        title4-2 포함 모든 상태를 초기화한다.
-      */
 
       page4Modal
         .classList
@@ -1691,14 +2517,17 @@ function hidePage4(){
       );
 
 
-      closeTimer = null;
+      closeTimer =
+        null;
 
     },1300);
 
 }
 
 
-/* PAGE 4 열기 */
+/* =========================
+   PAGE 4 EVENT
+========================= */
 
 openPage4.addEventListener(
   'click',
@@ -1712,8 +2541,6 @@ openPage4.addEventListener(
 );
 
 
-/* X 버튼 */
-
 closePage4.addEventListener(
   'click',
   e=>{
@@ -1726,17 +2553,18 @@ closePage4.addEventListener(
 );
 
 
-/* 바깥 영역 클릭 */
-
 page4Modal.addEventListener(
   'click',
   e=>{
 
     if(
       e.target === page4Modal ||
-      e.target.classList.contains(
-        'page4-content'
-      )
+
+      e.target
+        .classList
+        .contains(
+          'page4-content'
+        )
     ){
 
       hidePage4();
@@ -1748,7 +2576,7 @@ page4Modal.addEventListener(
 
 
 /* =========================
-   계좌번호 복사
+   COPY
 ========================= */
 
 const copyToast =
@@ -1757,7 +2585,8 @@ const copyToast =
   );
 
 
-let toastTimer = null;
+let toastTimer =
+  null;
 
 
 function fallbackCopy(text){
@@ -1768,7 +2597,8 @@ function fallbackCopy(text){
     );
 
 
-  textarea.value = text;
+  textarea.value =
+    text;
 
 
   textarea.setAttribute(
@@ -1780,8 +2610,10 @@ function fallbackCopy(text){
   textarea.style.position =
     'fixed';
 
+
   textarea.style.left =
     '-9999px';
+
 
   textarea.style.opacity =
     '0';
@@ -1817,7 +2649,10 @@ async function copyAccountNumber(
 
   const digitsOnly =
     String(value)
-      .replace(/\D/g,'');
+      .replace(
+        /\D/g,
+        ''
+      );
 
 
   try{
@@ -1853,7 +2688,9 @@ async function copyAccountNumber(
 
     copyToast
       .classList
-      .remove('show');
+      .remove(
+        'show'
+      );
 
 
     void copyToast.offsetWidth;
@@ -1861,7 +2698,9 @@ async function copyAccountNumber(
 
     copyToast
       .classList
-      .add('show');
+      .add(
+        'show'
+      );
 
 
     toastTimer =
@@ -1869,10 +2708,13 @@ async function copyAccountNumber(
 
         copyToast
           .classList
-          .remove('show');
+          .remove(
+            'show'
+          );
 
 
-        toastTimer = null;
+        toastTimer =
+          null;
 
       },1550);
 
@@ -1910,7 +2752,7 @@ document
 
 
 /* =========================
-   외부 페이지에서 복귀
+   외부 페이지 복귀
 ========================= */
 
 window.addEventListener(
