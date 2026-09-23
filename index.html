@@ -28,74 +28,48 @@ body{
 .scroll-root{
   width:100%;
   height:100%;
-
   overflow-y:auto;
   overflow-x:hidden;
-
   -webkit-overflow-scrolling:touch;
-
   overscroll-behavior:none;
-
   display:flex;
   flex-direction:column;
   align-items:center;
-
   background:#fff;
 }
 
-
 /* =========================================================
    PAGE
-
-   변경:
-   기존 aspect-ratio는 fallback으로 유지.
-
-   실제 높이는 JS에서
-   현재 렌더링 너비 × 1891 / 1360
-   값을 정수 px로 계산해서 지정한다.
-
-   페이지 간 음수 margin 없음.
 ========================================================= */
 
 .page{
   position:relative;
-
   width:min(100%,1360px);
-
   aspect-ratio:1360/1891;
-
   flex:0 0 auto;
-
   overflow:hidden;
 
-  background:transparent;
+  /*
+    background1/2/3.png의 외곽 반투명 픽셀 뒤로
+    흰색이 비치지 않도록 원본 배경색을 깐다.
+  */
+  background:rgb(0,146,162);
 
   line-height:0;
 }
 
-
-/* 페이지 사이
-   여백 0
-   겹침 0
-*/
 .page+.page{
   margin-top:0;
 }
 
-
 .layer{
   position:absolute;
   inset:0;
-
   width:100%;
   height:100%;
-
   object-fit:fill;
-
   opacity:0;
-
   pointer-events:none;
-
   display:block;
 }
 
@@ -107,15 +81,10 @@ body{
 .initial-loader{
   position:fixed;
   inset:0;
-
   z-index:20000;
-
   background:#fff;
-
   opacity:1;
-
   visibility:visible;
-
   pointer-events:auto;
 
   transition:
@@ -123,12 +92,9 @@ body{
     visibility 0s linear .45s;
 }
 
-
 .site-ready .initial-loader{
   opacity:0;
-
   visibility:hidden;
-
   pointer-events:none;
 }
 
@@ -164,13 +130,10 @@ body{
     rgba(255,255,255,.7);
 
   display:grid;
-
   place-items:center;
 
   backdrop-filter:blur(4px);
-
-  -webkit-backdrop-filter:
-    blur(4px);
+  -webkit-backdrop-filter:blur(4px);
 
   cursor:pointer;
 
@@ -178,11 +141,9 @@ body{
     transparent;
 }
 
-
 .bgm-btn svg{
   width:18px;
   height:18px;
-
   fill:#555;
 }
 
@@ -192,7 +153,6 @@ body{
 ========================================================= */
 
 @keyframes fadeIn{
-
   from{
     opacity:0;
   }
@@ -200,50 +160,35 @@ body{
   to{
     opacity:1;
   }
-
 }
-
 
 @keyframes growTree{
-
   from{
     opacity:0;
-
-    transform:
-      scale(0);
+    transform:scale(0);
   }
 
   to{
     opacity:1;
-
-    transform:
-      scale(1);
+    transform:scale(1);
   }
-
 }
 
-
 @keyframes flyAndStop{
-
   from{
     opacity:0;
-
     transform:
       translate(120px,-20px);
   }
 
   to{
     opacity:1;
-
     transform:
       translate(0,0);
   }
-
 }
 
-
 @keyframes title2FromLine{
-
   0%{
     transform:
       translateY(-2.8556%);
@@ -253,12 +198,9 @@ body{
     transform:
       translateY(0);
   }
-
 }
-
 
 @keyframes title3FromLine{
-
   0%{
     transform:
       translateY(-2.9085%);
@@ -268,12 +210,9 @@ body{
     transform:
       translateY(0);
   }
-
 }
 
-
 @keyframes title4FromLine{
-
   0%{
     transform:
       translateY(-2.9085%);
@@ -283,7 +222,6 @@ body{
     transform:
       translateY(0);
   }
-
 }
 
 
@@ -296,60 +234,44 @@ body{
 .title4-reveal{
   position:absolute;
   inset:0;
-
   z-index:20;
-
   overflow:hidden;
-
   visibility:hidden;
-
   pointer-events:none;
 }
-
 
 .title2-reveal{
   clip-path:
     inset(20.5182% 0 0 0);
 }
 
-
 .title3-reveal{
   clip-path:
     inset(25.8065% 0 0 0);
 }
-
 
 .title4-reveal{
   clip-path:
     inset(30.4072% 0 0 0);
 }
 
-
 .title2-reveal .title22,
 .title3-reveal .title32,
 .title4-reveal .title42{
   display:none;
-
   opacity:0!important;
-
   visibility:hidden;
-
   width:100%;
   height:100%;
-
   object-fit:fill;
-
   position:absolute;
   inset:0;
 }
 
-
 .title2-reveal.run .title22,
 .title3-reveal.run .title32{
   display:block;
-
   opacity:1!important;
-
   visibility:visible;
 }
 
@@ -363,7 +285,6 @@ body{
     50% 82%;
 }
 
-
 .site-ready
 .page1
 .background1{
@@ -374,7 +295,6 @@ body{
     0s
     both;
 }
-
 
 .site-ready
 .page1
@@ -387,7 +307,6 @@ body{
     both;
 }
 
-
 .site-ready
 .page1
 .tree1{
@@ -398,7 +317,6 @@ body{
     2.6s
     both;
 }
-
 
 .site-ready
 .page1
@@ -411,7 +329,6 @@ body{
     both;
 }
 
-
 .site-ready
 .page1
 .title1{
@@ -423,7 +340,6 @@ body{
     both;
 }
 
-
 .site-ready
 .page1
 .date1{
@@ -434,7 +350,6 @@ body{
     6.5s
     both;
 }
-
 
 .site-ready
 .page1
@@ -481,10 +396,8 @@ body{
 
 .page3 .blessing3{
   opacity:0;
-
   visibility:hidden;
 }
-
 
 .page2 .background2.run,
 .page2 .photo2.run,
@@ -524,8 +437,8 @@ body{
 
 
 /* =========================================================
-   PAGE 2 / 3
-   ANIMATION FINISHED STATIC STATE
+   PAGE 2 / PAGE 3
+   ANIMATION FINISHED
 ========================================================= */
 
 .page2 .background2.shown,
@@ -557,9 +470,7 @@ body{
 
 .page3 .blessing3.shown{
   opacity:1!important;
-
   visibility:visible!important;
-
   animation:none!important;
 }
 
@@ -576,14 +487,11 @@ body{
   visibility:visible;
 }
 
-
 .page2
 .title2-reveal.run
 .title22{
   display:block;
-
   opacity:1!important;
-
   visibility:visible!important;
 
   animation:
@@ -592,22 +500,17 @@ body{
     linear;
 }
 
-
 .page2
 .title2-reveal.shown
 .title22{
   display:block;
-
   opacity:1!important;
-
   visibility:visible!important;
-
   animation:none!important;
 
   transform:
     translateY(0)!important;
 }
-
 
 .flower2{
   filter:none!important;
@@ -634,19 +537,15 @@ body{
     ease-in-out;
 }
 
-
 .page3
 .icon-place-motion.shown,
 
 .page3
 .icon-gift-motion.shown{
   opacity:1!important;
-
   visibility:visible!important;
-
   animation:none!important;
 }
-
 
 .page3
 .title3-reveal.run,
@@ -656,14 +555,11 @@ body{
   visibility:visible;
 }
 
-
 .page3
 .title3-reveal.run
 .title32{
   display:block;
-
   opacity:1!important;
-
   visibility:visible!important;
 
   animation:
@@ -672,16 +568,12 @@ body{
     linear;
 }
 
-
 .page3
 .title3-reveal.shown
 .title32{
   display:block;
-
   opacity:1!important;
-
   visibility:visible!important;
-
   animation:none!important;
 
   transform:
@@ -690,20 +582,15 @@ body{
 
 
 /* =========================================================
-   PAGE 3 ICON
+   ICON
 ========================================================= */
 
 .icon-motion-wrapper{
   position:absolute;
-
   z-index:70;
-
   overflow:hidden;
-
   opacity:0;
-
   visibility:hidden;
-
   pointer-events:none;
 
   transform:
@@ -732,7 +619,6 @@ body{
     transparent;
 }
 
-
 .icon-motion-wrapper.is-pressed{
   transform:
     scale(.82);
@@ -740,7 +626,6 @@ body{
   -webkit-transform:
     scale(.82);
 }
-
 
 .page3
 .icon-place-motion.ready,
@@ -750,76 +635,53 @@ body{
   pointer-events:auto;
 }
 
-
 .icon-place-motion{
   left:66.6667%;
   top:51.0312%;
-
   width:9.1979%;
   height:6.6103%;
 }
 
-
 .icon-gift-motion{
   left:82.3400%;
   top:89.1063%;
-
   width:7.5791%;
   height:5.4469%;
 }
 
-
 .icon-crop-source{
   position:absolute;
-
   max-width:none;
-
   pointer-events:none;
-
   object-fit:fill;
 }
-
 
 .icon-place-motion
 .icon-crop-source{
   width:1087.2%;
   height:1512.8%;
-
   left:-724.8%;
   top:-772%;
 }
-
 
 .icon-gift-motion
 .icon-crop-source{
   width:1319.4175%;
   height:1835.9223%;
-
   left:-1086.4078%;
   top:-1635.9223%;
 }
 
-
 .icon-motion-click{
   position:absolute;
-
   inset:0;
-
   z-index:3;
-
   border:0;
-
   outline:0;
-
   background:transparent;
-
   cursor:pointer;
-
-  -webkit-tap-highlight-color:
-    transparent;
-
+  -webkit-tap-highlight-color:transparent;
   appearance:none;
-
   -webkit-appearance:none;
 }
 
@@ -830,22 +692,17 @@ body{
 
 .page4-modal{
   position:fixed;
-
   inset:0;
-
   z-index:15000;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:
     rgba(0,0,0,0);
 
   visibility:hidden;
-
   pointer-events:none;
 
   transition:
@@ -859,10 +716,8 @@ body{
     1.3s;
 }
 
-
 .page4-modal.active{
   visibility:visible;
-
   pointer-events:auto;
 
   background:
@@ -874,28 +729,21 @@ body{
     ease-in-out;
 }
 
-
 .page4-modal.active.closing{
   visibility:visible;
-
   pointer-events:none;
 
   background:
     rgba(0,0,0,0);
 }
 
-
 .page4-content{
   position:relative;
-
   width:100vw;
-
   height:100dvh;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   opacity:0;
@@ -906,18 +754,15 @@ body{
     ease-in-out;
 }
 
-
 .page4-modal.active
 .page4-content{
   opacity:1;
 }
 
-
 .page4-modal.active.closing
 .page4-content{
   opacity:0;
 }
-
 
 .page4-card{
   position:relative;
@@ -951,7 +796,6 @@ body{
     both;
 }
 
-
 .page4-modal.active
 .rabbit4{
   animation:
@@ -961,7 +805,6 @@ body{
     1.3s
     both;
 }
-
 
 .page4-modal.active
 .title41{
@@ -973,26 +816,21 @@ body{
     both;
 }
 
-
 .page4-modal
 .title4-reveal{
   visibility:hidden;
 }
-
 
 .page4-modal.active.title4-ready
 .title4-reveal{
   visibility:visible;
 }
 
-
 .page4-modal.active.title4-ready
 .title4-reveal
 .title42{
   display:block;
-
   opacity:1!important;
-
   visibility:visible!important;
 
   animation:
@@ -1002,29 +840,21 @@ body{
     both;
 }
 
-
-/* 닫는 동안 title4-2 유지 */
-
 .page4-modal.active.closing.title4-ready
 .title4-reveal{
   visibility:visible!important;
 }
 
-
 .page4-modal.active.closing.title4-ready
 .title42{
   display:block!important;
-
   opacity:1!important;
-
   visibility:visible!important;
-
   animation:none!important;
 
   transform:
     translateY(0)!important;
 }
-
 
 .page4-modal.active
 .account4{
@@ -1038,7 +868,7 @@ body{
 
 
 /* =========================================================
-   PAGE 4 CLOSE BUTTON
+   CLOSE BUTTON
 ========================================================= */
 
 .modal-close-btn{
@@ -1058,7 +888,6 @@ body{
   height:36px;
 
   border:0;
-
   border-radius:50%;
 
   background:
@@ -1072,31 +901,23 @@ body{
     transparent;
 }
 
-
 .modal-close-btn:before,
 .modal-close-btn:after{
   content:"";
-
   position:absolute;
-
   left:50%;
   top:50%;
-
   width:17px;
   height:2px;
-
   background:#fff;
-
   border-radius:2px;
 }
-
 
 .modal-close-btn:before{
   transform:
     translate(-50%,-50%)
     rotate(45deg);
 }
-
 
 .modal-close-btn:after{
   transform:
@@ -1111,48 +932,33 @@ body{
 
 .account-click{
   position:absolute;
-
   z-index:80;
-
   border:0;
-
   outline:0;
-
   background:transparent;
-
   cursor:pointer;
-
-  -webkit-tap-highlight-color:
-    transparent;
-
+  -webkit-tap-highlight-color:transparent;
   appearance:none;
-
   -webkit-appearance:none;
 }
-
 
 .account-kb{
   left:30.5147%;
   top:42.6230%;
-
   width:38.5294%;
   height:2.0624%;
 }
 
-
 .account-woori{
   left:30.8824%;
   top:52.7763%;
-
   width:37.7206%;
   height:2.1153%;
 }
 
-
 .account-hana{
   left:32.7206%;
   top:60.4971%;
-
   width:34.4118%;
   height:2.0624%;
 }
@@ -1164,7 +970,6 @@ body{
 
 .copy-toast{
   position:fixed;
-
   left:50%;
 
   bottom:max(
@@ -1204,7 +1009,6 @@ body{
     translate(-50%,8px);
 }
 
-
 .copy-toast.show{
   animation:
     copyToastFade
@@ -1213,9 +1017,7 @@ body{
     both;
 }
 
-
 @keyframes copyToastFade{
-
   0%{
     opacity:0;
 
@@ -1237,7 +1039,6 @@ body{
     transform:
       translate(-50%,-3px);
   }
-
 }
 
 </style>
@@ -1283,10 +1084,6 @@ body{
   id="scrollRoot">
 
 
-<!-- ======================================================
-     PAGE 1
-====================================================== -->
-
 <section class="page page1">
 
   <img
@@ -1320,10 +1117,6 @@ body{
 </section>
 
 
-<!-- ======================================================
-     PAGE 2
-====================================================== -->
-
 <section class="page page2">
 
   <img
@@ -1342,7 +1135,6 @@ body{
     data-src="title2-1.png"
     class="layer title21">
 
-
   <div class="title2-reveal">
 
     <img
@@ -1351,7 +1143,6 @@ body{
 
   </div>
 
-
   <img
     data-src="message2.png"
     class="layer message2">
@@ -1359,70 +1150,28 @@ body{
 </section>
 
 
-<!-- ======================================================
-     PAGE 3
-====================================================== -->
-
 <section class="page page3">
 
   <img
     data-src="background3.png"
     class="layer background3">
 
-
-  <img
-    data-src="rabbit3-1.png"
-    class="layer r31">
-
-  <img
-    data-src="rabbit3-2.png"
-    class="layer r32">
-
-  <img
-    data-src="rabbit3-3.png"
-    class="layer r33">
-
-  <img
-    data-src="rabbit3-4.png"
-    class="layer r34">
-
-  <img
-    data-src="rabbit3-5.png"
-    class="layer r35">
-
-  <img
-    data-src="rabbit3-6.png"
-    class="layer r36">
-
-  <img
-    data-src="rabbit3-7.png"
-    class="layer r37">
-
-  <img
-    data-src="rabbit3-8.png"
-    class="layer r38">
-
-  <img
-    data-src="rabbit3-9.png"
-    class="layer r39">
-
-  <img
-    data-src="rabbit3-10.png"
-    class="layer r310">
-
-  <img
-    data-src="rabbit3-11.png"
-    class="layer r311">
-
-  <img
-    data-src="rabbit3-12.png"
-    class="layer r312">
-
+  <img data-src="rabbit3-1.png" class="layer r31">
+  <img data-src="rabbit3-2.png" class="layer r32">
+  <img data-src="rabbit3-3.png" class="layer r33">
+  <img data-src="rabbit3-4.png" class="layer r34">
+  <img data-src="rabbit3-5.png" class="layer r35">
+  <img data-src="rabbit3-6.png" class="layer r36">
+  <img data-src="rabbit3-7.png" class="layer r37">
+  <img data-src="rabbit3-8.png" class="layer r38">
+  <img data-src="rabbit3-9.png" class="layer r39">
+  <img data-src="rabbit3-10.png" class="layer r310">
+  <img data-src="rabbit3-11.png" class="layer r311">
+  <img data-src="rabbit3-12.png" class="layer r312">
 
   <img
     data-src="title3-1.png"
     class="layer title31">
-
 
   <div class="title3-reveal">
 
@@ -1432,11 +1181,9 @@ body{
 
   </div>
 
-
   <img
     data-src="message3.png"
     class="layer message3">
-
 
   <img
     data-src="details3.png"
@@ -1451,7 +1198,6 @@ body{
       data-src="icon3-1.png"
       class="icon-crop-source"
       aria-hidden="true">
-
 
     <a
       class="icon-motion-click"
@@ -1479,7 +1225,6 @@ body{
       class="icon-crop-source"
       aria-hidden="true">
 
-
     <button
       class="icon-motion-click"
       id="openPage4"
@@ -1494,10 +1239,6 @@ body{
 </main>
 
 
-<!-- ======================================================
-     PAGE 4
-====================================================== -->
-
 <div
   class="page4-modal"
   id="page4Modal"
@@ -1507,21 +1248,17 @@ body{
 
     <div class="page4-card">
 
-
       <img
         data-src="background4.png"
         class="layer background4">
-
 
       <img
         data-src="rabbit4.png"
         class="layer rabbit4">
 
-
       <img
         data-src="title4-1.png"
         class="layer title41">
-
 
       <div class="title4-reveal">
 
@@ -1531,11 +1268,9 @@ body{
 
       </div>
 
-
       <img
         data-src="account4.png"
         class="layer account4">
-
 
       <button
         class="modal-close-btn"
@@ -1544,14 +1279,12 @@ body{
         aria-label="닫기">
       </button>
 
-
       <button
         class="account-click account-kb"
         type="button"
         data-account="27010204218011"
         aria-label="국민은행 계좌번호 복사">
       </button>
-
 
       <button
         class="account-click account-woori"
@@ -1560,14 +1293,12 @@ body{
         aria-label="우리은행 계좌번호 복사">
       </button>
 
-
       <button
         class="account-click account-hana"
         type="button"
         data-account="29819040468"
         aria-label="하나은행 계좌번호 복사">
       </button>
-
 
     </div>
 
@@ -1598,20 +1329,16 @@ const root =
     'scrollRoot'
   );
 
-
 const pages =
   [...document.querySelectorAll(
     '.page'
   )];
 
-
 const page1 =
   pages[0];
 
-
 const page2 =
   pages[1];
-
 
 const page3 =
   pages[2];
@@ -1619,31 +1346,14 @@ const page3 =
 
 /* =========================================================
    PAGE HEIGHT
-
-   변경 부분.
-
-   실제 렌더링된 페이지 너비를 기준으로
-   1360 : 1891 비율의 높이를 계산한 다음
-   정수 CSS px로 고정한다.
-
-   페이지 사이에 음수 margin을 사용하지 않는다.
 ========================================================= */
 
 function updatePageHeights(){
 
   pages.forEach(page=>{
 
-    /*
-      width는 CSS에서 이미
-      min(100%,1360px)로 결정된 상태.
-
-      getBoundingClientRect()로
-      실제 렌더링 너비를 읽는다.
-    */
-
     const width =
       page.getBoundingClientRect().width;
-
 
     if(
       !width ||
@@ -1652,28 +1362,13 @@ function updatePageHeights(){
       return;
     }
 
-
-    /*
-      원본:
-      1360 × 1891
-
-      계산 결과를 정수 CSS px로 고정.
-    */
-
     const height =
       Math.round(
         width * 1891 / 1360
       );
 
-
     page.style.height =
       height + 'px';
-
-
-    /*
-      JS height가 명확하게 적용되도록
-      flex-basis도 같은 값으로 고정.
-    */
 
     page.style.flexBasis =
       height + 'px';
@@ -1682,33 +1377,15 @@ function updatePageHeights(){
 
 }
 
-
-/*
-  첫 화면에서 애니메이션 시작 전에
-  페이지 높이부터 확정.
-*/
-
 updatePageHeights();
-
-
-/*
-  화면 폭이 실제로 달라졌을 때만
-  다시 계산한다.
-
-  Safari 주소창이 단순히 위/아래로 움직여
-  viewport 높이만 변하는 경우에는
-  불필요하게 페이지 높이를 바꾸지 않는다.
-*/
 
 let lastViewportWidth =
   window.innerWidth;
-
 
 function handleViewportResize(){
 
   const currentWidth =
     window.innerWidth;
-
 
   if(
     Math.abs(
@@ -1719,22 +1396,18 @@ function handleViewportResize(){
     return;
   }
 
-
   lastViewportWidth =
     currentWidth;
-
 
   updatePageHeights();
 
 }
-
 
 window.addEventListener(
   'resize',
   handleViewportResize,
   {passive:true}
 );
-
 
 window.addEventListener(
   'orientationchange',
@@ -1760,45 +1433,32 @@ window.addEventListener(
 const imagePromises =
   new WeakMap();
 
-
 function loadImage(img){
 
   if(!img){
-
     return Promise.resolve();
-
   }
-
 
   if(
     img.complete &&
     img.naturalWidth > 0
   ){
-
     return Promise.resolve();
-
   }
-
 
   if(
     imagePromises.has(img)
   ){
-
     return imagePromises.get(img);
-
   }
-
 
   if(
     img.dataset.src &&
     !img.getAttribute('src')
   ){
-
     img.src =
       img.dataset.src;
-
   }
-
 
   const task =
     new Promise(resolve=>{
@@ -1807,27 +1467,18 @@ function loadImage(img){
         img.complete &&
         img.naturalWidth > 0
       ){
-
         resolve();
-
         return;
-
       }
 
-
-      const done = ()=>{
-
-        resolve();
-
-      };
-
+      const done =
+        ()=>resolve();
 
       img.addEventListener(
         'load',
         done,
         {once:true}
       );
-
 
       img.addEventListener(
         'error',
@@ -1837,12 +1488,10 @@ function loadImage(img){
 
     });
 
-
   imagePromises.set(
     img,
     task
   );
-
 
   return task;
 
@@ -1863,28 +1512,21 @@ async function loadSelectorImages(
       selector
     );
 
-
   for(const el of elements){
 
     if(
       el.tagName === 'IMG'
     ){
-
       await loadImage(el);
-
     }
-
 
     const images =
       el.querySelectorAll
         ? el.querySelectorAll('img')
         : [];
 
-
     for(const img of images){
-
       await loadImage(img);
-
     }
 
   }
@@ -1903,7 +1545,6 @@ function waitPage1(){
       'img'
     );
 
-
   return Promise.all(
 
     [...images].map(img=>{
@@ -1912,11 +1553,8 @@ function waitPage1(){
         img.complete &&
         img.naturalWidth > 0
       ){
-
         return Promise.resolve();
-
       }
-
 
       return new Promise(resolve=>{
 
@@ -1925,7 +1563,6 @@ function waitPage1(){
           resolve,
           {once:true}
         );
-
 
         img.addEventListener(
           'error',
@@ -1941,17 +1578,10 @@ function waitPage1(){
 
 }
 
-
 waitPage1()
   .finally(()=>{
 
-    /*
-      이미지가 준비된 뒤에도
-      현재 폭 기준 높이를 한 번 더 확인.
-    */
-
     updatePageHeights();
-
 
     requestAnimationFrame(()=>{
 
@@ -1967,7 +1597,7 @@ waitPage1()
 
 
 /* =========================================================
-   PAGE 2 / 3 RUN STEP
+   PAGE 2 / PAGE 3 RUN STEP
 ========================================================= */
 
 function runStep(
@@ -1986,27 +1616,21 @@ function runStep(
         'shown'
       );
 
-
       el.classList.add(
         'run'
       );
 
-
       if(ready){
-
         el.classList.add(
           'ready'
         );
-
       }
-
 
       setTimeout(()=>{
 
         el.classList.remove(
           'run'
         );
-
 
         el.classList.add(
           'shown'
@@ -2032,15 +1656,11 @@ function schedulePage(
     !page ||
     page.dataset.started === '1'
   ){
-
     return;
-
   }
-
 
   page.dataset.started =
     '1';
-
 
   steps.forEach(
     ([selector,delay,ready])=>{
@@ -2051,7 +1671,6 @@ function schedulePage(
           delay * 1000 - 450
         );
 
-
       setTimeout(()=>{
 
         loadSelectorImages(
@@ -2061,7 +1680,6 @@ function schedulePage(
 
       },prepareDelay);
 
-
       setTimeout(
         async()=>{
 
@@ -2069,7 +1687,6 @@ function schedulePage(
             page,
             selector
           );
-
 
           runStep(
             page,
@@ -2102,15 +1719,8 @@ function startPage(page){
     !page ||
     page.dataset.started === '1'
   ){
-
     return;
-
   }
-
-
-  /* =======================================================
-     PAGE 2
-  ======================================================= */
 
   if(
     page.classList.contains(
@@ -2157,11 +1767,6 @@ function startPage(page){
 
   }
 
-
-  /* =======================================================
-     PAGE 3
-  ======================================================= */
-
   if(
     page.classList.contains(
       'page3'
@@ -2176,7 +1781,6 @@ function startPage(page){
           '.background3',
           0
         ],
-
 
         [
           '.r31',
@@ -2238,18 +1842,15 @@ function startPage(page){
           5.15
         ],
 
-
         [
           '.title31',
           6.45
         ],
 
-
         [
           '.title3-reveal',
           7.75
         ],
-
 
         [
           '.details3,.icon-place-motion',
@@ -2257,12 +1858,10 @@ function startPage(page){
           true
         ],
 
-
         [
           '.message3',
           10.35
         ],
-
 
         [
           '.blessing3,.icon-gift-motion',
@@ -2280,30 +1879,18 @@ function startPage(page){
 
 /* =========================================================
    PAGE 4 PRELOAD
-
-   Page 4를 보여주는 코드가 아님.
-
-   Page 3에 도착하면
-   Page 4 PNG 파일 5개만 동시에 요청해서
-   브라우저에 미리 준비한다.
-
-   modal은 계속 visibility:hidden.
 ========================================================= */
 
 let page4PreparePromise =
   null;
-
 
 function preparePage4(){
 
   if(
     page4PreparePromise
   ){
-
     return page4PreparePromise;
-
   }
-
 
   const images = [
 
@@ -2329,7 +1916,6 @@ function preparePage4(){
 
   ];
 
-
   page4PreparePromise =
     Promise.all(
 
@@ -2339,14 +1925,13 @@ function preparePage4(){
 
     );
 
-
   return page4PreparePromise;
 
 }
 
 
 /* =========================================================
-   PAGE 2 / 3 INTERSECTION
+   PAGE 2 / PAGE 3 INTERSECTION
 ========================================================= */
 
 const io =
@@ -2374,18 +1959,14 @@ const io =
     },
 
     {
-
       root:root,
-
       threshold:.18,
 
       rootMargin:
         '0px 0px -10% 0px'
-
     }
 
   );
-
 
 pages
   .slice(1)
@@ -2400,9 +1981,6 @@ pages
 
 /* =========================================================
    PAGE 3 진입 시 PAGE 4 PRELOAD
-
-   화면 표시 없음.
-   파일만 준비.
 ========================================================= */
 
 const page4PreloadObserver =
@@ -2419,7 +1997,6 @@ const page4PreloadObserver =
 
             preparePage4();
 
-
             page4PreloadObserver
               .disconnect();
 
@@ -2431,15 +2008,11 @@ const page4PreloadObserver =
     },
 
     {
-
       root:root,
-
       threshold:.01
-
     }
 
   );
-
 
 page4PreloadObserver.observe(
   page3
@@ -2455,30 +2028,24 @@ const bgm =
     'bgm'
   );
 
-
 const btn =
   document.getElementById(
     'bgmBtn'
   );
-
 
 const musicIcon =
   document.getElementById(
     'musicIcon'
   );
 
-
 let isPlaying =
   false;
-
 
 const iconPlaying =
   '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
 
-
 const iconMuted =
   '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
-
 
 function playAudio(){
 
@@ -2489,7 +2056,6 @@ function playAudio(){
       isPlaying =
         true;
 
-
       musicIcon.innerHTML =
         iconPlaying;
 
@@ -2498,17 +2064,14 @@ function playAudio(){
 
 }
 
-
 function toggleBgm(){
 
   if(isPlaying){
 
     bgm.pause();
 
-
     isPlaying =
       false;
-
 
     musicIcon.innerHTML =
       iconMuted;
@@ -2521,30 +2084,24 @@ function toggleBgm(){
 
 }
 
-
 btn.addEventListener(
   'click',
   e=>{
 
     e.stopPropagation();
 
-
     toggleBgm();
 
   }
 );
-
 
 function firstTouch(){
 
   if(
     !isPlaying
   ){
-
     playAudio();
-
   }
-
 
   window.removeEventListener(
     'pointerdown',
@@ -2552,7 +2109,6 @@ function firstTouch(){
   );
 
 }
-
 
 window.addEventListener(
   'pointerdown',
@@ -2574,11 +2130,8 @@ function bindPress(
     !button ||
     !wrapper
   ){
-
     return;
-
   }
-
 
   button.addEventListener(
     'pointerdown',
@@ -2592,7 +2145,6 @@ function bindPress(
 
     }
   );
-
 
   [
     'pointerup',
@@ -2620,7 +2172,6 @@ function bindPress(
 
 }
 
-
 bindPress(
 
   document.getElementById(
@@ -2632,7 +2183,6 @@ bindPress(
   )
 
 );
-
 
 bindPress(
 
@@ -2656,22 +2206,18 @@ const page4Modal =
     'page4Modal'
   );
 
-
 const openPage4 =
   document.getElementById(
     'openPage4'
   );
-
 
 const closePage4 =
   document.getElementById(
     'closePage4'
   );
 
-
 let closeTimer =
   null;
-
 
 let title4Timer =
   null;
@@ -2692,30 +2238,24 @@ function resetPage4Animations(){
       el.style.animation =
         'none';
 
-
       void el.offsetWidth;
-
 
       el.style.animation =
         '';
 
     });
 
-
   const title42 =
     page4Modal.querySelector(
       '.title42'
     );
-
 
   if(title42){
 
     title42.style.animation =
       'none';
 
-
     void title42.offsetWidth;
-
 
     title42.style.animation =
       '';
@@ -2727,28 +2267,11 @@ function resetPage4Animations(){
 
 /* =========================================================
    PAGE 4 OPEN
-
-   preload 완료를 기다리지 않는다.
-
-   클릭 즉시 modal 활성화.
-
-   표시 순서는 CSS 그대로:
-   background4 = 0
-   rabbit4     = 1.3
-   title4-1    = 2.6
-   title4-2    = 3.9
-   account4    = 5.2
 ========================================================= */
 
 function showPage4(){
 
-  /*
-    이미 preload 됐으면 그대로 사용.
-    아직 진행 중이어도 클릭을 막지 않는다.
-  */
-
   preparePage4();
-
 
   if(closeTimer){
 
@@ -2756,12 +2279,10 @@ function showPage4(){
       closeTimer
     );
 
-
     closeTimer =
       null;
 
   }
-
 
   if(title4Timer){
 
@@ -2769,12 +2290,10 @@ function showPage4(){
       title4Timer
     );
 
-
     title4Timer =
       null;
 
   }
-
 
   page4Modal
     .classList
@@ -2783,9 +2302,7 @@ function showPage4(){
       'title4-ready'
     );
 
-
   resetPage4Animations();
-
 
   page4Modal
     .classList
@@ -2793,12 +2310,10 @@ function showPage4(){
       'active'
     );
 
-
   page4Modal.setAttribute(
     'aria-hidden',
     'false'
   );
-
 
   title4Timer =
     setTimeout(()=>{
@@ -2828,7 +2343,6 @@ function showPage4(){
           );
 
       }
-
 
       title4Timer =
         null;
@@ -2861,11 +2375,8 @@ function hidePage4(){
       )
 
   ){
-
     return;
-
   }
-
 
   if(title4Timer){
 
@@ -2873,27 +2384,16 @@ function hidePage4(){
       title4Timer
     );
 
-
     title4Timer =
       null;
 
   }
-
-
-  /*
-    title4-ready를 여기서 제거하지 않는다.
-
-    따라서 닫는 순간 현재 보이던
-    title4-2도 그대로 유지한 상태로
-    전체 modal이 1.3초 동안 사라진다.
-  */
 
   page4Modal
     .classList
     .add(
       'closing'
     );
-
 
   closeTimer =
     setTimeout(()=>{
@@ -2906,12 +2406,10 @@ function hidePage4(){
           'title4-ready'
         );
 
-
       page4Modal.setAttribute(
         'aria-hidden',
         'true'
       );
-
 
       closeTimer =
         null;
@@ -2931,12 +2429,10 @@ openPage4.addEventListener(
 
     e.stopPropagation();
 
-
     showPage4();
 
   }
 );
-
 
 closePage4.addEventListener(
   'click',
@@ -2944,12 +2440,10 @@ closePage4.addEventListener(
 
     e.stopPropagation();
 
-
     hidePage4();
 
   }
 );
-
 
 page4Modal.addEventListener(
   'click',
@@ -2986,10 +2480,8 @@ const copyToast =
     'copyToast'
   );
 
-
 let toastTimer =
   null;
-
 
 function fallbackCopy(text){
 
@@ -2998,52 +2490,41 @@ function fallbackCopy(text){
       'textarea'
     );
 
-
   textarea.value =
     text;
-
 
   textarea.setAttribute(
     'readonly',
     ''
   );
 
-
   textarea.style.position =
     'fixed';
-
 
   textarea.style.left =
     '-9999px';
 
-
   textarea.style.opacity =
     '0';
-
 
   document.body.appendChild(
     textarea
   );
 
-
   textarea.select();
-
 
   textarea.setSelectionRange(
     0,
     text.length
   );
 
-
   document.execCommand(
     'copy'
   );
 
-
   textarea.remove();
 
 }
-
 
 async function copyAccountNumber(
   value
@@ -3055,7 +2536,6 @@ async function copyAccountNumber(
         /\D/g,
         ''
       );
-
 
   try{
 
@@ -3078,7 +2558,6 @@ async function copyAccountNumber(
 
     }
 
-
     if(toastTimer){
 
       clearTimeout(
@@ -3087,23 +2566,19 @@ async function copyAccountNumber(
 
     }
 
-
     copyToast
       .classList
       .remove(
         'show'
       );
 
-
     void copyToast.offsetWidth;
-
 
     copyToast
       .classList
       .add(
         'show'
       );
-
 
     toastTimer =
       setTimeout(()=>{
@@ -3114,12 +2589,10 @@ async function copyAccountNumber(
             'show'
           );
 
-
         toastTimer =
           null;
 
       },1550);
-
 
   }catch(error){
 
@@ -3128,7 +2601,6 @@ async function copyAccountNumber(
   }
 
 }
-
 
 document
   .querySelectorAll(
@@ -3141,7 +2613,6 @@ document
       e=>{
 
         e.stopPropagation();
-
 
         copyAccountNumber(
           el.dataset.account
@@ -3161,14 +2632,6 @@ window.addEventListener(
   'pageshow',
   ()=>{
 
-    /*
-      외부 링크에서 돌아왔을 때
-      아이콘 눌림 상태만 해제.
-
-      Page 3 애니메이션은
-      다시 시작하지 않는다.
-    */
-
     document
       .querySelectorAll(
         '.icon-motion-wrapper'
@@ -3183,15 +2646,8 @@ window.addEventListener(
 
       });
 
-
-    /*
-      Safari가 복귀하면서 화면 폭을
-      다시 계산한 경우에만 높이 정렬.
-    */
-
     const currentWidth =
       window.innerWidth;
-
 
     if(
       Math.abs(
@@ -3202,7 +2658,6 @@ window.addEventListener(
 
       lastViewportWidth =
         currentWidth;
-
 
       updatePageHeights();
 
