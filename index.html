@@ -71,7 +71,6 @@ body{
   opacity:1;
   visibility:visible;
   pointer-events:auto;
-
   transition:
     opacity .45s ease-in-out,
     visibility 0s linear .45s;
@@ -90,40 +89,20 @@ body{
 
 .bgm-btn{
   position:fixed;
-
-  top:max(
-    20px,
-    env(safe-area-inset-top)
-  );
-
-  left:max(
-    20px,
-    env(safe-area-inset-left)
-  );
-
+  top:max(20px,env(safe-area-inset-top));
+  left:max(20px,env(safe-area-inset-left));
   z-index:10000;
-
   width:36px;
   height:36px;
-
   border-radius:50%;
-
-  border:
-    1px solid rgba(0,0,0,.1);
-
-  background:
-    rgba(255,255,255,.7);
-
+  border:1px solid rgba(0,0,0,.1);
+  background:rgba(255,255,255,.7);
   display:grid;
   place-items:center;
-
   backdrop-filter:blur(4px);
   -webkit-backdrop-filter:blur(4px);
-
   cursor:pointer;
-
-  -webkit-tap-highlight-color:
-    transparent;
+  -webkit-tap-highlight-color:transparent;
 }
 
 .bgm-btn svg{
@@ -138,92 +117,45 @@ body{
 ========================= */
 
 @keyframes fadeIn{
-
-  from{
-    opacity:0;
-  }
-
-  to{
-    opacity:1;
-  }
-
+  from{opacity:0}
+  to{opacity:1}
 }
 
-
 @keyframes growTree{
-
   from{
     opacity:0;
     transform:scale(0);
   }
-
   to{
     opacity:1;
     transform:scale(1);
   }
-
 }
-
 
 @keyframes flyAndStop{
-
   from{
     opacity:0;
-    transform:
-      translate(120px,-20px);
+    transform:translate(120px,-20px);
   }
-
   to{
     opacity:1;
-    transform:
-      translate(0,0);
+    transform:translate(0,0);
   }
-
 }
-
 
 @keyframes title2FromLine{
-
-  0%{
-    transform:
-      translateY(-2.8556%);
-  }
-
-  100%{
-    transform:
-      translateY(0);
-  }
-
+  0%{transform:translateY(-2.8556%)}
+  100%{transform:translateY(0)}
 }
-
 
 @keyframes title3FromLine{
-
-  0%{
-    transform:
-      translateY(-2.9085%);
-  }
-
-  100%{
-    transform:
-      translateY(0);
-  }
-
+  0%{transform:translateY(-2.9085%)}
+  100%{transform:translateY(0)}
 }
 
-
 @keyframes title4FromLine{
-
-  0%{
-    transform:
-      translateY(-2.9085%);
-  }
-
-  100%{
-    transform:
-      translateY(0);
-  }
-
+  0%{transform:translateY(-2.9085%)}
+  100%{transform:translateY(0)}
 }
 
 
@@ -236,60 +168,41 @@ body{
 .title4-reveal{
   position:absolute;
   inset:0;
-
   z-index:20;
-
   overflow:hidden;
-
   visibility:hidden;
-
   pointer-events:none;
 }
 
-
 .title2-reveal{
-  clip-path:
-    inset(20.5182% 0 0 0);
+  clip-path:inset(20.5182% 0 0 0);
 }
-
 
 .title3-reveal{
-  clip-path:
-    inset(25.8065% 0 0 0);
+  clip-path:inset(25.8065% 0 0 0);
 }
-
 
 .title4-reveal{
-  clip-path:
-    inset(30.4072% 0 0 0);
+  clip-path:inset(30.4072% 0 0 0);
 }
-
 
 .title2-reveal .title22,
 .title3-reveal .title32,
 .title4-reveal .title42{
   display:none;
-
   opacity:0!important;
-
   visibility:hidden;
-
   width:100%;
   height:100%;
-
   object-fit:fill;
-
   position:absolute;
   inset:0;
 }
 
-
 .title2-reveal.run .title22,
 .title3-reveal.run .title32{
   display:block;
-
   opacity:1!important;
-
   visibility:visible;
 }
 
@@ -299,92 +212,35 @@ body{
 ========================= */
 
 .page1 .tree1{
-  transform-origin:
-    50% 82%;
+  transform-origin:50% 82%;
 }
 
-
-.site-ready
-.page1
-.background1{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    0s
-    both;
+.site-ready .page1 .background1{
+  animation:fadeIn 1.3s ease-in-out 0s both;
 }
 
-
-.site-ready
-.page1
-.rabbit1{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    1.3s
-    both;
+.site-ready .page1 .rabbit1{
+  animation:fadeIn 1.3s ease-in-out 1.3s both;
 }
 
-
-.site-ready
-.page1
-.tree1{
-  animation:
-    growTree
-    1.3s
-    ease-in-out
-    2.6s
-    both;
+.site-ready .page1 .tree1{
+  animation:growTree 1.3s ease-in-out 2.6s both;
 }
 
-
-.site-ready
-.page1
-.bird1{
-  animation:
-    flyAndStop
-    1.3s
-    ease-in-out
-    3.9s
-    both;
+.site-ready .page1 .bird1{
+  animation:flyAndStop 1.3s ease-in-out 3.9s both;
 }
 
-
-.site-ready
-.page1
-.title1{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    5.2s
-    both;
+.site-ready .page1 .title1{
+  animation:fadeIn 1.3s ease-in-out 5.2s both;
 }
 
-
-.site-ready
-.page1
-.date1{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    6.5s
-    both;
+.site-ready .page1 .date1{
+  animation:fadeIn 1.3s ease-in-out 6.5s both;
 }
 
-
-.site-ready
-.page1
-.name1{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    7.8s
-    both;
+.site-ready .page1 .name1{
+  animation:fadeIn 1.3s ease-in-out 7.8s both;
 }
 
 
@@ -399,7 +255,6 @@ body{
 .page2 .message2,
 
 .page3 .background3,
-
 .page3 .r31,
 .page3 .r32,
 .page3 .r33,
@@ -412,19 +267,18 @@ body{
 .page3 .r310,
 .page3 .r311,
 .page3 .r312,
-
 .page3 .title31,
-
 .page3 .message3,
-
 .page3 .details3,
-
 .page3 .blessing3{
   opacity:0;
   visibility:hidden;
 }
 
 
+/*
+  등장 애니메이션 중
+*/
 .page2 .background2.run,
 .page2 .photo2.run,
 .page2 .flower2.run,
@@ -432,7 +286,6 @@ body{
 .page2 .message2.run,
 
 .page3 .background3.run,
-
 .page3 .r31.run,
 .page3 .r32.run,
 .page3 .r33.run,
@@ -445,21 +298,50 @@ body{
 .page3 .r310.run,
 .page3 .r311.run,
 .page3 .r312.run,
-
 .page3 .title31.run,
-
 .page3 .message3.run,
-
 .page3 .details3.run,
-
 .page3 .blessing3.run{
   visibility:visible;
+  animation:fadeIn 1.3s ease-in-out;
+}
 
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    both;
+
+/*
+  ★ Android 수정 핵심
+
+  1.3초 애니메이션이 끝난 레이어는
+  animation 상태로 계속 두지 않는다.
+
+  .shown 상태로 바꾸고
+  정적인 opacity:1 상태로 확정한다.
+*/
+.page2 .background2.shown,
+.page2 .photo2.shown,
+.page2 .flower2.shown,
+.page2 .title21.shown,
+.page2 .message2.shown,
+
+.page3 .background3.shown,
+.page3 .r31.shown,
+.page3 .r32.shown,
+.page3 .r33.shown,
+.page3 .r34.shown,
+.page3 .r35.shown,
+.page3 .r36.shown,
+.page3 .r37.shown,
+.page3 .r38.shown,
+.page3 .r39.shown,
+.page3 .r310.shown,
+.page3 .r311.shown,
+.page3 .r312.shown,
+.page3 .title31.shown,
+.page3 .message3.shown,
+.page3 .details3.shown,
+.page3 .blessing3.shown{
+  opacity:1!important;
+  visibility:visible!important;
+  animation:none!important;
 }
 
 
@@ -467,34 +349,29 @@ body{
    PAGE 2
 ========================= */
 
-.page2
-.title2-reveal.run{
+.page2 .title2-reveal.run,
+.page2 .title2-reveal.shown{
   visibility:visible;
 }
 
-
-.page2
-.title2-reveal.run
-.title22{
+.page2 .title2-reveal.run .title22{
   display:block;
-
   opacity:1!important;
-
-  visibility:visible;
-
-  animation:
-    title2FromLine
-    1.3s
-    linear
-    both;
+  visibility:visible!important;
+  animation:title2FromLine 1.3s linear;
 }
 
+.page2 .title2-reveal.shown .title22{
+  display:block;
+  opacity:1!important;
+  visibility:visible!important;
+  animation:none!important;
+  transform:translateY(0)!important;
+}
 
 .flower2{
   filter:none!important;
-
-  mix-blend-mode:
-    normal!important;
+  mix-blend-mode:normal!important;
 }
 
 
@@ -502,170 +379,119 @@ body{
    PAGE 3
 ========================= */
 
-.page3
-.icon-place-motion.run,
-
-.page3
-.icon-gift-motion.run{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    both;
-}
-
-
-.page3
-.title3-reveal.run{
+.page3 .icon-place-motion.run,
+.page3 .icon-gift-motion.run{
   visibility:visible;
+  animation:fadeIn 1.3s ease-in-out;
 }
 
-
-.page3
-.title3-reveal.run
-.title32{
-  display:block;
-
+.page3 .icon-place-motion.shown,
+.page3 .icon-gift-motion.shown{
   opacity:1!important;
+  visibility:visible!important;
+  animation:none!important;
+}
 
+.page3 .title3-reveal.run,
+.page3 .title3-reveal.shown{
   visibility:visible;
+}
 
-  animation:
-    title3FromLine
-    1.3s
-    linear
-    both;
+.page3 .title3-reveal.run .title32{
+  display:block;
+  opacity:1!important;
+  visibility:visible!important;
+  animation:title3FromLine 1.3s linear;
+}
+
+.page3 .title3-reveal.shown .title32{
+  display:block;
+  opacity:1!important;
+  visibility:visible!important;
+  animation:none!important;
+  transform:translateY(0)!important;
 }
 
 
 /* =========================
-   ICON
+   ICON MOTION
 ========================= */
 
 .icon-motion-wrapper{
   position:absolute;
-
   z-index:70;
-
   overflow:hidden;
-
   opacity:0;
-
+  visibility:hidden;
   pointer-events:none;
 
-  transform:
-    scale(1);
+  -webkit-transform:scale(1);
+  transform:scale(1);
 
-  -webkit-transform:
-    scale(1);
+  -webkit-transform-origin:50% 50%;
+  transform-origin:50% 50%;
 
-  transform-origin:
-    50% 50%;
+  -webkit-transition:-webkit-transform 140ms ease-out;
+  transition:transform 140ms ease-out;
 
-  -webkit-transform-origin:
-    50% 50%;
-
-  transition:
-    transform
-    140ms
-    ease-out;
-
-  -webkit-transition:
-    -webkit-transform
-    140ms
-    ease-out;
-
-  -webkit-tap-highlight-color:
-    transparent;
+  -webkit-tap-highlight-color:transparent;
 }
-
 
 .icon-motion-wrapper.is-pressed{
-  transform:
-    scale(.82);
-
-  -webkit-transform:
-    scale(.82);
+  -webkit-transform:scale(.82);
+  transform:scale(.82);
 }
 
-
-.page3
-.icon-place-motion.ready,
-
-.page3
-.icon-gift-motion.ready{
+.page3 .icon-place-motion.ready,
+.page3 .icon-gift-motion.ready{
   pointer-events:auto;
 }
-
 
 .icon-place-motion{
   left:66.6667%;
   top:51.0312%;
-
   width:9.1979%;
   height:6.6103%;
 }
 
-
 .icon-gift-motion{
   left:82.3400%;
   top:89.1063%;
-
   width:7.5791%;
   height:5.4469%;
 }
 
-
 .icon-crop-source{
   position:absolute;
-
   max-width:none;
-
   pointer-events:none;
-
   object-fit:fill;
 }
 
-
-.icon-place-motion
-.icon-crop-source{
+.icon-place-motion .icon-crop-source{
   width:1087.2%;
   height:1512.8%;
-
   left:-724.8%;
   top:-772%;
 }
 
-
-.icon-gift-motion
-.icon-crop-source{
+.icon-gift-motion .icon-crop-source{
   width:1319.4175%;
   height:1835.9223%;
-
   left:-1086.4078%;
   top:-1635.9223%;
 }
 
-
 .icon-motion-click{
   position:absolute;
-
   inset:0;
-
   z-index:3;
-
   border:0;
   outline:0;
-
   background:transparent;
-
   cursor:pointer;
-
-  -webkit-tap-highlight-color:
-    transparent;
-
+  -webkit-tap-highlight-color:transparent;
   appearance:none;
-
   -webkit-appearance:none;
 }
 
@@ -676,94 +502,56 @@ body{
 
 .page4-modal{
   position:fixed;
-
   inset:0;
-
   z-index:15000;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
-  background:
-    rgba(0,0,0,0);
+  background:rgba(0,0,0,0);
 
   visibility:hidden;
-
   pointer-events:none;
 
   transition:
-    background-color
-    1.3s
-    ease-in-out,
-
-    visibility
-    0s
-    linear
-    1.3s;
+    background-color 1.3s ease-in-out,
+    visibility 0s linear 1.3s;
 }
-
 
 .page4-modal.active{
   visibility:visible;
-
   pointer-events:auto;
-
-  background:
-    rgba(0,0,0,.62);
-
-  transition:
-    background-color
-    1.3s
-    ease-in-out;
+  background:rgba(0,0,0,.62);
+  transition:background-color 1.3s ease-in-out;
 }
-
 
 .page4-modal.active.closing{
   visibility:visible;
-
   pointer-events:none;
-
-  background:
-    rgba(0,0,0,0);
+  background:rgba(0,0,0,0);
 }
-
 
 .page4-content{
   position:relative;
-
   width:100vw;
-
   height:100dvh;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   opacity:0;
-
-  transition:
-    opacity
-    1.3s
-    ease-in-out;
+  transition:opacity 1.3s ease-in-out;
 }
 
-
-.page4-modal.active
-.page4-content{
+.page4-modal.active .page4-content{
   opacity:1;
 }
 
-
-.page4-modal.active.closing
-.page4-content{
+.page4-modal.active.closing .page4-content{
   opacity:0;
 }
-
 
 .page4-card{
   position:relative;
@@ -774,114 +562,61 @@ body{
     1360px
   );
 
-  aspect-ratio:
-    1360/1891;
-
+  aspect-ratio:1360/1891;
   overflow:hidden;
-
   background:transparent;
 }
 
 
 /* =========================
-   PAGE 4 ANIMATION
+   PAGE 4 등장
 ========================= */
 
-.page4-modal.active
-.background4{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    0s
-    both;
+.page4-modal.active .background4{
+  animation:fadeIn 1.3s ease-in-out 0s both;
 }
 
-
-.page4-modal.active
-.rabbit4{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    1.3s
-    both;
+.page4-modal.active .rabbit4{
+  animation:fadeIn 1.3s ease-in-out 1.3s both;
 }
 
-
-.page4-modal.active
-.title41{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    2.6s
-    both;
+.page4-modal.active .title41{
+  animation:fadeIn 1.3s ease-in-out 2.6s both;
 }
 
-
-.page4-modal
-.title4-reveal{
+.page4-modal .title4-reveal{
   visibility:hidden;
 }
 
-
-.page4-modal.active.title4-ready
-.title4-reveal{
+.page4-modal.active.title4-ready .title4-reveal{
   visibility:visible;
 }
 
-
-.page4-modal.active.title4-ready
-.title4-reveal
-.title42{
+.page4-modal.active.title4-ready .title4-reveal .title42{
   display:block;
-
   opacity:1!important;
-
   visibility:visible!important;
-
-  animation:
-    title4FromLine
-    1.3s
-    linear
-    both;
+  animation:title4FromLine 1.3s linear both;
 }
 
 
 /*
-  닫는 동안 title4-2 유지
+  닫을 때 title4-2 먼저 사라지지 않게 유지
 */
-
-.page4-modal.active.closing.title4-ready
-.title4-reveal{
+.page4-modal.active.closing.title4-ready .title4-reveal{
   visibility:visible!important;
 }
 
-
-.page4-modal.active.closing.title4-ready
-.title42{
+.page4-modal.active.closing.title4-ready .title42{
   display:block!important;
-
   opacity:1!important;
-
   visibility:visible!important;
-
   animation:none!important;
-
-  transform:
-    translateY(0)!important;
+  transform:translateY(0)!important;
 }
 
-
-.page4-modal.active
-.account4{
-  animation:
-    fadeIn
-    1.3s
-    ease-in-out
-    5.2s
-    both;
+.page4-modal.active .account4{
+  animation:fadeIn 1.3s ease-in-out 5.2s both;
 }
 
 
@@ -892,61 +627,41 @@ body{
 .modal-close-btn{
   position:absolute;
 
-  top:max(
-    20px,
-    env(safe-area-inset-top)
-  );
-
-  right:max(
-    20px,
-    env(safe-area-inset-right)
-  );
+  top:max(20px,env(safe-area-inset-top));
+  right:max(20px,env(safe-area-inset-right));
 
   width:36px;
   height:36px;
 
   border:0;
-
   border-radius:50%;
 
-  background:
-    rgba(0,0,0,.55);
+  background:rgba(0,0,0,.55);
 
   z-index:100;
-
   cursor:pointer;
-}
 
+  -webkit-tap-highlight-color:transparent;
+}
 
 .modal-close-btn:before,
 .modal-close-btn:after{
   content:"";
-
   position:absolute;
-
   left:50%;
   top:50%;
-
   width:17px;
   height:2px;
-
   background:#fff;
-
   border-radius:2px;
 }
 
-
 .modal-close-btn:before{
-  transform:
-    translate(-50%,-50%)
-    rotate(45deg);
+  transform:translate(-50%,-50%) rotate(45deg);
 }
 
-
 .modal-close-btn:after{
-  transform:
-    translate(-50%,-50%)
-    rotate(-45deg);
+  transform:translate(-50%,-50%) rotate(-45deg);
 }
 
 
@@ -956,48 +671,37 @@ body{
 
 .account-click{
   position:absolute;
-
   z-index:80;
 
   border:0;
-
   outline:0;
-
   background:transparent;
 
   cursor:pointer;
 
-  -webkit-tap-highlight-color:
-    transparent;
+  -webkit-tap-highlight-color:transparent;
 
   appearance:none;
-
   -webkit-appearance:none;
 }
-
 
 .account-kb{
   left:30.5147%;
   top:42.6230%;
-
   width:38.5294%;
   height:2.0624%;
 }
 
-
 .account-woori{
   left:30.8824%;
   top:52.7763%;
-
   width:37.7206%;
   height:2.1153%;
 }
 
-
 .account-hana{
   left:32.7206%;
   top:60.4971%;
-
   width:34.4118%;
   height:2.0624%;
 }
@@ -1014,75 +718,48 @@ body{
 
   bottom:max(
     30px,
-    calc(
-      env(safe-area-inset-bottom)
-      + 18px
-    )
+    calc(env(safe-area-inset-bottom) + 18px)
   );
 
   z-index:20000;
 
-  padding:
-    10px 17px;
+  padding:10px 17px;
 
-  border-radius:
-    999px;
+  border-radius:999px;
 
   color:#fff;
-
-  background:
-    rgba(0,0,0,.58);
+  background:rgba(0,0,0,.58);
 
   font-size:14px;
+  letter-spacing:-.02em;
 
-  letter-spacing:
-    -.02em;
+  white-space:nowrap;
 
-  white-space:
-    nowrap;
-
-  pointer-events:
-    none;
+  pointer-events:none;
 
   opacity:0;
-
-  transform:
-    translate(-50%,8px);
+  transform:translate(-50%,8px);
 }
-
 
 .copy-toast.show{
-  animation:
-    copyToastFade
-    1.55s
-    ease-in-out
-    both;
+  animation:copyToastFade 1.55s ease-in-out both;
 }
 
-
 @keyframes copyToastFade{
-
   0%{
     opacity:0;
-
-    transform:
-      translate(-50%,8px);
+    transform:translate(-50%,8px);
   }
 
   18%,70%{
     opacity:.92;
-
-    transform:
-      translate(-50%,0);
+    transform:translate(-50%,0);
   }
 
   100%{
     opacity:0;
-
-    transform:
-      translate(-50%,-3px);
+    transform:translate(-50%,-3px);
   }
-
 }
 </style>
 </head>
@@ -1434,31 +1111,22 @@ body{
 <script>
 
 /* =========================
-   기본
+   기본 변수
 ========================= */
 
 const root =
-  document.getElementById(
-    'scrollRoot'
-  );
+  document.getElementById('scrollRoot');
 
 const pages =
-  [...document.querySelectorAll(
-    '.page'
-  )];
+  [...document.querySelectorAll('.page')];
 
-const page1 =
-  pages[0];
-
-const page2 =
-  pages[1];
-
-const page3 =
-  pages[2];
+const page1 = pages[0];
+const page2 = pages[1];
+const page3 = pages[2];
 
 
 /* =========================
-   이미지 한 장만 준비
+   이미지 준비
 ========================= */
 
 const imagePromises =
@@ -1489,10 +1157,8 @@ function loadImage(img){
     img.dataset.src &&
     !img.getAttribute('src')
   ){
-
     img.src =
       img.dataset.src;
-
   }
 
 
@@ -1503,26 +1169,13 @@ function loadImage(img){
         img.complete &&
         img.naturalWidth > 0
       ){
-
         resolve();
         return;
-
       }
 
 
       const done = ()=>{
-
-        /*
-          여기서는 강제로 decode()를
-          호출하지 않는다.
-
-          일부 저사양 Android에서
-          여러 대형 PNG를 decode()로
-          미리 올리는 것을 피한다.
-        */
-
         resolve();
-
       };
 
 
@@ -1554,7 +1207,7 @@ function loadImage(img){
 
 
 /* =========================
-   selector에 필요한 이미지만 로드
+   selector 이미지 준비
 ========================= */
 
 async function loadSelectorImages(
@@ -1563,9 +1216,7 @@ async function loadSelectorImages(
 ){
 
   const elements =
-    page.querySelectorAll(
-      selector
-    );
+    page.querySelectorAll(selector);
 
 
   for(const el of elements){
@@ -1573,9 +1224,7 @@ async function loadSelectorImages(
     if(
       el.tagName === 'IMG'
     ){
-
       await loadImage(el);
-
     }
 
 
@@ -1586,9 +1235,7 @@ async function loadSelectorImages(
 
 
     for(const img of images){
-
       await loadImage(img);
-
     }
 
   }
@@ -1597,17 +1244,8 @@ async function loadSelectorImages(
 
 
 /* =========================
-   PAGE 1
+   PAGE 1 준비
 ========================= */
-
-/*
-  1페이지 파일명과
-  애니메이션은 기존 그대로.
-
-  첫 페이지 이미지는 HTML src로
-  직접 로딩되므로 loader만
-  load 상태를 확인한다.
-*/
 
 function waitPage1(){
 
@@ -1663,7 +1301,7 @@ waitPage1()
 
 
 /* =========================
-   PAGE 2 / 3 순차 실행
+   레이어 등장
 ========================= */
 
 function runStep(
@@ -1676,33 +1314,43 @@ function runStep(
     .querySelectorAll(selector)
     .forEach(el=>{
 
-      el.classList.add(
-        'run'
-      );
+      /*
+        혹시 이전 shown 상태가 있으면 제거.
+      */
+      el.classList.remove('shown');
+
+      el.classList.add('run');
 
 
       if(ready){
-
-        el.classList.add(
-          'ready'
-        );
-
+        el.classList.add('ready');
       }
+
+
+      /*
+        ★ 핵심
+
+        fade / title reveal이 끝나는
+        정확히 1.3초 뒤에
+
+        animation을 완전히 제거하고
+        정적인 shown 상태로 바꾼다.
+      */
+      setTimeout(()=>{
+
+        el.classList.remove('run');
+        el.classList.add('shown');
+
+      },1300);
 
     });
 
 }
 
 
-/*
-  핵심:
-
-  페이지 전체 이미지를 미리
-  메모리에 올리지 않는다.
-
-  각 레이어 등장 직전에
-  그 레이어만 로딩한다.
-*/
+/* =========================
+   PAGE 스케줄
+========================= */
 
 function schedulePage(
   page,
@@ -1724,6 +1372,10 @@ function schedulePage(
   steps.forEach(
     ([selector,delay,ready])=>{
 
+      /*
+        등장 약간 전에
+        필요한 파일만 로드.
+      */
       const prepareDelay =
         Math.max(
           0,
@@ -1731,10 +1383,6 @@ function schedulePage(
         );
 
 
-      /*
-        등장 약 450ms 전에
-        해당 레이어만 요청.
-      */
       setTimeout(()=>{
 
         loadSelectorImages(
@@ -1746,8 +1394,7 @@ function schedulePage(
 
 
       /*
-        원래 지정된 시간에
-        해당 레이어 실행.
+        지정된 등장 시간.
       */
       setTimeout(
         async()=>{
@@ -1844,14 +1491,11 @@ function startPage(page){
   /* =========================
      PAGE 3
 
-     정확한 순서:
+     순서 유지:
 
      background3
-
      rabbit3-1 ~ rabbit3-12
-
      title3-1
-
      title3-2
 
      details3 + icon3-1
@@ -1951,10 +1595,8 @@ function startPage(page){
 
 
         /*
-          먼저:
-          details3 + icon3-1
+          details3 + icon3-1 먼저
         */
-
         [
           '.details3,.icon-place-motion',
           9.05,
@@ -1963,10 +1605,8 @@ function startPage(page){
 
 
         /*
-          그 다음:
-          message3
+          message3 다음
         */
-
         [
           '.message3',
           10.35
@@ -1974,10 +1614,8 @@ function startPage(page){
 
 
         /*
-          마지막:
-          blessing3 + icon3-2
+          blessing3 + icon3-2 마지막
         */
-
         [
           '.blessing3,.icon-gift-motion',
           11.65,
@@ -1993,33 +1631,29 @@ function startPage(page){
 
 
 /* =========================
-   화면 진입 감지
+   PAGE 진입 감지
 ========================= */
 
 const io =
   new IntersectionObserver(
-
     entries=>{
 
-      entries.forEach(
-        entry=>{
+      entries.forEach(entry=>{
 
-          if(
-            entry.isIntersecting &&
-            entry.target !== page1
-          ){
+        if(
+          entry.isIntersecting &&
+          entry.target !== page1
+        ){
 
-            startPage(
-              entry.target
-            );
-
-          }
+          startPage(
+            entry.target
+          );
 
         }
-      );
+
+      });
 
     },
-
     {
 
       root:root,
@@ -2030,7 +1664,6 @@ const io =
         '0px 0px -10% 0px'
 
     }
-
   );
 
 
@@ -2048,21 +1681,13 @@ pages
 ========================= */
 
 const bgm =
-  document.getElementById(
-    'bgm'
-  );
-
+  document.getElementById('bgm');
 
 const btn =
-  document.getElementById(
-    'bgmBtn'
-  );
-
+  document.getElementById('bgmBtn');
 
 const musicIcon =
-  document.getElementById(
-    'musicIcon'
-  );
+  document.getElementById('musicIcon');
 
 
 let isPlaying =
@@ -2131,9 +1756,7 @@ btn.addEventListener(
 function firstTouch(){
 
   if(!isPlaying){
-
     playAudio();
-
   }
 
 
@@ -2153,7 +1776,7 @@ window.addEventListener(
 
 
 /* =========================
-   ICON PRESS
+   아이콘 클릭 모션
 ========================= */
 
 function bindPress(
@@ -2175,9 +1798,7 @@ function bindPress(
 
       wrapper
         .classList
-        .add(
-          'is-pressed'
-        );
+        .add('is-pressed');
 
     }
   );
@@ -2187,52 +1808,41 @@ function bindPress(
     'pointerup',
     'pointercancel',
     'pointerleave'
+  ].forEach(eventName=>{
 
-  ].forEach(
-    eventName=>{
+    button.addEventListener(
+      eventName,
+      ()=>{
 
-      button.addEventListener(
-        eventName,
-        ()=>{
+        wrapper
+          .classList
+          .remove('is-pressed');
 
-          wrapper
-            .classList
-            .remove(
-              'is-pressed'
-            );
+      }
+    );
 
-        }
-      );
-
-    }
-  );
+  });
 
 }
 
 
 bindPress(
-
   document.getElementById(
     'placeHotspot'
   ),
-
   document.getElementById(
     'placeIconMotion'
   )
-
 );
 
 
 bindPress(
-
   document.getElementById(
     'openPage4'
   ),
-
   document.getElementById(
     'giftIconMotion'
   )
-
 );
 
 
@@ -2267,15 +1877,10 @@ let title4Timer =
 
 
 /* =========================
-   PAGE 4 필요한 파일 로딩
+   PAGE 4 이미지 준비
 ========================= */
 
 async function preparePage4(){
-
-  /*
-    PAGE 4는 클릭했을 때만
-    순차 로딩한다.
-  */
 
   const images = [
 
@@ -2303,24 +1908,20 @@ async function preparePage4(){
 
 
   for(const img of images){
-
     await loadImage(img);
-
   }
 
 }
 
 
 /* =========================
-   PAGE 4 animation reset
+   PAGE 4 애니메이션 초기화
 ========================= */
 
 function resetPage4Animations(){
 
   page4Modal
-    .querySelectorAll(
-      '.layer'
-    )
+    .querySelectorAll('.layer')
     .forEach(el=>{
 
       el.style.animation =
@@ -2356,7 +1957,7 @@ function resetPage4Animations(){
 
 
 /* =========================
-   PAGE 4 OPEN
+   PAGE 4 열기
 ========================= */
 
 async function showPage4(){
@@ -2401,9 +2002,7 @@ async function showPage4(){
 
   page4Modal
     .classList
-    .add(
-      'active'
-    );
+    .add('active');
 
 
   page4Modal.setAttribute(
@@ -2418,22 +2017,16 @@ async function showPage4(){
       if(
         page4Modal
           .classList
-          .contains(
-            'active'
-          ) &&
+          .contains('active') &&
 
         !page4Modal
           .classList
-          .contains(
-            'closing'
-          )
+          .contains('closing')
       ){
 
         page4Modal
           .classList
-          .add(
-            'title4-ready'
-          );
+          .add('title4-ready');
 
       }
 
@@ -2447,7 +2040,7 @@ async function showPage4(){
 
 
 /* =========================
-   PAGE 4 CLOSE
+   PAGE 4 닫기
 ========================= */
 
 function hidePage4(){
@@ -2455,15 +2048,11 @@ function hidePage4(){
   if(
     !page4Modal
       .classList
-      .contains(
-        'active'
-      ) ||
+      .contains('active') ||
 
     page4Modal
       .classList
-      .contains(
-        'closing'
-      )
+      .contains('closing')
   ){
 
     return;
@@ -2484,19 +2073,16 @@ function hidePage4(){
 
 
   /*
-    title4-ready는
-    페이드 전에 제거하지 않는다.
+    title4-ready는 여기서 제거하지 않는다.
 
-    title4-2 포함 현재 보이는
-    PAGE 4 전체가 그대로
+    title4-2 포함
+    현재 보이는 PAGE 4 전체를
+    그대로 유지한 상태에서
     1.3초 페이드아웃.
   */
-
   page4Modal
     .classList
-    .add(
-      'closing'
-    );
+    .add('closing');
 
 
   closeTimer =
@@ -2526,7 +2112,7 @@ function hidePage4(){
 
 
 /* =========================
-   PAGE 4 EVENT
+   PAGE 4 이벤트
 ========================= */
 
 openPage4.addEventListener(
@@ -2576,7 +2162,7 @@ page4Modal.addEventListener(
 
 
 /* =========================
-   COPY
+   계좌번호 복사
 ========================= */
 
 const copyToast =
@@ -2610,10 +2196,8 @@ function fallbackCopy(text){
   textarea.style.position =
     'fixed';
 
-
   textarea.style.left =
     '-9999px';
-
 
   textarea.style.opacity =
     '0';
@@ -2649,10 +2233,7 @@ async function copyAccountNumber(
 
   const digitsOnly =
     String(value)
-      .replace(
-        /\D/g,
-        ''
-      );
+      .replace(/\D/g,'');
 
 
   try{
@@ -2688,9 +2269,7 @@ async function copyAccountNumber(
 
     copyToast
       .classList
-      .remove(
-        'show'
-      );
+      .remove('show');
 
 
     void copyToast.offsetWidth;
@@ -2698,9 +2277,7 @@ async function copyAccountNumber(
 
     copyToast
       .classList
-      .add(
-        'show'
-      );
+      .add('show');
 
 
     toastTimer =
@@ -2708,9 +2285,7 @@ async function copyAccountNumber(
 
         copyToast
           .classList
-          .remove(
-            'show'
-          );
+          .remove('show');
 
 
         toastTimer =
@@ -2752,7 +2327,7 @@ document
 
 
 /* =========================
-   외부 페이지 복귀
+   외부 페이지에서 복귀
 ========================= */
 
 window.addEventListener(
