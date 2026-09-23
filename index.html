@@ -6,9 +6,14 @@
 <title>KIMUN & FUTABA</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-html,body{
+html,
+body{
   width:100%;
   height:100%;
   background:#fff;
@@ -23,54 +28,94 @@ body{
 .scroll-root{
   width:100%;
   height:100%;
+
   overflow-y:auto;
   overflow-x:hidden;
+
   -webkit-overflow-scrolling:touch;
+
   overscroll-behavior:none;
+
   display:flex;
   flex-direction:column;
   align-items:center;
+
   background:#fff;
 }
 
+
+/* =========================================================
+   PAGE
+
+   변경:
+   기존 aspect-ratio는 fallback으로 유지.
+
+   실제 높이는 JS에서
+   현재 렌더링 너비 × 1891 / 1360
+   값을 정수 px로 계산해서 지정한다.
+
+   페이지 간 음수 margin 없음.
+========================================================= */
+
 .page{
   position:relative;
+
   width:min(100%,1360px);
+
   aspect-ratio:1360/1891;
+
   flex:0 0 auto;
+
   overflow:hidden;
+
   background:transparent;
+
   line-height:0;
 }
 
-/* 페이지 사이: 여백 0 / 겹침 0 */
+
+/* 페이지 사이
+   여백 0
+   겹침 0
+*/
 .page+.page{
   margin-top:0;
 }
 
+
 .layer{
   position:absolute;
   inset:0;
+
   width:100%;
   height:100%;
+
   object-fit:fill;
+
   opacity:0;
+
   pointer-events:none;
+
   display:block;
 }
 
 
-/* =========================
+/* =========================================================
    INITIAL LOADER
-========================= */
+========================================================= */
 
 .initial-loader{
   position:fixed;
   inset:0;
+
   z-index:20000;
+
   background:#fff;
+
   opacity:1;
+
   visibility:visible;
+
   pointer-events:auto;
 
   transition:
@@ -78,16 +123,19 @@ body{
     visibility 0s linear .45s;
 }
 
+
 .site-ready .initial-loader{
   opacity:0;
+
   visibility:hidden;
+
   pointer-events:none;
 }
 
 
-/* =========================
+/* =========================================================
    BGM
-========================= */
+========================================================= */
 
 .bgm-btn{
   position:fixed;
@@ -116,10 +164,13 @@ body{
     rgba(255,255,255,.7);
 
   display:grid;
+
   place-items:center;
 
   backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
+
+  -webkit-backdrop-filter:
+    blur(4px);
 
   cursor:pointer;
 
@@ -127,16 +178,18 @@ body{
     transparent;
 }
 
+
 .bgm-btn svg{
   width:18px;
   height:18px;
+
   fill:#555;
 }
 
 
-/* =========================
+/* =========================================================
    KEYFRAMES
-========================= */
+========================================================= */
 
 @keyframes fadeIn{
 
@@ -155,12 +208,16 @@ body{
 
   from{
     opacity:0;
-    transform:scale(0);
+
+    transform:
+      scale(0);
   }
 
   to{
     opacity:1;
-    transform:scale(1);
+
+    transform:
+      scale(1);
   }
 
 }
@@ -170,12 +227,14 @@ body{
 
   from{
     opacity:0;
+
     transform:
       translate(120px,-20px);
   }
 
   to{
     opacity:1;
+
     transform:
       translate(0,0);
   }
@@ -228,9 +287,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    TITLE REVEAL
-========================= */
+========================================================= */
 
 .title2-reveal,
 .title3-reveal,
@@ -295,9 +354,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 1
-========================= */
+========================================================= */
 
 .page1 .tree1{
   transform-origin:
@@ -389,9 +448,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 2 / PAGE 3
-========================= */
+========================================================= */
 
 .page2 .background2,
 .page2 .photo2,
@@ -422,6 +481,7 @@ body{
 
 .page3 .blessing3{
   opacity:0;
+
   visibility:hidden;
 }
 
@@ -463,9 +523,10 @@ body{
 }
 
 
-/* =========================
-   ANDROID STATIC STATE
-========================= */
+/* =========================================================
+   PAGE 2 / 3
+   ANIMATION FINISHED STATIC STATE
+========================================================= */
 
 .page2 .background2.shown,
 .page2 .photo2.shown,
@@ -496,17 +557,20 @@ body{
 
 .page3 .blessing3.shown{
   opacity:1!important;
+
   visibility:visible!important;
+
   animation:none!important;
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 2
-========================= */
+========================================================= */
 
 .page2
 .title2-reveal.run,
+
 .page2
 .title2-reveal.shown{
   visibility:visible;
@@ -520,7 +584,7 @@ body{
 
   opacity:1!important;
 
-  visibility:visible;
+  visibility:visible!important;
 
   animation:
     title2FromLine
@@ -553,9 +617,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 3
-========================= */
+========================================================= */
 
 .page3
 .icon-place-motion.run,
@@ -577,7 +641,9 @@ body{
 .page3
 .icon-gift-motion.shown{
   opacity:1!important;
+
   visibility:visible!important;
+
   animation:none!important;
 }
 
@@ -598,7 +664,7 @@ body{
 
   opacity:1!important;
 
-  visibility:visible;
+  visibility:visible!important;
 
   animation:
     title3FromLine
@@ -623,9 +689,9 @@ body{
 }
 
 
-/* =========================
-   ICON
-========================= */
+/* =========================================================
+   PAGE 3 ICON
+========================================================= */
 
 .icon-motion-wrapper{
   position:absolute;
@@ -742,6 +808,7 @@ body{
   z-index:3;
 
   border:0;
+
   outline:0;
 
   background:transparent;
@@ -757,9 +824,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 4
-========================= */
+========================================================= */
 
 .page4-modal{
   position:fixed;
@@ -870,9 +937,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 4 ANIMATION
-========================= */
+========================================================= */
 
 .page4-modal.active
 .background4{
@@ -936,9 +1003,7 @@ body{
 }
 
 
-/*
-  닫는 동안 title4-2 유지
-*/
+/* 닫는 동안 title4-2 유지 */
 
 .page4-modal.active.closing.title4-ready
 .title4-reveal{
@@ -972,9 +1037,9 @@ body{
 }
 
 
-/* =========================
-   CLOSE BUTTON
-========================= */
+/* =========================================================
+   PAGE 4 CLOSE BUTTON
+========================================================= */
 
 .modal-close-btn{
   position:absolute;
@@ -1002,6 +1067,9 @@ body{
   z-index:100;
 
   cursor:pointer;
+
+  -webkit-tap-highlight-color:
+    transparent;
 }
 
 
@@ -1037,9 +1105,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    ACCOUNT
-========================= */
+========================================================= */
 
 .account-click{
   position:absolute;
@@ -1090,9 +1158,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    COPY TOAST
-========================= */
+========================================================= */
 
 .copy-toast{
   position:fixed;
@@ -1128,8 +1196,7 @@ body{
   white-space:
     nowrap;
 
-  pointer-events:
-    none;
+  pointer-events:none;
 
   opacity:0;
 
@@ -1156,7 +1223,8 @@ body{
       translate(-50%,8px);
   }
 
-  18%,70%{
+  18%,
+  70%{
     opacity:.92;
 
     transform:
@@ -1171,6 +1239,7 @@ body{
   }
 
 }
+
 </style>
 </head>
 
@@ -1214,9 +1283,9 @@ body{
   id="scrollRoot">
 
 
-<!-- =========================
+<!-- ======================================================
      PAGE 1
-========================= -->
+====================================================== -->
 
 <section class="page page1">
 
@@ -1251,9 +1320,9 @@ body{
 </section>
 
 
-<!-- =========================
+<!-- ======================================================
      PAGE 2
-========================= -->
+====================================================== -->
 
 <section class="page page2">
 
@@ -1290,9 +1359,9 @@ body{
 </section>
 
 
-<!-- =========================
+<!-- ======================================================
      PAGE 3
-========================= -->
+====================================================== -->
 
 <section class="page page3">
 
@@ -1425,9 +1494,9 @@ body{
 </main>
 
 
-<!-- =========================
+<!-- ======================================================
      PAGE 4
-========================= -->
+====================================================== -->
 
 <div
   class="page4-modal"
@@ -1520,33 +1589,173 @@ body{
 
 <script>
 
-/* =========================
-   기본
-========================= */
+/* =========================================================
+   BASIC
+========================================================= */
 
 const root =
   document.getElementById(
     'scrollRoot'
   );
 
+
 const pages =
   [...document.querySelectorAll(
     '.page'
   )];
 
+
 const page1 =
   pages[0];
 
+
 const page2 =
   pages[1];
+
 
 const page3 =
   pages[2];
 
 
-/* =========================
-   이미지 한 장 준비
-========================= */
+/* =========================================================
+   PAGE HEIGHT
+
+   변경 부분.
+
+   실제 렌더링된 페이지 너비를 기준으로
+   1360 : 1891 비율의 높이를 계산한 다음
+   정수 CSS px로 고정한다.
+
+   페이지 사이에 음수 margin을 사용하지 않는다.
+========================================================= */
+
+function updatePageHeights(){
+
+  pages.forEach(page=>{
+
+    /*
+      width는 CSS에서 이미
+      min(100%,1360px)로 결정된 상태.
+
+      getBoundingClientRect()로
+      실제 렌더링 너비를 읽는다.
+    */
+
+    const width =
+      page.getBoundingClientRect().width;
+
+
+    if(
+      !width ||
+      width <= 0
+    ){
+      return;
+    }
+
+
+    /*
+      원본:
+      1360 × 1891
+
+      계산 결과를 정수 CSS px로 고정.
+    */
+
+    const height =
+      Math.round(
+        width * 1891 / 1360
+      );
+
+
+    page.style.height =
+      height + 'px';
+
+
+    /*
+      JS height가 명확하게 적용되도록
+      flex-basis도 같은 값으로 고정.
+    */
+
+    page.style.flexBasis =
+      height + 'px';
+
+  });
+
+}
+
+
+/*
+  첫 화면에서 애니메이션 시작 전에
+  페이지 높이부터 확정.
+*/
+
+updatePageHeights();
+
+
+/*
+  화면 폭이 실제로 달라졌을 때만
+  다시 계산한다.
+
+  Safari 주소창이 단순히 위/아래로 움직여
+  viewport 높이만 변하는 경우에는
+  불필요하게 페이지 높이를 바꾸지 않는다.
+*/
+
+let lastViewportWidth =
+  window.innerWidth;
+
+
+function handleViewportResize(){
+
+  const currentWidth =
+    window.innerWidth;
+
+
+  if(
+    Math.abs(
+      currentWidth -
+      lastViewportWidth
+    ) < 1
+  ){
+    return;
+  }
+
+
+  lastViewportWidth =
+    currentWidth;
+
+
+  updatePageHeights();
+
+}
+
+
+window.addEventListener(
+  'resize',
+  handleViewportResize,
+  {passive:true}
+);
+
+
+window.addEventListener(
+  'orientationchange',
+  ()=>{
+
+    setTimeout(()=>{
+
+      lastViewportWidth =
+        window.innerWidth;
+
+      updatePageHeights();
+
+    },100);
+
+  }
+);
+
+
+/* =========================================================
+   IMAGE LOADING
+========================================================= */
 
 const imagePromises =
   new WeakMap();
@@ -1555,7 +1764,9 @@ const imagePromises =
 function loadImage(img){
 
   if(!img){
+
     return Promise.resolve();
+
   }
 
 
@@ -1563,12 +1774,18 @@ function loadImage(img){
     img.complete &&
     img.naturalWidth > 0
   ){
+
     return Promise.resolve();
+
   }
 
 
-  if(imagePromises.has(img)){
+  if(
+    imagePromises.has(img)
+  ){
+
     return imagePromises.get(img);
+
   }
 
 
@@ -1592,13 +1809,16 @@ function loadImage(img){
       ){
 
         resolve();
+
         return;
 
       }
 
 
       const done = ()=>{
+
         resolve();
+
       };
 
 
@@ -1629,9 +1849,9 @@ function loadImage(img){
 }
 
 
-/* =========================
-   selector 이미지 로드
-========================= */
+/* =========================================================
+   SELECTOR IMAGE LOADING
+========================================================= */
 
 async function loadSelectorImages(
   page,
@@ -1672,24 +1892,29 @@ async function loadSelectorImages(
 }
 
 
-/* =========================
-   PAGE 1
-========================= */
+/* =========================================================
+   PAGE 1 INITIAL LOAD
+========================================================= */
 
 function waitPage1(){
 
   const images =
-    page1.querySelectorAll('img');
+    page1.querySelectorAll(
+      'img'
+    );
 
 
   return Promise.all(
+
     [...images].map(img=>{
 
       if(
         img.complete &&
         img.naturalWidth > 0
       ){
+
         return Promise.resolve();
+
       }
 
 
@@ -1701,6 +1926,7 @@ function waitPage1(){
           {once:true}
         );
 
+
         img.addEventListener(
           'error',
           resolve,
@@ -1710,6 +1936,7 @@ function waitPage1(){
       });
 
     })
+
   );
 
 }
@@ -1718,20 +1945,30 @@ function waitPage1(){
 waitPage1()
   .finally(()=>{
 
+    /*
+      이미지가 준비된 뒤에도
+      현재 폭 기준 높이를 한 번 더 확인.
+    */
+
+    updatePageHeights();
+
+
     requestAnimationFrame(()=>{
 
       document.body
         .classList
-        .add('site-ready');
+        .add(
+          'site-ready'
+        );
 
     });
 
   });
 
 
-/* =========================
-   PAGE 2 / 3 실행
-========================= */
+/* =========================================================
+   PAGE 2 / 3 RUN STEP
+========================================================= */
 
 function runStep(
   page,
@@ -1740,12 +1977,15 @@ function runStep(
 ){
 
   page
-    .querySelectorAll(selector)
+    .querySelectorAll(
+      selector
+    )
     .forEach(el=>{
 
       el.classList.remove(
         'shown'
       );
+
 
       el.classList.add(
         'run'
@@ -1767,6 +2007,7 @@ function runStep(
           'run'
         );
 
+
         el.classList.add(
           'shown'
         );
@@ -1778,9 +2019,9 @@ function runStep(
 }
 
 
-/* =========================
-   PAGE 스케줄
-========================= */
+/* =========================================================
+   PAGE SCHEDULE
+========================================================= */
 
 function schedulePage(
   page,
@@ -1791,7 +2032,9 @@ function schedulePage(
     !page ||
     page.dataset.started === '1'
   ){
+
     return;
+
   }
 
 
@@ -1835,10 +2078,12 @@ function schedulePage(
           );
 
         },
+
         Math.max(
           0,
           delay * 1000
         )
+
       );
 
     }
@@ -1847,9 +2092,9 @@ function schedulePage(
 }
 
 
-/* =========================
-   PAGE 시작
-========================= */
+/* =========================================================
+   PAGE START
+========================================================= */
 
 function startPage(page){
 
@@ -1857,13 +2102,15 @@ function startPage(page){
     !page ||
     page.dataset.started === '1'
   ){
+
     return;
+
   }
 
 
-  /* =========================
+  /* =======================================================
      PAGE 2
-  ========================= */
+  ======================================================= */
 
   if(
     page.classList.contains(
@@ -1911,19 +2158,9 @@ function startPage(page){
   }
 
 
-  /* =========================
+  /* =======================================================
      PAGE 3
-
-     순서 그대로 유지
-
-     background3
-     rabbit3-1 ~ rabbit3-12
-     title3-1
-     title3-2
-     details3 + icon3-1
-     message3
-     blessing3 + icon3-2
-  ========================= */
+  ======================================================= */
 
   if(
     page.classList.contains(
@@ -2041,12 +2278,17 @@ function startPage(page){
 }
 
 
-/* =========================
-   PAGE 4 이미지 미리 준비
+/* =========================================================
+   PAGE 4 PRELOAD
 
-   파일만 로드한다.
-   화면에는 표시하지 않는다.
-========================= */
+   Page 4를 보여주는 코드가 아님.
+
+   Page 3에 도착하면
+   Page 4 PNG 파일 5개만 동시에 요청해서
+   브라우저에 미리 준비한다.
+
+   modal은 계속 visibility:hidden.
+========================================================= */
 
 let page4PreparePromise =
   null;
@@ -2054,8 +2296,12 @@ let page4PreparePromise =
 
 function preparePage4(){
 
-  if(page4PreparePromise){
+  if(
+    page4PreparePromise
+  ){
+
     return page4PreparePromise;
+
   }
 
 
@@ -2086,9 +2332,11 @@ function preparePage4(){
 
   page4PreparePromise =
     Promise.all(
+
       images.map(
         img=>loadImage(img)
       )
+
     );
 
 
@@ -2097,9 +2345,9 @@ function preparePage4(){
 }
 
 
-/* =========================
-   PAGE 진입 감지
-========================= */
+/* =========================================================
+   PAGE 2 / 3 INTERSECTION
+========================================================= */
 
 const io =
   new IntersectionObserver(
@@ -2143,15 +2391,19 @@ pages
   .slice(1)
   .forEach(page=>{
 
-    io.observe(page);
+    io.observe(
+      page
+    );
 
   });
 
 
-/* =========================
-   PAGE 3 진입 시
-   PAGE 4 파일만 미리 로드
-========================= */
+/* =========================================================
+   PAGE 3 진입 시 PAGE 4 PRELOAD
+
+   화면 표시 없음.
+   파일만 준비.
+========================================================= */
 
 const page4PreloadObserver =
   new IntersectionObserver(
@@ -2161,9 +2413,12 @@ const page4PreloadObserver =
       entries.forEach(
         entry=>{
 
-          if(entry.isIntersecting){
+          if(
+            entry.isIntersecting
+          ){
 
             preparePage4();
+
 
             page4PreloadObserver
               .disconnect();
@@ -2191,9 +2446,9 @@ page4PreloadObserver.observe(
 );
 
 
-/* =========================
+/* =========================================================
    BGM
-========================= */
+========================================================= */
 
 const bgm =
   document.getElementById(
@@ -2234,6 +2489,7 @@ function playAudio(){
       isPlaying =
         true;
 
+
       musicIcon.innerHTML =
         iconPlaying;
 
@@ -2249,8 +2505,10 @@ function toggleBgm(){
 
     bgm.pause();
 
+
     isPlaying =
       false;
+
 
     musicIcon.innerHTML =
       iconMuted;
@@ -2270,6 +2528,7 @@ btn.addEventListener(
 
     e.stopPropagation();
 
+
     toggleBgm();
 
   }
@@ -2278,7 +2537,9 @@ btn.addEventListener(
 
 function firstTouch(){
 
-  if(!isPlaying){
+  if(
+    !isPlaying
+  ){
 
     playAudio();
 
@@ -2300,9 +2561,9 @@ window.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
    ICON PRESS
-========================= */
+========================================================= */
 
 function bindPress(
   button,
@@ -2313,7 +2574,9 @@ function bindPress(
     !button ||
     !wrapper
   ){
+
     return;
+
   }
 
 
@@ -2384,9 +2647,9 @@ bindPress(
 );
 
 
-/* =========================
+/* =========================================================
    PAGE 4
-========================= */
+========================================================= */
 
 const page4Modal =
   document.getElementById(
@@ -2414,9 +2677,9 @@ let title4Timer =
   null;
 
 
-/* =========================
-   PAGE 4 animation reset
-========================= */
+/* =========================================================
+   PAGE 4 ANIMATION RESET
+========================================================= */
 
 function resetPage4Animations(){
 
@@ -2429,7 +2692,9 @@ function resetPage4Animations(){
       el.style.animation =
         'none';
 
+
       void el.offsetWidth;
+
 
       el.style.animation =
         '';
@@ -2448,7 +2713,9 @@ function resetPage4Animations(){
     title42.style.animation =
       'none';
 
+
     void title42.offsetWidth;
+
 
     title42.style.animation =
       '';
@@ -2458,14 +2725,27 @@ function resetPage4Animations(){
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 4 OPEN
 
-   preload 완료를 기다리지 않고
-   클릭 즉시 modal 활성화
-========================= */
+   preload 완료를 기다리지 않는다.
+
+   클릭 즉시 modal 활성화.
+
+   표시 순서는 CSS 그대로:
+   background4 = 0
+   rabbit4     = 1.3
+   title4-1    = 2.6
+   title4-2    = 3.9
+   account4    = 5.2
+========================================================= */
 
 function showPage4(){
+
+  /*
+    이미 preload 됐으면 그대로 사용.
+    아직 진행 중이어도 클릭을 막지 않는다.
+  */
 
   preparePage4();
 
@@ -2475,6 +2755,7 @@ function showPage4(){
     clearTimeout(
       closeTimer
     );
+
 
     closeTimer =
       null;
@@ -2487,6 +2768,7 @@ function showPage4(){
     clearTimeout(
       title4Timer
     );
+
 
     title4Timer =
       null;
@@ -2522,17 +2804,21 @@ function showPage4(){
     setTimeout(()=>{
 
       if(
+
         page4Modal
           .classList
           .contains(
             'active'
-          ) &&
+          )
+
+        &&
 
         !page4Modal
           .classList
           .contains(
             'closing'
           )
+
       ){
 
         page4Modal
@@ -2552,24 +2838,28 @@ function showPage4(){
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 4 CLOSE
-========================= */
+========================================================= */
 
 function hidePage4(){
 
   if(
+
     !page4Modal
       .classList
       .contains(
         'active'
-      ) ||
+      )
+
+    ||
 
     page4Modal
       .classList
       .contains(
         'closing'
       )
+
   ){
 
     return;
@@ -2583,11 +2873,20 @@ function hidePage4(){
       title4Timer
     );
 
+
     title4Timer =
       null;
 
   }
 
+
+  /*
+    title4-ready를 여기서 제거하지 않는다.
+
+    따라서 닫는 순간 현재 보이던
+    title4-2도 그대로 유지한 상태로
+    전체 modal이 1.3초 동안 사라진다.
+  */
 
   page4Modal
     .classList
@@ -2622,15 +2921,16 @@ function hidePage4(){
 }
 
 
-/* =========================
-   PAGE 4 EVENT
-========================= */
+/* =========================================================
+   PAGE 4 EVENTS
+========================================================= */
 
 openPage4.addEventListener(
   'click',
   e=>{
 
     e.stopPropagation();
+
 
     showPage4();
 
@@ -2644,6 +2944,7 @@ closePage4.addEventListener(
 
     e.stopPropagation();
 
+
     hidePage4();
 
   }
@@ -2655,13 +2956,17 @@ page4Modal.addEventListener(
   e=>{
 
     if(
-      e.target === page4Modal ||
+
+      e.target === page4Modal
+
+      ||
 
       e.target
         .classList
         .contains(
           'page4-content'
         )
+
     ){
 
       hidePage4();
@@ -2672,9 +2977,9 @@ page4Modal.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
    COPY
-========================= */
+========================================================= */
 
 const copyToast =
   document.getElementById(
@@ -2848,13 +3153,21 @@ document
   });
 
 
-/* =========================
+/* =========================================================
    외부 페이지 복귀
-========================= */
+========================================================= */
 
 window.addEventListener(
   'pageshow',
   ()=>{
+
+    /*
+      외부 링크에서 돌아왔을 때
+      아이콘 눌림 상태만 해제.
+
+      Page 3 애니메이션은
+      다시 시작하지 않는다.
+    */
 
     document
       .querySelectorAll(
@@ -2869,6 +3182,31 @@ window.addEventListener(
           );
 
       });
+
+
+    /*
+      Safari가 복귀하면서 화면 폭을
+      다시 계산한 경우에만 높이 정렬.
+    */
+
+    const currentWidth =
+      window.innerWidth;
+
+
+    if(
+      Math.abs(
+        currentWidth -
+        lastViewportWidth
+      ) >= 1
+    ){
+
+      lastViewportWidth =
+        currentWidth;
+
+
+      updatePageHeights();
+
+    }
 
   }
 );
