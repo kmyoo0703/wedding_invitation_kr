@@ -1922,7 +1922,7 @@ function preparePage4(){
 
 /* =========================================================
    PAGE 2 / PAGE 3
-   페이지 맨 아래 도달 시 시작
+   페이지 약 90% 지점 진입 시 시작
 ========================================================= */
 
 function checkPageAnimationStart(){
@@ -1942,8 +1942,16 @@ function checkPageAnimationStart(){
     const rect =
       page.getBoundingClientRect();
 
+    /*
+      페이지의 위에서부터 90% 지점이
+      화면 하단 안으로 들어오는 순간 시작
+    */
+    const triggerPoint =
+      rect.top +
+      rect.height * 0.9;
+
     if(
-      rect.bottom <= rootRect.bottom &&
+      triggerPoint <= rootRect.bottom &&
       rect.bottom > rootRect.top
     ){
 
