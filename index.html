@@ -48,13 +48,7 @@ body{
   aspect-ratio:1360/1891;
   flex:0 0 auto;
   overflow:hidden;
-
-  /*
-    background1/2/3.png의 외곽 반투명 픽셀 뒤로
-    흰색이 비치지 않도록 원본 배경색을 깐다.
-  */
   background:rgb(0,146,162);
-
   line-height:0;
 }
 
@@ -1931,52 +1925,61 @@ function preparePage4(){
 
 
 /* =========================================================
-   PAGE 2 / PAGE 3 INTERSECTION
+   PAGE 2 / PAGE 3
+   페이지 맨 아래 도달 시 시작
 ========================================================= */
 
-const io =
-  new IntersectionObserver(
+function checkPageAnimationStart(){
 
-    entries=>{
+  const rootRect =
+    root.getBoundingClientRect();
 
-      entries.forEach(
-        entry=>{
+  [page2,page3].forEach(page=>{
 
-          if(
-            entry.isIntersecting &&
-            entry.target !== page1
-          ){
-
-            startPage(
-              entry.target
-            );
-
-          }
-
-        }
-      );
-
-    },
-
-    {
-      root:root,
-      threshold:.18,
-
-      rootMargin:
-        '0px 0px -10% 0px'
+    if(
+      !page ||
+      page.dataset.started === '1'
+    ){
+      return;
     }
 
-  );
+    const rect =
+      page.getBoundingClientRect();
 
-pages
-  .slice(1)
-  .forEach(page=>{
+    /*
+      해당 페이지의 맨 아래가
+      화면 맨 아래 안으로 들어오는 순간 시작
+    */
+    if(
+      rect.bottom <= rootRect.bottom &&
+      rect.bottom > rootRect.top
+    ){
 
-    io.observe(
-      page
-    );
+      startPage(
+        page
+      );
+
+    }
 
   });
+
+}
+
+root.addEventListener(
+  'scroll',
+  checkPageAnimationStart,
+  {passive:true}
+);
+
+window.addEventListener(
+  'resize',
+  checkPageAnimationStart,
+  {passive:true}
+);
+
+requestAnimationFrame(
+  checkPageAnimationStart
+);
 
 
 /* =========================================================
@@ -2662,6 +2665,8 @@ window.addEventListener(
       updatePageHeights();
 
     }
+
+    checkPageAnimationStart();
 
   }
 );
