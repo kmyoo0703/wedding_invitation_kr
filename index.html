@@ -43,8 +43,9 @@ body{
   line-height:0;
 }
 
+/* 페이지 사이: 여백 0 / 겹침 0 */
 .page+.page{
-  margin-top:-3px;
+  margin-top:0;
 }
 
 .layer{
@@ -1760,10 +1761,6 @@ function runStep(
       }
 
 
-      /*
-        1.3초 애니메이션 종료 후
-        정적인 상태로 확정
-      */
       setTimeout(()=>{
 
         el.classList.remove(
@@ -2047,11 +2044,8 @@ function startPage(page){
 /* =========================
    PAGE 4 이미지 미리 준비
 
-   ★ 이번 수정 부분
-
-   파일만 받아둔다.
-   Page 4는 여전히 visibility:hidden이라
-   클릭 전 화면에는 아무것도 보이지 않는다.
+   파일만 로드한다.
+   화면에는 표시하지 않는다.
 ========================= */
 
 let page4PreparePromise =
@@ -2090,14 +2084,6 @@ function preparePage4(){
   ];
 
 
-  /*
-    표시 순서가 아니라
-    네트워크 로딩만 동시에 준비.
-
-    화면 등장 순서는
-    기존 CSS의
-    0 / 1.3 / 2.6 / 3.9 / 5.2초 그대로.
-  */
   page4PreparePromise =
     Promise.all(
       images.map(
@@ -2164,9 +2150,7 @@ pages
 
 /* =========================
    PAGE 3 진입 시
-   PAGE 4 파일만 미리 준비
-
-   ★ 화면에는 표시 안 됨
+   PAGE 4 파일만 미리 로드
 ========================= */
 
 const page4PreloadObserver =
@@ -2477,18 +2461,12 @@ function resetPage4Animations(){
 /* =========================
    PAGE 4 OPEN
 
-   ★ 이번 수정:
-   preparePage4 완료를 기다리지 않는다.
-
-   클릭 즉시 modal 활성화.
+   preload 완료를 기다리지 않고
+   클릭 즉시 modal 활성화
 ========================= */
 
 function showPage4(){
 
-  /*
-    혹시 preload가 아직 안 끝났더라도
-    요청만 유지하고 클릭은 기다리지 않는다.
-  */
   preparePage4();
 
 
@@ -2540,10 +2518,6 @@ function showPage4(){
   );
 
 
-  /*
-    기존 그대로:
-    title4-2는 3.9초 후 시작
-  */
   title4Timer =
     setTimeout(()=>{
 
@@ -2614,15 +2588,6 @@ function hidePage4(){
 
   }
 
-
-  /*
-    title4-ready는
-    페이드 전에 제거하지 않는다.
-
-    title4-2 포함 현재 보이는
-    PAGE 4 전체가 그대로
-    1.3초 페이드아웃.
-  */
 
   page4Modal
     .classList
