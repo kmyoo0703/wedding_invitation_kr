@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
 <title>KIMUN & FUTABA</title>
 
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://kmyoo0703.github.io/wedding_invitation_kr/">
 <meta property="og:title" content="KIMUN & FUTABA">
-<meta property="og:image" content="https://kmyoo0703.github.io/wedding-invitation/thumbnail.png">
-<meta property="og:image:secure_url" content="https://kmyoo0703.github.io/wedding-invitation/thumbnail.png">
+<meta property="og:image" content="https://kmyoo0703.github.io/wedding_invitation_kr/thumbnail.png">
+<meta property="og:image:secure_url" content="https://kmyoo0703.github.io/wedding_invitation_kr/thumbnail.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1360">
-<meta property="og:image:height" content="1891">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KIMUN & FUTABA">
-<meta name="twitter:image" content="https://kmyoo0703.github.io/wedding-invitation/thumbnail.png">
+<meta name="twitter:image" content="https://kmyoo0703.github.io/wedding_invitation_kr/thumbnail.png">
 
 <style>
 *{
@@ -119,20 +119,40 @@ body{
 
 .bgm-btn{
   position:fixed;
-  top:max(20px,env(safe-area-inset-top));
-  left:max(20px,env(safe-area-inset-left));
+
+  top:max(
+    20px,
+    env(safe-area-inset-top)
+  );
+
+  left:max(
+    20px,
+    env(safe-area-inset-left)
+  );
+
   z-index:10000;
+
   width:36px;
   height:36px;
+
   border-radius:50%;
-  border:1px solid rgba(0,0,0,.1);
-  background:rgba(255,255,255,.7);
+
+  border:
+    1px solid rgba(0,0,0,.1);
+
+  background:
+    rgba(255,255,255,.7);
+
   display:grid;
   place-items:center;
+
   backdrop-filter:blur(4px);
   -webkit-backdrop-filter:blur(4px);
+
   cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+
+  -webkit-tap-highlight-color:
+    transparent;
 }
 
 .bgm-btn svg{
@@ -147,8 +167,13 @@ body{
 ========================================================= */
 
 @keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
 }
 
 @keyframes growTree{
@@ -156,6 +181,7 @@ body{
     opacity:0;
     transform:scale(0);
   }
+
   to{
     opacity:1;
     transform:scale(1);
@@ -165,27 +191,51 @@ body{
 @keyframes flyAndStop{
   from{
     opacity:0;
-    transform:translate(120px,-20px);
+    transform:
+      translate(120px,-20px);
   }
+
   to{
     opacity:1;
-    transform:translate(0,0);
+    transform:
+      translate(0,0);
   }
 }
 
 @keyframes title2FromLine{
-  0%{transform:translateY(-2.8556%);}
-  100%{transform:translateY(0);}
+  0%{
+    transform:
+      translateY(-2.8556%);
+  }
+
+  100%{
+    transform:
+      translateY(0);
+  }
 }
 
 @keyframes title3FromLine{
-  0%{transform:translateY(-2.9085%);}
-  100%{transform:translateY(0);}
+  0%{
+    transform:
+      translateY(-2.9085%);
+  }
+
+  100%{
+    transform:
+      translateY(0);
+  }
 }
 
 @keyframes title4FromLine{
-  0%{transform:translateY(-2.9085%);}
-  100%{transform:translateY(0);}
+  0%{
+    transform:
+      translateY(-2.9085%);
+  }
+
+  100%{
+    transform:
+      translateY(0);
+  }
 }
 
 
@@ -205,15 +255,18 @@ body{
 }
 
 .title2-reveal{
-  clip-path:inset(20.5182% 0 0 0);
+  clip-path:
+    inset(20.5182% 0 0 0);
 }
 
 .title3-reveal{
-  clip-path:inset(25.8065% 0 0 0);
+  clip-path:
+    inset(25.8065% 0 0 0);
 }
 
 .title4-reveal{
-  clip-path:inset(30.4072% 0 0 0);
+  clip-path:
+    inset(30.4072% 0 0 0);
 }
 
 .title2-reveal .title22,
@@ -242,31 +295,74 @@ body{
 ========================================================= */
 
 .page1 .tree1{
-  transform-origin:50% 82%;
+  transform-origin:
+    50% 82%;
 }
 
-.site-ready .page1 .rabbit1{
-  animation:fadeIn 1.3s ease-in-out 1.3s both;
+.site-ready
+.page1
+.rabbit1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    1.3s
+    both;
 }
 
-.site-ready .page1 .tree1{
-  animation:growTree 1.3s ease-in-out 2.6s both;
+.site-ready
+.page1
+.tree1{
+  animation:
+    growTree
+    1.3s
+    ease-in-out
+    2.6s
+    both;
 }
 
-.site-ready .page1 .bird1{
-  animation:flyAndStop 1.3s ease-in-out 3.9s both;
+.site-ready
+.page1
+.bird1{
+  animation:
+    flyAndStop
+    1.3s
+    ease-in-out
+    3.9s
+    both;
 }
 
-.site-ready .page1 .title1{
-  animation:fadeIn 1.3s ease-in-out 5.2s both;
+.site-ready
+.page1
+.title1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    5.2s
+    both;
 }
 
-.site-ready .page1 .date1{
-  animation:fadeIn 1.3s ease-in-out 6.5s both;
+.site-ready
+.page1
+.date1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    6.5s
+    both;
 }
 
-.site-ready .page1 .name1{
-  animation:fadeIn 1.3s ease-in-out 7.8s both;
+.site-ready
+.page1
+.name1{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    7.8s
+    both;
 }
 
 
@@ -278,6 +374,7 @@ body{
 .page2 .flower2,
 .page2 .title21,
 .page2 .message2,
+
 .page3 .r31,
 .page3 .r32,
 .page3 .r33,
@@ -290,9 +387,13 @@ body{
 .page3 .r310,
 .page3 .r311,
 .page3 .r312,
+
 .page3 .title31,
+
 .page3 .message3,
+
 .page3 .details3,
+
 .page3 .blessing3{
   opacity:0;
   visibility:hidden;
@@ -302,6 +403,7 @@ body{
 .page2 .flower2.run,
 .page2 .title21.run,
 .page2 .message2.run,
+
 .page3 .r31.run,
 .page3 .r32.run,
 .page3 .r33.run,
@@ -314,18 +416,33 @@ body{
 .page3 .r310.run,
 .page3 .r311.run,
 .page3 .r312.run,
+
 .page3 .title31.run,
+
 .page3 .message3.run,
+
 .page3 .details3.run,
+
 .page3 .blessing3.run{
   visibility:visible;
-  animation:fadeIn 1.3s ease-in-out;
+
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out;
 }
+
+
+/* =========================================================
+   PAGE 2 / PAGE 3
+   ANIMATION FINISHED
+========================================================= */
 
 .page2 .photo2.shown,
 .page2 .flower2.shown,
 .page2 .title21.shown,
 .page2 .message2.shown,
+
 .page3 .r31.shown,
 .page3 .r32.shown,
 .page3 .r33.shown,
@@ -338,9 +455,13 @@ body{
 .page3 .r310.shown,
 .page3 .r311.shown,
 .page3 .r312.shown,
+
 .page3 .title31.shown,
+
 .page3 .message3.shown,
+
 .page3 .details3.shown,
+
 .page3 .blessing3.shown{
   opacity:1!important;
   visibility:visible!important;
@@ -352,29 +473,44 @@ body{
    PAGE 2
 ========================================================= */
 
-.page2 .title2-reveal.run,
-.page2 .title2-reveal.shown{
+.page2
+.title2-reveal.run,
+
+.page2
+.title2-reveal.shown{
   visibility:visible;
 }
 
-.page2 .title2-reveal.run .title22{
+.page2
+.title2-reveal.run
+.title22{
   display:block;
   opacity:1!important;
   visibility:visible!important;
-  animation:title2FromLine 1.3s linear;
+
+  animation:
+    title2FromLine
+    1.3s
+    linear;
 }
 
-.page2 .title2-reveal.shown .title22{
+.page2
+.title2-reveal.shown
+.title22{
   display:block;
   opacity:1!important;
   visibility:visible!important;
   animation:none!important;
-  transform:translateY(0)!important;
+
+  transform:
+    translateY(0)!important;
 }
 
 .flower2{
   filter:none!important;
-  mix-blend-mode:normal!important;
+
+  mix-blend-mode:
+    normal!important;
 }
 
 
@@ -382,37 +518,60 @@ body{
    PAGE 3
 ========================================================= */
 
-.page3 .icon-place-motion.run,
-.page3 .icon-gift-motion.run{
+.page3
+.icon-place-motion.run,
+
+.page3
+.icon-gift-motion.run{
   visibility:visible;
-  animation:fadeIn 1.3s ease-in-out;
+
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out;
 }
 
-.page3 .icon-place-motion.shown,
-.page3 .icon-gift-motion.shown{
+.page3
+.icon-place-motion.shown,
+
+.page3
+.icon-gift-motion.shown{
   opacity:1!important;
   visibility:visible!important;
   animation:none!important;
 }
 
-.page3 .title3-reveal.run,
-.page3 .title3-reveal.shown{
+.page3
+.title3-reveal.run,
+
+.page3
+.title3-reveal.shown{
   visibility:visible;
 }
 
-.page3 .title3-reveal.run .title32{
+.page3
+.title3-reveal.run
+.title32{
   display:block;
   opacity:1!important;
   visibility:visible!important;
-  animation:title3FromLine 1.3s linear;
+
+  animation:
+    title3FromLine
+    1.3s
+    linear;
 }
 
-.page3 .title3-reveal.shown .title32{
+.page3
+.title3-reveal.shown
+.title32{
   display:block;
   opacity:1!important;
   visibility:visible!important;
   animation:none!important;
-  transform:translateY(0)!important;
+
+  transform:
+    translateY(0)!important;
 }
 
 
@@ -427,22 +586,46 @@ body{
   opacity:0;
   visibility:hidden;
   pointer-events:none;
-  transform:scale(1);
-  -webkit-transform:scale(1);
-  transform-origin:50% 50%;
-  -webkit-transform-origin:50% 50%;
-  transition:transform 140ms ease-out;
-  -webkit-transition:-webkit-transform 140ms ease-out;
-  -webkit-tap-highlight-color:transparent;
+
+  transform:
+    scale(1);
+
+  -webkit-transform:
+    scale(1);
+
+  transform-origin:
+    50% 50%;
+
+  -webkit-transform-origin:
+    50% 50%;
+
+  transition:
+    transform
+    140ms
+    ease-out;
+
+  -webkit-transition:
+    -webkit-transform
+    140ms
+    ease-out;
+
+  -webkit-tap-highlight-color:
+    transparent;
 }
 
 .icon-motion-wrapper.is-pressed{
-  transform:scale(.82);
-  -webkit-transform:scale(.82);
+  transform:
+    scale(.82);
+
+  -webkit-transform:
+    scale(.82);
 }
 
-.page3 .icon-place-motion.ready,
-.page3 .icon-gift-motion.ready{
+.page3
+.icon-place-motion.ready,
+
+.page3
+.icon-gift-motion.ready{
   pointer-events:auto;
 }
 
@@ -467,14 +650,16 @@ body{
   object-fit:fill;
 }
 
-.icon-place-motion .icon-crop-source{
+.icon-place-motion
+.icon-crop-source{
   width:1087.2%;
   height:1512.8%;
   left:-724.8%;
   top:-772%;
 }
 
-.icon-gift-motion .icon-crop-source{
+.icon-gift-motion
+.icon-crop-source{
   width:1319.4175%;
   height:1835.9223%;
   left:-1086.4078%;
@@ -503,59 +688,90 @@ body{
   position:fixed;
   inset:0;
   z-index:15000;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  background:rgba(0,0,0,0);
+
+  background:
+    rgba(0,0,0,0);
+
   visibility:hidden;
   pointer-events:none;
 
   transition:
-    background-color 1.3s ease-in-out,
-    visibility 0s linear 1.3s;
+    background-color
+    1.3s
+    ease-in-out,
+
+    visibility
+    0s
+    linear
+    1.3s;
 }
 
 .page4-modal.active{
   visibility:visible;
   pointer-events:auto;
-  background:rgba(0,0,0,.62);
-  transition:background-color 1.3s ease-in-out;
+
+  background:
+    rgba(0,0,0,.62);
+
+  transition:
+    background-color
+    1.3s
+    ease-in-out;
 }
 
 .page4-modal.active.closing{
   visibility:visible;
   pointer-events:none;
-  background:rgba(0,0,0,0);
+
+  background:
+    rgba(0,0,0,0);
 }
 
 .page4-content{
   position:relative;
   width:100vw;
   height:100dvh;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   opacity:0;
-  transition:opacity 1.6s ease-in-out;
+
+  transition:
+    opacity
+    1.6s
+    ease-in-out;
 }
 
-.page4-modal.active .page4-content{
+.page4-modal.active
+.page4-content{
   opacity:1;
 }
 
-.page4-modal.active.closing .page4-content{
+.page4-modal.active.closing
+.page4-content{
   opacity:0;
 }
 
 .page4-card{
   position:relative;
+
   width:min(
     100vw,
     calc(100dvh * 1360 / 1891),
     1360px
   );
-  aspect-ratio:1360/1891;
+
+  aspect-ratio:
+    1360/1891;
+
   overflow:hidden;
+
   background:transparent;
 }
 
@@ -564,33 +780,54 @@ body{
    PAGE 4 ANIMATION
 ========================================================= */
 
-.page4-modal .background4{
+.page4-modal
+.background4{
   opacity:1;
   visibility:visible;
 }
 
-.page4-modal.active .rabbit4{
-  animation:fadeIn 1.3s ease-in-out 1.3s both;
+.page4-modal.active
+.rabbit4{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    1.3s
+    both;
 }
 
-.page4-modal.active .title41{
-  animation:fadeIn 1.3s ease-in-out 2.6s both;
+.page4-modal.active
+.title41{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    2.6s
+    both;
 }
 
-.page4-modal .title4-reveal{
+.page4-modal
+.title4-reveal{
   visibility:hidden;
 }
 
-.page4-modal.active.title4-ready .title4-reveal{
+.page4-modal.active.title4-ready
+.title4-reveal{
   visibility:visible;
 }
 
 .page4-modal.active.title4-ready
-.title4-reveal .title42{
+.title4-reveal
+.title42{
   display:block;
   opacity:1!important;
   visibility:visible!important;
-  animation:title4FromLine 1.3s linear both;
+
+  animation:
+    title4FromLine
+    1.3s
+    linear
+    both;
 }
 
 .page4-modal.active.closing.title4-ready
@@ -600,16 +837,26 @@ body{
 
 /* 닫는 순간 현재 보이는 상태를 그대로 멈춘 뒤
    page4-content 전체만 자연스럽게 페이드아웃 */
-.page4-modal.active.closing .rabbit4,
-.page4-modal.active.closing .title41,
-.page4-modal.active.closing .title42,
-.page4-modal.active.closing .account4{
+.page4-modal.active.closing
+.rabbit4,
+.page4-modal.active.closing
+.title41,
+.page4-modal.active.closing
+.title42,
+.page4-modal.active.closing
+.account4{
   animation-play-state:paused!important;
   -webkit-animation-play-state:paused!important;
 }
 
-.page4-modal.active .account4{
-  animation:fadeIn 1.3s ease-in-out 5.2s both;
+.page4-modal.active
+.account4{
+  animation:
+    fadeIn
+    1.3s
+    ease-in-out
+    5.2s
+    both;
 }
 
 
@@ -619,16 +866,32 @@ body{
 
 .modal-close-btn{
   position:absolute;
-  top:max(20px,env(safe-area-inset-top));
-  right:max(20px,env(safe-area-inset-right));
+
+  top:max(
+    20px,
+    env(safe-area-inset-top)
+  );
+
+  right:max(
+    20px,
+    env(safe-area-inset-right)
+  );
+
   width:36px;
   height:36px;
+
   border:0;
   border-radius:50%;
-  background:rgba(0,0,0,.55);
+
+  background:
+    rgba(0,0,0,.55);
+
   z-index:100;
+
   cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+
+  -webkit-tap-highlight-color:
+    transparent;
 }
 
 .modal-close-btn:before,
@@ -644,11 +907,15 @@ body{
 }
 
 .modal-close-btn:before{
-  transform:translate(-50%,-50%) rotate(45deg);
+  transform:
+    translate(-50%,-50%)
+    rotate(45deg);
 }
 
 .modal-close-btn:after{
-  transform:translate(-50%,-50%) rotate(-45deg);
+  transform:
+    translate(-50%,-50%)
+    rotate(-45deg);
 }
 
 
@@ -697,50 +964,88 @@ body{
 .copy-toast{
   position:fixed;
   left:50%;
+
   bottom:max(
     30px,
-    calc(env(safe-area-inset-bottom) + 18px)
+    calc(
+      env(safe-area-inset-bottom)
+      + 18px
+    )
   );
+
   z-index:20000;
-  padding:10px 17px;
-  border-radius:999px;
+
+  padding:
+    10px 17px;
+
+  border-radius:
+    999px;
+
   color:#fff;
-  background:rgba(0,0,0,.58);
+
+  background:
+    rgba(0,0,0,.58);
+
   font-size:14px;
-  letter-spacing:-.02em;
-  white-space:nowrap;
+
+  letter-spacing:
+    -.02em;
+
+  white-space:
+    nowrap;
+
   pointer-events:none;
+
   opacity:0;
-  transform:translate(-50%,8px);
+
+  transform:
+    translate(-50%,8px);
 }
 
 .copy-toast.show{
-  animation:copyToastFade 1.55s ease-in-out both;
+  animation:
+    copyToastFade
+    1.55s
+    ease-in-out
+    both;
 }
 
 @keyframes copyToastFade{
   0%{
     opacity:0;
-    transform:translate(-50%,8px);
+
+    transform:
+      translate(-50%,8px);
   }
 
   18%,
   70%{
     opacity:.92;
-    transform:translate(-50%,0);
+
+    transform:
+      translate(-50%,0);
   }
 
   100%{
     opacity:0;
-    transform:translate(-50%,-3px);
+
+    transform:
+      translate(-50%,-3px);
   }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<div class="initial-loader" aria-hidden="true"></div>
+
+<div
+  class="initial-loader"
+  aria-hidden="true">
+</div>
+
 
 <audio
   id="bgm"
@@ -748,6 +1053,7 @@ body{
   loop
   preload="auto">
 </audio>
+
 
 <button
   class="bgm-btn"
@@ -758,13 +1064,18 @@ body{
   <svg
     id="musicIcon"
     viewBox="0 0 24 24">
+
     <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+
   </svg>
+
 </button>
+
 
 <main
   class="scroll-root"
   id="scrollRoot">
+
 
 <section class="page page1">
 
@@ -818,9 +1129,11 @@ body{
     class="layer title21">
 
   <div class="title2-reveal">
+
     <img
       data-src="title2-2.png"
       class="title22">
+
   </div>
 
   <img
@@ -854,9 +1167,11 @@ body{
     class="layer title31">
 
   <div class="title3-reveal">
+
     <img
       data-src="title3-2.png"
       class="title32">
+
   </div>
 
   <img
@@ -866,6 +1181,7 @@ body{
   <img
     data-src="details3.png"
     class="layer details3">
+
 
   <div
     class="icon-motion-wrapper icon-place-motion"
@@ -887,9 +1203,11 @@ body{
 
   </div>
 
+
   <img
     data-src="blessing3.png"
     class="layer blessing3">
+
 
   <div
     class="icon-motion-wrapper icon-gift-motion"
@@ -936,9 +1254,11 @@ body{
         class="layer title41">
 
       <div class="title4-reveal">
+
         <img
           data-src="title4-2.png"
           class="title42">
+
       </div>
 
       <img
@@ -985,7 +1305,9 @@ body{
   id="copyToast"
   role="status"
   aria-live="polite">
+
   계좌번호가 복사되었습니다.
+
 </div>
 
 
@@ -996,14 +1318,23 @@ body{
 ========================================================= */
 
 const root =
-  document.getElementById('scrollRoot');
+  document.getElementById(
+    'scrollRoot'
+  );
 
 const pages =
-  [...document.querySelectorAll('.page')];
+  [...document.querySelectorAll(
+    '.page'
+  )];
 
-const page1 = pages[0];
-const page2 = pages[1];
-const page3 = pages[2];
+const page1 =
+  pages[0];
+
+const page2 =
+  pages[1];
+
+const page3 =
+  pages[2];
 
 
 /* =========================================================
@@ -1017,12 +1348,17 @@ function updatePageHeights(){
     const width =
       page.getBoundingClientRect().width;
 
-    if(!width || width <= 0){
+    if(
+      !width ||
+      width <= 0
+    ){
       return;
     }
 
     const height =
-      Math.round(width * 1891 / 1360);
+      Math.round(
+        width * 1891 / 1360
+      );
 
     page.style.height =
       height + 'px';
@@ -1057,6 +1393,7 @@ function handleViewportResize(){
     currentWidth;
 
   updatePageHeights();
+
 }
 
 window.addEventListener(
@@ -1102,7 +1439,9 @@ function loadImage(img){
     return Promise.resolve();
   }
 
-  if(imagePromises.has(img)){
+  if(
+    imagePromises.has(img)
+  ){
     return imagePromises.get(img);
   }
 
@@ -1148,19 +1487,25 @@ function loadImage(img){
   );
 
   return task;
+
 }
 
 
 /* =========================================================
    BACKGROUND 2 / 3
+   처음부터 로드
 ========================================================= */
 
 loadImage(
-  page2.querySelector('.background2')
+  page2.querySelector(
+    '.background2'
+  )
 );
 
 loadImage(
-  page3.querySelector('.background3')
+  page3.querySelector(
+    '.background3'
+  )
 );
 
 
@@ -1174,11 +1519,15 @@ async function loadSelectorImages(
 ){
 
   const elements =
-    page.querySelectorAll(selector);
+    page.querySelectorAll(
+      selector
+    );
 
   for(const el of elements){
 
-    if(el.tagName === 'IMG'){
+    if(
+      el.tagName === 'IMG'
+    ){
       await loadImage(el);
     }
 
@@ -1203,7 +1552,9 @@ async function loadSelectorImages(
 function waitPage1(){
 
   const images =
-    page1.querySelectorAll('img');
+    page1.querySelectorAll(
+      'img'
+    );
 
   return Promise.all(
 
@@ -1247,7 +1598,9 @@ waitPage1()
 
       document.body
         .classList
-        .add('site-ready');
+        .add(
+          'site-ready'
+        );
 
     });
 
@@ -1265,20 +1618,34 @@ function runStep(
 ){
 
   page
-    .querySelectorAll(selector)
+    .querySelectorAll(
+      selector
+    )
     .forEach(el=>{
 
-      el.classList.remove('shown');
-      el.classList.add('run');
+      el.classList.remove(
+        'shown'
+      );
+
+      el.classList.add(
+        'run'
+      );
 
       if(ready){
-        el.classList.add('ready');
+        el.classList.add(
+          'ready'
+        );
       }
 
       setTimeout(()=>{
 
-        el.classList.remove('run');
-        el.classList.add('shown');
+        el.classList.remove(
+          'run'
+        );
+
+        el.classList.add(
+          'shown'
+        );
 
       },1300);
 
@@ -1303,7 +1670,8 @@ function schedulePage(
     return;
   }
 
-  page.dataset.started = '1';
+  page.dataset.started =
+    '1';
 
   steps.forEach(
     ([selector,delay,ready])=>{
@@ -1354,6 +1722,7 @@ function schedulePage(
 
 /* =========================================================
    PAGE START
+   90% 도달 즉시 첫 오브젝트 시작
 ========================================================= */
 
 function startPage(page){
@@ -1365,43 +1734,143 @@ function startPage(page){
     return;
   }
 
-  if(page.classList.contains('page2')){
+  if(
+    page.classList.contains(
+      'page2'
+    )
+  ){
 
     schedulePage(
       page,
       [
-        ['.photo2',0],
-        ['.flower2',1.3],
-        ['.title21',2.6],
-        ['.title2-reveal',3.9],
-        ['.message2',5.2]
+
+        [
+          '.photo2',
+          0
+        ],
+
+        [
+          '.flower2',
+          1.3
+        ],
+
+        [
+          '.title21',
+          2.6
+        ],
+
+        [
+          '.title2-reveal',
+          3.9
+        ],
+
+        [
+          '.message2',
+          5.2
+        ]
+
       ]
     );
 
   }
 
-  if(page.classList.contains('page3')){
+  if(
+    page.classList.contains(
+      'page3'
+    )
+  ){
 
     schedulePage(
       page,
       [
-        ['.r31',0],
-        ['.r32',.35],
-        ['.r33',.70],
-        ['.r34',1.05],
-        ['.r35',1.40],
-        ['.r36',1.75],
-        ['.r37',2.10],
-        ['.r38',2.45],
-        ['.r39',2.80],
-        ['.r310',3.15],
-        ['.r311',3.50],
-        ['.r312',3.85],
-        ['.title31',5.15],
-        ['.title3-reveal',6.45],
-        ['.details3,.icon-place-motion',7.75,true],
-        ['.message3',9.05],
-        ['.blessing3,.icon-gift-motion',10.35,true]
+
+        [
+          '.r31',
+          0
+        ],
+
+        [
+          '.r32',
+          .35
+        ],
+
+        [
+          '.r33',
+          .70
+        ],
+
+        [
+          '.r34',
+          1.05
+        ],
+
+        [
+          '.r35',
+          1.40
+        ],
+
+        [
+          '.r36',
+          1.75
+        ],
+
+        [
+          '.r37',
+          2.10
+        ],
+
+        [
+          '.r38',
+          2.45
+        ],
+
+        [
+          '.r39',
+          2.80
+        ],
+
+        [
+          '.r310',
+          3.15
+        ],
+
+        [
+          '.r311',
+          3.50
+        ],
+
+        [
+          '.r312',
+          3.85
+        ],
+
+        [
+          '.title31',
+          5.15
+        ],
+
+        [
+          '.title3-reveal',
+          6.45
+        ],
+
+        [
+          '.details3,.icon-place-motion',
+          7.75,
+          true
+        ],
+
+        [
+          '.message3',
+          9.05
+        ],
+
+        [
+          '.blessing3,.icon-gift-motion',
+          10.35,
+          true
+        ]
+
       ]
     );
 
@@ -1419,7 +1888,9 @@ let page4PreparePromise =
 
 function preparePage4(){
 
-  if(page4PreparePromise){
+  if(
+    page4PreparePromise
+  ){
     return page4PreparePromise;
   }
 
@@ -1449,12 +1920,15 @@ function preparePage4(){
 
   page4PreparePromise =
     Promise.all(
+
       images.map(
         img=>loadImage(img)
       )
+
     );
 
   return page4PreparePromise;
+
 }
 
 
@@ -1480,6 +1954,10 @@ function checkPageAnimationStart(){
     const rect =
       page.getBoundingClientRect();
 
+    /*
+      페이지의 위에서부터 90% 지점이
+      화면 하단 안으로 들어오는 순간 시작
+    */
     const triggerPoint =
       rect.top +
       rect.height * 0.9;
@@ -1489,7 +1967,9 @@ function checkPageAnimationStart(){
       rect.bottom > rootRect.top
     ){
 
-      startPage(page);
+      startPage(
+        page
+      );
 
     }
 
@@ -1526,7 +2006,9 @@ const page4PreloadObserver =
       entries.forEach(
         entry=>{
 
-          if(entry.isIntersecting){
+          if(
+            entry.isIntersecting
+          ){
 
             preparePage4();
 
@@ -1557,13 +2039,19 @@ page4PreloadObserver.observe(
 ========================================================= */
 
 const bgm =
-  document.getElementById('bgm');
+  document.getElementById(
+    'bgm'
+  );
 
 const btn =
-  document.getElementById('bgmBtn');
+  document.getElementById(
+    'bgmBtn'
+  );
 
 const musicIcon =
-  document.getElementById('musicIcon');
+  document.getElementById(
+    'musicIcon'
+  );
 
 let isPlaying =
   false;
@@ -1580,7 +2068,9 @@ function playAudio(){
     .play()
     .then(()=>{
 
-      isPlaying = true;
+      isPlaying =
+        true;
+
       musicIcon.innerHTML =
         iconPlaying;
 
@@ -1594,7 +2084,10 @@ function toggleBgm(){
   if(isPlaying){
 
     bgm.pause();
-    isPlaying = false;
+
+    isPlaying =
+      false;
+
     musicIcon.innerHTML =
       iconMuted;
 
@@ -1611,6 +2104,7 @@ btn.addEventListener(
   e=>{
 
     e.stopPropagation();
+
     toggleBgm();
 
   }
@@ -1618,7 +2112,9 @@ btn.addEventListener(
 
 function firstTouch(){
 
-  if(!isPlaying){
+  if(
+    !isPlaying
+  ){
     playAudio();
   }
 
@@ -1658,7 +2154,9 @@ function bindPress(
 
       wrapper
         .classList
-        .add('is-pressed');
+        .add(
+          'is-pressed'
+        );
 
     }
   );
@@ -1667,6 +2165,7 @@ function bindPress(
     'pointerup',
     'pointercancel',
     'pointerleave'
+
   ].forEach(
     eventName=>{
 
@@ -1676,7 +2175,9 @@ function bindPress(
 
           wrapper
             .classList
-            .remove('is-pressed');
+            .remove(
+              'is-pressed'
+            );
 
         }
       );
@@ -1687,13 +2188,27 @@ function bindPress(
 }
 
 bindPress(
-  document.getElementById('placeHotspot'),
-  document.getElementById('placeIconMotion')
+
+  document.getElementById(
+    'placeHotspot'
+  ),
+
+  document.getElementById(
+    'placeIconMotion'
+  )
+
 );
 
 bindPress(
-  document.getElementById('openPage4'),
-  document.getElementById('giftIconMotion')
+
+  document.getElementById(
+    'openPage4'
+  ),
+
+  document.getElementById(
+    'giftIconMotion'
+  )
+
 );
 
 
@@ -1702,13 +2217,19 @@ bindPress(
 ========================================================= */
 
 const page4Modal =
-  document.getElementById('page4Modal');
+  document.getElementById(
+    'page4Modal'
+  );
 
 const openPage4 =
-  document.getElementById('openPage4');
+  document.getElementById(
+    'openPage4'
+  );
 
 const closePage4 =
-  document.getElementById('closePage4');
+  document.getElementById(
+    'closePage4'
+  );
 
 let closeTimer =
   null;
@@ -1724,7 +2245,9 @@ let title4Timer =
 function resetPage4Animations(){
 
   page4Modal
-    .querySelectorAll('.layer')
+    .querySelectorAll(
+      '.layer'
+    )
     .forEach(el=>{
 
       el.style.animation =
@@ -1738,7 +2261,9 @@ function resetPage4Animations(){
     });
 
   const title42 =
-    page4Modal.querySelector('.title42');
+    page4Modal.querySelector(
+      '.title42'
+    );
 
   if(title42){
 
@@ -1765,15 +2290,23 @@ function showPage4(){
 
   if(closeTimer){
 
-    clearTimeout(closeTimer);
-    closeTimer = null;
+    clearTimeout(
+      closeTimer
+    );
+
+    closeTimer =
+      null;
 
   }
 
   if(title4Timer){
 
-    clearTimeout(title4Timer);
-    title4Timer = null;
+    clearTimeout(
+      title4Timer
+    );
+
+    title4Timer =
+      null;
 
   }
 
@@ -1788,7 +2321,9 @@ function showPage4(){
 
   page4Modal
     .classList
-    .add('active');
+    .add(
+      'active'
+    );
 
   page4Modal.setAttribute(
     'aria-hidden',
@@ -1799,22 +2334,33 @@ function showPage4(){
     setTimeout(()=>{
 
       if(
+
         page4Modal
           .classList
-          .contains('active')
+          .contains(
+            'active'
+          )
+
         &&
+
         !page4Modal
           .classList
-          .contains('closing')
+          .contains(
+            'closing'
+          )
+
       ){
 
         page4Modal
           .classList
-          .add('title4-ready');
+          .add(
+            'title4-ready'
+          );
 
       }
 
-      title4Timer = null;
+      title4Timer =
+        null;
 
     },3900);
 
@@ -1828,27 +2374,41 @@ function showPage4(){
 function hidePage4(){
 
   if(
+
     !page4Modal
       .classList
-      .contains('active')
+      .contains(
+        'active'
+      )
+
     ||
+
     page4Modal
       .classList
-      .contains('closing')
+      .contains(
+        'closing'
+      )
+
   ){
     return;
   }
 
   if(title4Timer){
 
-    clearTimeout(title4Timer);
-    title4Timer = null;
+    clearTimeout(
+      title4Timer
+    );
+
+    title4Timer =
+      null;
 
   }
 
   page4Modal
     .classList
-    .add('closing');
+    .add(
+      'closing'
+    );
 
   closeTimer =
     setTimeout(()=>{
@@ -1866,7 +2426,8 @@ function hidePage4(){
         'true'
       );
 
-      closeTimer = null;
+      closeTimer =
+        null;
 
     },1600);
 
@@ -1882,6 +2443,7 @@ openPage4.addEventListener(
   e=>{
 
     e.stopPropagation();
+
     showPage4();
 
   }
@@ -1892,6 +2454,7 @@ closePage4.addEventListener(
   e=>{
 
     e.stopPropagation();
+
     hidePage4();
 
   }
@@ -1902,11 +2465,17 @@ page4Modal.addEventListener(
   e=>{
 
     if(
+
       e.target === page4Modal
+
       ||
+
       e.target
         .classList
-        .contains('page4-content')
+        .contains(
+          'page4-content'
+        )
+
     ){
 
       hidePage4();
@@ -1922,7 +2491,9 @@ page4Modal.addEventListener(
 ========================================================= */
 
 const copyToast =
-  document.getElementById('copyToast');
+  document.getElementById(
+    'copyToast'
+  );
 
 let toastTimer =
   null;
@@ -1930,9 +2501,12 @@ let toastTimer =
 function fallbackCopy(text){
 
   const textarea =
-    document.createElement('textarea');
+    document.createElement(
+      'textarea'
+    );
 
-  textarea.value = text;
+  textarea.value =
+    text;
 
   textarea.setAttribute(
     'readonly',
@@ -1959,16 +2533,24 @@ function fallbackCopy(text){
     text.length
   );
 
-  document.execCommand('copy');
+  document.execCommand(
+    'copy'
+  );
 
   textarea.remove();
+
 }
 
-async function copyAccountNumber(value){
+async function copyAccountNumber(
+  value
+){
 
   const digitsOnly =
     String(value)
-      .replace(/\D/g,'');
+      .replace(
+        /\D/g,
+        ''
+      );
 
   try{
 
@@ -1979,36 +2561,51 @@ async function copyAccountNumber(value){
 
       await navigator
         .clipboard
-        .writeText(digitsOnly);
+        .writeText(
+          digitsOnly
+        );
 
     }else{
 
-      fallbackCopy(digitsOnly);
+      fallbackCopy(
+        digitsOnly
+      );
 
     }
 
     if(toastTimer){
-      clearTimeout(toastTimer);
+
+      clearTimeout(
+        toastTimer
+      );
+
     }
 
     copyToast
       .classList
-      .remove('show');
+      .remove(
+        'show'
+      );
 
     void copyToast.offsetWidth;
 
     copyToast
       .classList
-      .add('show');
+      .add(
+        'show'
+      );
 
     toastTimer =
       setTimeout(()=>{
 
         copyToast
           .classList
-          .remove('show');
+          .remove(
+            'show'
+          );
 
-        toastTimer = null;
+        toastTimer =
+          null;
 
       },1550);
 
@@ -2021,7 +2618,9 @@ async function copyAccountNumber(value){
 }
 
 document
-  .querySelectorAll('.account-click')
+  .querySelectorAll(
+    '.account-click'
+  )
   .forEach(el=>{
 
     el.addEventListener(
@@ -2056,7 +2655,9 @@ window.addEventListener(
 
         el
           .classList
-          .remove('is-pressed');
+          .remove(
+            'is-pressed'
+          );
 
       });
 
